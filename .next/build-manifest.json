@@ -14,10 +14,10 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
-    "/": [
+    "/Post/[slug]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/index.js"
+      "static/chunks/pages/Post/[slug].js"
     ],
     "/_app": [
       "static/chunks/webpack.js",
@@ -29,25 +29,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/actualites": [
+    "/histoires": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/actualites.js"
-    ],
-    "/next/dist/pages/_error": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/next/dist/pages/_error.js"
-    ],
-    "/partirDesRessourcesExistantes": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/partirDesRessourcesExistantes.js"
-    ],
-    "/sourcesEtTraductions": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/sourcesEtTraductions.js"
+      "static/chunks/pages/histoires.js"
     ]
   },
   "ampFirstPages": []

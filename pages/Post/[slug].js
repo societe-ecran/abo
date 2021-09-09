@@ -48,7 +48,9 @@ const Post = ({ postData }) => {
                 <Seo title={titre} />
 
                 <ArticleHeader src={foule} title={titre} date={date} author={auteur} source={source} />
-                <div className='titreNav text-gray-800 lg:pl-32 pr-24' dangerouslySetInnerHTML={{ __html: texte}} />
+                <div className="xl:px-64 lg:px-32 md:px-24 lg:bg-gray-50 ">
+                <div className='titreNav text-gray-800  xl:px-32 lg:px-28 md:px-12 px-3 lg:text-lg bg-white' dangerouslySetInnerHTML={{ __html: texte}} />
+                </div>
             </Layout>
         </div>
     )

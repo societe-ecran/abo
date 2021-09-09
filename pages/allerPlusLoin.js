@@ -76,7 +76,8 @@ const allerPlusLoin = () => {
         setValue(newValue);
     };
 
-    const [tabViewed, settabViewed] = useState(JSON.parse(id))
+    // const [tabViewed, settabViewed] = useState(JSON.parse(id))
+        const [tabViewed, settabViewed] = useState(0)
     const triMedias = () => {
         settabViewed(1)
     }

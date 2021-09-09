@@ -2,9 +2,6 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/": "pages/index.js",
-  "/actualites": "pages/actualites.js",
-  "/sourcesEtTraductions": "pages/sourcesEtTraductions.js",
-  "/partirDesRessourcesExistantes": "pages/partirDesRessourcesExistantes.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
+  "/Post/[slug]": "pages/Post/[slug].js",
+  "/histoires": "pages/histoires.js"
 }

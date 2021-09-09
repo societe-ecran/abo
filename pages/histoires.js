@@ -37,7 +37,7 @@ const histoires = ({histoiresPartagees}) => {
                                     <div className='text-gray-500'>
                                         {histoire.node.partagerNosHistoires?.auteur}
                                     </div>
-                                    <div className='text-left font-bold md:text-4xl text-red-700 transform -translate-y-6'>
+                                    <div className='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                                         __
                                     </div>
                                     <div>

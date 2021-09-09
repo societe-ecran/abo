@@ -190,11 +190,11 @@ export async function getDates() {
 }
 
 
-export async function getPage(id) {
+export async function getPageNevreGiveUp() {
   const data = await fetchAPI(
     `
     query MyQuery {
-      page(id: $id) {
+      page(id:"cG9zdDoxMzk=") {
         traductionsCompletes {
           auteur
           date
@@ -209,4 +209,85 @@ export async function getPage(id) {
 
   return data;
 }
+
+export async function getPageAuWendy() {
+  const data = await fetchAPI(
+    `
+    query MyQuery {
+      page(id:"cG9zdDoxMzc=") {
+        traductionsCompletes {
+          auteur
+          date
+          traduction
+        }
+        title
+        content
+      }
+    }
+    `
+  );
+
+  return data;
+}
+
+export async function getPageExerxerAbolition() {
+  const data = await fetchAPI(
+    `
+    query MyQuery {
+      page(id:"cG9zdDoxNDE=") {
+        traductionsCompletes {
+          auteur
+          date
+          traduction
+        }
+        title
+        content
+      }
+    }
+    `
+  );
+
+  return data;
+}
+
+export async function getPagePartirRessources() {
+  const data = await fetchAPI(
+    `
+    query MyQuery {
+      page(id:"cG9zdDoxNDU=") {
+        traductionsCompletes {
+          auteur
+          date
+          traduction
+        }
+        title
+        content
+      }
+    }
+    `
+  );
+
+  return data;
+}
+
+export async function getPageSista() {
+  const data = await fetchAPI(
+    `
+    query MyQuery {
+      page(id:"cG9zdDoxNDM=") {
+        traductionsCompletes {
+          auteur
+          date
+          traduction
+        }
+        title
+        content
+      }
+    }
+    `
+  );
+
+  return data;
+}
+
 

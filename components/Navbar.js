@@ -127,7 +127,7 @@ export default function Example() {
                           <div className='flex flex-col '>
                             <span className="">Le livre </span>
                             {router.pathname == '/actualites' || router.pathname == '/leLivre' || router.pathname == '/sourcesEtTraductions' ?
-                              <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
+                              <div className='text-center font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                                 __
                               </div>
                               : ""}
@@ -191,7 +191,7 @@ export default function Example() {
                           <div className='flex flex-col'>
                             <span>Aller plus loin </span>
                             {router.pathname == '/allerPlusLoin' ?
-                              <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
+                              <div className='text-center font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                                 __
                               </div>
                               : ""}
@@ -256,7 +256,7 @@ export default function Example() {
 
 
                           {router.pathname == '/histoires' ?
-                            <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
+                            <div className='text-center font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                               __
                             </div>
                             : ""}
@@ -280,7 +280,7 @@ export default function Example() {
                           <div className='flex flex-col'>
                             <span className="">Trouver des groupes près de chez vous </span>
                             {router.pathname == '/groupes' ?
-                              <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
+                              <div className='text-center font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                                 __
                               </div>
                               : ""}

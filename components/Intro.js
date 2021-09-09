@@ -6,7 +6,7 @@ const intro = (props) => {
 
 
     return (
-        <div className=' py-6 md:px-12 md:flex md:flex-raw '>
+        <div className=' py-12 md:px-20  md:flex md:flex-raw '>
         <div className=''>
             <div className='violetBack'>
                 <div className='transforme -translate-x-5 -translate-y-5 md:shadow-md'>
