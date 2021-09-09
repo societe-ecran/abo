@@ -26,11 +26,10 @@
   /* font-weight: bold; */
 }
 
-@font-face {
+/* @font-face {
   font-family: "Combat";
   src: local("Combat"), url("./fonts/Combat.otf") format("truetype");
-  /* font-weight: bold; */
-}
+} */
 
 .menthe {
     color:#E1ECD5
@@ -45,9 +44,9 @@
     background-color:#E1ECD5
 }
 
-.combat {
+/* .combat {
   font-family: "Combat";
-}
+} */
 
 .sabonBold {
   font-family: "SabonBold";
