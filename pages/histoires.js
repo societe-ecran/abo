@@ -29,19 +29,19 @@ const histoires = ({histoiresPartagees}) => {
                                 <div className='border-t pb-6 hover:bg-gray-50 ' key={histoire.node.slug}
                                 >
                                     <div className='text-gray-500 pt-3'>
-                                        {histoire.node.partagerNosHistoires?.date}
+                                        {histoire.node.partagerNosHistoires.date}
                                     </div>
                                     <div className='font-bold '>
-                                        {histoire.node.partagerNosHistoires?.titreDeLarticle}
+                                        {histoire.node.partagerNosHistoires.titreDeLarticle}
                                     </div>
                                     <div className='text-gray-500'>
-                                        {histoire.node.partagerNosHistoires?.auteur}
+                                        {histoire.node.partagerNosHistoires.auteur}
                                     </div>
                                     <div className='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                                         __
                                     </div>
                                     <div>
-                                        {histoire.node.partagerNosHistoires?.resume}
+                                        {histoire.node.partagerNosHistoires.resume}
                                     </div>
 
                                 </div>
