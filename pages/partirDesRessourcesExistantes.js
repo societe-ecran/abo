@@ -5,7 +5,7 @@ import ArticleHeader from '../components/ArticleHeader'
 import occupy from '../public/occupycityhall.png'
 import {getPage} from '../components/lib/api'
 
-const PartirDesRessourcesExistantes = (traduction) => {
+const PartirDesRessourcesExistantes = () => {
     const titre = 'Partir des ressources existantes'
     const description = 'Traduction complète'
     
@@ -33,11 +33,11 @@ console.log(traduction)
 
 export default PartirDesRessourcesExistantes
 
-export async function getStaticProps() {
-    const traduction = await getPage();
-    return {
-        props: {
-            traduction
-        }
-    };
-}
+// export async function getStaticProps() {
+//     const traduction = await getPage();
+//     return {
+//         props: {
+//             traduction
+//         }
+//     };
+// }
