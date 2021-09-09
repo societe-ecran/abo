@@ -9,7 +9,7 @@ const PartirDesRessourcesExistantes = () => {
     const titre = 'Partir des ressources existantes'
     const description = 'Traduction complète'
     
-console.log(traduction)
+
 
     return (
         <div>
