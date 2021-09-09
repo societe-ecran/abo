@@ -22,24 +22,6 @@ const Post = ({ postData }) => {
             date = postData.partagerNosHistoires.date
     }
 
-    // if (postData.categories.edges[0].node.name == 'PartagerNosHistoires') {
-    //     titre = postData.partagerNosHistoires.titreDaLarticle
-    //     auteur = postData.partagerNosHistoires.auteur,
-    //         source = postData.partagerNosHistoires.source,
-    //         date = postData.partagerNosHistoires.date
-
-    // }
-    // else if (postData.categories.edges[0].node.name == 'allerPlusLoin') {
-    //     return (
-    //         titre = postData.allerPlusLoin.titreDaLarticle,
-    //         auteur = postData.allerPlusLoin.auteur,
-    //         source = postData.allerPlusLoin.source,
-    //         date = postData.allerPlusLoin.date
-    //     )
-
-    // }
-
-
     const texte = postData.content
 
     return (
