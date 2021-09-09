@@ -9,7 +9,6 @@ import { useRouter } from 'next/router'
 export default function Example() {
 
   const router = useRouter()
-console.log(router.pathname)
   const LeLivre = [
     {
       name: "Actualités",
@@ -33,12 +32,13 @@ console.log(router.pathname)
       name: 'Médias',
       description: 'articles, fanzines, bibliographie, filmographie, podcasts',
       href: '/allerPlusLoin',
+      number:1
     },
     {
       name: 'Thématiques',
-      description: 'histoires, réformes et luttes, justice transformatrice',
+      description: 'histoire, réformes et luttes, justice transformatrice',
       href: '/allerPlusLoin',
-      //   icon: IconTwo,
+      number:0
     }
   ]
 
@@ -74,9 +74,7 @@ console.log(router.pathname)
 
 
   return (
-    <Disclosure as="nav" className="bg-white shadow">
-
-
+    <Disclosure as="nav" className="bg-white shadow ">
 
       {({ open }) => (
         <>
@@ -126,15 +124,15 @@ console.log(router.pathname)
                 ${open ? '' : 'text-opacity-90'}
                 text-black group bg-orange-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
                         >
-                        <div className='flex flex-col'>
-                           <span>Le livre </span>
-                          {router.pathname == '/actualites' || router.pathname == '/leLivre' || router.pathname == '/sourcesEtTraductions' ? 
-                          <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
-                            __
-                        </div>
-                           : ""}
-                        </div>
-                         
+                          <div className='flex flex-col '>
+                            <span className="">Le livre </span>
+                            {router.pathname == '/actualites' || router.pathname == '/leLivre' || router.pathname == '/sourcesEtTraductions' ?
+                              <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
+                                __
+                              </div>
+                              : ""}
+                          </div>
+
                         </Popover.Button>
 
                         <Transition
@@ -190,15 +188,14 @@ console.log(router.pathname)
                 ${open ? '' : 'text-opacity-90'}
                 text-black group bg-orange-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
                         >
-                         
                           <div className='flex flex-col'>
                             <span>Aller plus loin </span>
-                          {router.pathname == '/allerPlusLoin' ? 
-                          <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
-                            __
-                        </div>
-                           : ""}
-                        </div>
+                            {router.pathname == '/allerPlusLoin' ?
+                              <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
+                                __
+                              </div>
+                              : ""}
+                          </div>
                         </Popover.Button>
                         <Transition
                           as={Fragment}
@@ -213,7 +210,13 @@ console.log(router.pathname)
                             <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                               <div className="relative  bg-white p-7 ">
                                 {AllerPlusLoin.map((item) => (
-                                  <Link href={item.href}>
+                                  <Link
+                                    href={{
+                                      pathname: "/allerPlusLoin",
+                                      query: { id:item.number },
+                                    }}
+
+                                  >
                                     <a
                                       key={item.name}
                                       className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
@@ -246,19 +249,19 @@ console.log(router.pathname)
                 ${open ? '' : 'text-opacity-90'}
                 text-black group bg-orange-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
                       >
-                       <div className='flex flex-col'>
+                        <div className='flex flex-col'>
                           <Link href='/histoires'>
                             <a> Partager nos histoires </a>
                           </Link>
-                       
-  
-                          {router.pathname == '/histoires' ? 
-                          <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
-                            __
+
+
+                          {router.pathname == '/histoires' ?
+                            <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
+                              __
+                            </div>
+                            : ""}
                         </div>
-                           : ""}
-                        </div>
-                      
+
                         {router.pathname == '/' ? "" : ''}
 
                       </Popover.Button>
@@ -273,16 +276,16 @@ console.log(router.pathname)
                           className={`
                 ${open ? '' : 'text-opacity-90'}
                 text-black group bg-orange-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
-                        >               
+                        >
                           <div className='flex flex-col'>
-                               <span className="">Trouver des groupes près de chez vous </span>
-                          {router.pathname == '/groupes' ? 
-                          <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
-                            __
-                        </div>
-                           : ""}
-                        </div>
-                             </Popover.Button>
+                            <span className="">Trouver des groupes près de chez vous </span>
+                            {router.pathname == '/groupes' ?
+                              <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
+                                __
+                              </div>
+                              : ""}
+                          </div>
+                        </Popover.Button>
                         <Transition
                           as={Fragment}
                           enter="transition ease-out duration-200"
@@ -292,9 +295,9 @@ console.log(router.pathname)
                           leaveFrom="opacity-100 translate-y-0"
                           leaveTo="opacity-0 translate-y-1"
                         >
-                          <Popover.Panel className="absolute z-10  max-w-sm px-4 mt-1 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl">
+                          <Popover.Panel className="absolute   max-w-sm px-4 mt-1 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl">
                             <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                              <div className="relative  bg-white p-7 ">
+                              <div className="relative z-50  bg-white p-7 ">
                                 {Groupes.map((item) => (
                                   <Link
                                     href={{

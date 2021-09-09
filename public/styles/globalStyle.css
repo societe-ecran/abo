@@ -36,6 +36,11 @@
     color:#E1ECD5
 }
 
+
+.cursorMain{
+  cursor: pointer;
+}
+
 .mentheBack {
     background-color:#E1ECD5
 }
@@ -125,6 +130,7 @@ font-family: "HarbourBold";
     opacity: 1;
   }
 }
+
 
 .violet {
   /* color:#59577C */

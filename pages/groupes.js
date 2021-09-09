@@ -1,4 +1,4 @@
-import {React, useEffect, useState} from 'react'
+import { React, useEffect, useState } from 'react'
 import Layout from '../components/Layout'
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -10,7 +10,7 @@ import { useRouter } from 'next/router'
 import Intro from '../components/Intro'
 import statue from '../public/statueNB.jpg'
 import Seo from '../components/seo/Seo'
-
+import { getCollectifs } from '../components/lib/api'
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     },
     tabs: {
         borderRight: `1px solid ${theme.palette.divider}`,
-        padding:'Opx 50px 50px 50px',
+        padding: 'Opx 50px 50px 50px',
         textAlign: 'left',
         // backgroundColor: "red"
     },
@@ -62,23 +62,22 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const groupes = () => {
+const groupes = ({  collectif }) => {
   
     const router = useRouter()
     const {
         query: { id },
     } = router
     const classes = useStyles();
-    const [value, setValue] = useState(JSON.parse(id));
+    // const [value, setValue] = useState(JSON.parse(id));
+    const [value, setValue] = useState(0);
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
-    
-
-const texte=' Les groupes ou collectifs rassemblés ici ne se disent pas nécessairement abolitionnistes. Mais ils mènent des luttes pour se défendre de la police, de la justice ou de la prison, ici et maintenant. Nous ne faisons que relayer ces organisations contre les violences d’État pour qu’il soit plus facile de les contacter et de connaître les forces en présence. Si vous participez à un collectif qui n’est pas répertorié ici et que vous aimeriez qu’il y soit, n’hésitez pas à nous envoyer un mail !'
-const titre = 'Groupes et collectifs'
-const description ="Les groupes ou collectifs rassemblés ici ne se disent pas nécessairement abolitionnistes. Mais ils mènent des luttes pour se défendre de la police, de la justice ou de la prison, ici et maintenant. "
+    const texte = ' Les groupes ou collectifs rassemblés ici ne se disent pas nécessairement abolitionnistes. Mais ils mènent des luttes pour se défendre de la police, de la justice ou de la prison, ici et maintenant. Nous ne faisons que relayer ces organisations contre les violences d’État pour qu’il soit plus facile de les contacter et de connaître les forces en présence. Si vous participez à un collectif qui n’est pas répertorié ici et que vous aimeriez qu’il y soit, n’hésitez pas à nous envoyer un mail !'
+    const titre = 'Groupes et collectifs'
+    const description = "Les groupes ou collectifs rassemblés ici ne se disent pas nécessairement abolitionnistes. Mais ils mènent des luttes pour se défendre de la police, de la justice ou de la prison, ici et maintenant. "
 
     const groupsTypes = [
         { name: "Comités vérité et justice" },
@@ -92,16 +91,9 @@ const description ="Les groupes ou collectifs rassemblés ici ne se disent pas n
         <div>
             <Layout>
 
-            <Seo title={titre}/>
+                <Seo title={titre} />
 
-            <Intro title='Groupes et collectifs' texte={texte} src={statue}/>
-                {/* <p className='sabonRoman'>
-                    Les groupes ou collectifs rassemblés ici ne se disent pas nécessairement abolitionnistes. Mais ils mènent des luttes pour se défendre de la police, de la justice ou de la prison, ici et maintenant. Nous ne faisons que relayer ces organisations contre les violences d’État pour qu’il soit plus facile de les contacter et de connaître les forces en présence. 
-                    <p>
-                        Si vous participez à un collectif qui n’est pas répertorié ici et que vous aimeriez qu’il y soit, n’hésitez pas à nous envoyer un mail !
-                    </p>
-                </p> */}
-
+                <Intro title='Groupes et collectifs' texte={texte} src={statue} />
 
                 <div className='pt-6 pl-6'>
                     <div className={classes.root}>
@@ -125,26 +117,18 @@ const description ="Les groupes ou collectifs rassemblés ici ne se disent pas n
 
                         <div className='pl-20'>
                             <TabPanel value={value} index={0}>
-                                Item One
+                            <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[2].node.content }} />
                             </TabPanel>
                             <TabPanel value={value} index={1}>
-                                Item Two
+                               <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[1].node.content }} />
                             </TabPanel>
                             <TabPanel value={value} index={2}>
-                                Item Three
+                            <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[3].node.content }} />
                             </TabPanel>
                             <TabPanel value={value} index={3}>
-                                Item Four
+                                <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[0].node.content}} />
                             </TabPanel>
-                            <TabPanel value={value} index={4}>
-                                Item Five
-                            </TabPanel>
-                            <TabPanel value={value} index={5}>
-                                Item Six
-                            </TabPanel>
-                            <TabPanel value={value} index={6}>
-                                Item Seven
-                            </TabPanel>
+
                         </div>
 
                     </div>
@@ -162,6 +146,14 @@ const description ="Les groupes ou collectifs rassemblés ici ne se disent pas n
 
 export default groupes
 
-groupes.getInitialProps = ({ query: { id } }) => {
-    return { id }
-  }
+// groupes.getInitialProps = ({ query: { id } }) => {
+//     return { id }
+// }
+
+export async function getStaticProps(context) {
+    const  collectif= await getCollectifs()
+    return {
+        props: { collectif }
+    }
+    
+}

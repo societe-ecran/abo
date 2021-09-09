@@ -7,28 +7,30 @@ import tags from '../public/tags.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
 import Seo from '../components/seo/Seo'
+import {getDates} from '../components/lib/api'
 
-export default function actualites() {
+export default function actualites({datesTournee}) {
     const titre = 'Actualités'
     const description = "Vous trouverez ici les actualités du collectif : dates de tournée, dernières publications et fils twitter."
 
-    const data = [
-        { ville: 'Paris', date: '12 octobre 2021', lieu: 'A la bibli', horaires: '19:00', présentation: 'Six ans après les attentats du 13 novembre 2015, qui ont fait 130 morts et plusieurs centaines de blessés au Bataclan, au Stade de France et dans les rues de Paris, le plus grand ' },
-        { ville: 'Rennes', date: '12 octobre 2021', lieu: 'Piscine', horaires: '19:00', présentation: 'Six ans après les attentats du 13 novembre 2015, qui ont fait 130 morts et plusieurs centaines de blessés au Bataclan, au Stade de France et dans les rues de Paris, le plus grand ' },
-        { ville: 'Lille', date: '12 octobre 2021', lieu: 'Librairie', horaires: '19:00', présentation: 'Six ans après les attentats du 13 novembre 2015, qui ont fait 130 morts et plusieurs centaines de blessés au Bataclan, au Stade de France et dans les rues de Paris, le plus grand ' }
-    ]
+    console.log(datesTournee.posts.edges[0])
 
-    const dernieresPublications = [
-        { titre: 'A la recherche du temps perdu', date: '12/07/2021', type: 'texte', extrait: 'Six ans après les attentats du 13 novembre 2015, qui ont fait 130 morts et plusieurs centaines de blessés au Bataclan, au Stade de France et dans les rues de Paris, le plus grand ' }
+    const data = datesTournee.posts.edges
+    
+    
+    // [
+    //     { ville: 'Paris', date: '12 octobre 2021', lieu: 'A la bibli', horaires: '19:00', présentation: 'Six ans après les attentats du 13 novembre 2015, qui ont fait 130 morts et plusieurs centaines de blessés au Bataclan, au Stade de France et dans les rues de Paris, le plus grand ' },
+    //     { ville: 'Rennes', date: '12 octobre 2021', lieu: 'Piscine', horaires: '19:00', présentation: 'Six ans après les attentats du 13 novembre 2015, qui ont fait 130 morts et plusieurs centaines de blessés au Bataclan, au Stade de France et dans les rues de Paris, le plus grand ' },
+    //     { ville: 'Lille', date: '12 octobre 2021', lieu: 'Librairie', horaires: '19:00', présentation: 'Six ans après les attentats du 13 novembre 2015, qui ont fait 130 morts et plusieurs centaines de blessés au Bataclan, au Stade de France et dans les rues de Paris, le plus grand ' }
+    // ]
 
-    ]
 
     return (
         <Layout>
             <Seo title={titre} description={description}/>
             <div className="">
                 <div className=''>
-                    <div className=' pb-6 pt-6 '>
+                    <div className=' pb-3 pt-12 '>
                         <div className="text-2xl text-center md:text-left md:text-3xl font-Bold px-12 titreNav  border-b  ">
                             {/* <div className='flex justify-start '> */}
                             Dates de la tournée
@@ -43,13 +45,14 @@ export default function actualites() {
                                 <div className='text-sm  md:text-baseshadow md:mx-6 md:my-6 px-3 py-3 rounded-lg border violetBack sabonRoman'>
 
                                     <div className='text-white'>
-                                        {item.date}
+                                        {item.node.datestournee.dateDeLaPresentation}
                                     </div>
                                     <div className='md:text-xl'>
-                                        {item.ville}
+                                        {item.node.datestournee.ville}
                                     </div>
                                     <div className='text-white'>
-                                        {item.présentation}
+                                    <div className='titreNav text-white' dangerouslySetInnerHTML={{ __html: item.node.content}} />
+                                       
                                     </div>
                                     <div className='text-center font-bold md:text-2xl text-red-700'>
                                         __
@@ -106,7 +109,7 @@ export default function actualites() {
                         <Image
                             src={pigs}
                             alt="Couverture Abolir la police"
-                            quality={100}
+                            quality={50}
                             layout="intrinsic"
                             // width={309}
                             // height={468}
@@ -115,11 +118,7 @@ export default function actualites() {
                         // Optionally allows to add a blurred version of the image while loading
                         // placeholder="blur"
                         />
-
                     </div>
-
-
-
 
                 </div>
                 <div className="text-3xl font-Bold px-12 titreNav transforme pt-12  text-center text-gray-500">
@@ -133,7 +132,7 @@ export default function actualites() {
                             <Image
                                 src={tags}
                                 alt="Couverture Abolir la police"
-                                quality={100}
+                                quality={50}
                                 layout="intrinsic"
                                 // width={309}
                                 // height={468}
@@ -142,7 +141,6 @@ export default function actualites() {
                             // Optionally allows to add a blurred version of the image while loading
                             // placeholder="blur"
                             />
-
                         </div>
 
                             <div className='pt-6'>
@@ -184,22 +182,11 @@ export default function actualites() {
                                     </Link>
                                 </div>
                             </div>
-                       
-
-
-
                     </div>
-
-
-           
-
-
-
 
                 <div className='md:grid md:grid-cols-3 px-3 md:px-3'>
 
                     <div className=''>
-
                     </div>
                     <div className=''>
 
@@ -225,110 +212,18 @@ export default function actualites() {
                             </div>
                         </div>
                     </div>
-                    <div className=''>
-
-                    </div>
-
                 </div>
-
-
-
             </div>
-
-
-
-
-            {/* 
-
-            <div className='flex flex-row justify-around pt-32'>
-
-                <div className='shadow-md w-1/3  mx-12 border rounded-md'>
-                    <>
-                        <div className="text-center pb-3 pt-1 border-b" >
-                            Dernieres Publications
-                        </div>
-                        <div>
-                            {dernieresPublications.map(article => {
-                                return (
-                                    <div className='px-2 py-2'>
-
-
-                                        <div className='shadow'>
-
-                                        </div> </div>
-                                )
-                            })}
-                        </div>
-
-                    </>
-                </div>
-
-                <div className='shadow-md w-1/3 mx-12 border rounded-md'>
-                    <div className="text-center pb-3 pt-1 border-b" >
-                        Dates tournée
-                    </div>
-
-                    <div className='px-2'>
-
-                        <Accordion>
-                            {data.map(item => {
-                                return (
-                                    <AccordionItem title={
-
-                                        <div className='flex justify-between px-2'>
-                                            <div>
-                                                {item.ville}
-                                            </div>
-                                            <div className='text-gray-500'>
-                                                {item.date}
-                                            </div>
-                                        </div>
-
-
-                                    }
-                                        expanded={item === 1}
-                                        expandedClassName=' acordionCard2 vignets '
-                                        duration={800}
-                                    >
-                                        <div className="px-2">
-                                            <div>
-                                                {item.lieu}
-                                            </div>
-                                            <div>
-                                                {item.horaires}
-                                            </div>
-                                        </div>
-
-
-                                    </AccordionItem>
-                                );
-                            })}
-                        </Accordion>
-                    </div>
-                </div>
-
-                <div className='shadow-md w-1/3 mx-12 border rounded-md'>
-                    <div className="text-center pt-1 pb-2" >
-                        Derniers tweets                    </div>
-                    <div className='px-2'>
-                        <Timeline
-                            dataSource={{
-                                sourceType: 'profile',
-                                screenName: 'CollectifMatsu1'
-
-                            }}
-                            options={{
-                                chrome: "noheader, nofooter",
-                                height: '400'
-                            }}
-                        />
-                    </div>
-                </div>
-
-            </div> */}
-
         </Layout>
     )
 }
 
 
+export async function getStaticProps() {
+    const datesTournee = await getDates();
+    return {
+        props: {
+            datesTournee
+        }
+    };
+}

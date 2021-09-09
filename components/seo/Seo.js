@@ -5,14 +5,18 @@ const Seo = (props) => {
     return (
         <Head>
             <title>{props.title}</title>
-            <meta name="description" content="The story behind My Clothing Store!" />
+            <meta name="description" content={props.description} />
             <meta property="og:title" content={props.title} />
             <meta property="og:description" content={props.description} />
             {/* <meta property="og:url" content="https://myclothingstore.com/about" /> */}
             <meta property="og:type" content="website" />
+            <meta charSet="utf-8"/>
+            <meta name="author" content="{Team17}"/>
+            <meta name="twitter:title" content="collectifmatsu1"/>
+            <meta name="theme-color" content="#59577c" />
 
-
-
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+            <link rel="icon" href="/favicon.ico" />
             <link rel="preconnect" href="<https://app.snipcart.com>" />
             <link rel="preconnect" href="<https://cdn.snipcart.com>" />
             {/* <link rel="stylesheet" href="<https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css>" /> */}

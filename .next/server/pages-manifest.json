@@ -1,7 +1,7 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/groupes": "pages/groupes.js",
-  "/actualites": "pages/actualites.js"
+  "/_error": "pages/_error.js",
+  "/partirDesRessourcesExistantes": "pages/partirDesRessourcesExistantes.js",
+  "/sourcesEtTraductions": "pages/sourcesEtTraductions.js"
 }

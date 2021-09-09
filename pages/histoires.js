@@ -5,60 +5,60 @@ import Intro from '../components/Intro'
 import { getAllPostsWithSlug } from '../components/lib/api';
 import Link from 'next/link'
 import Seo from '../components/seo/Seo'
+import {getHistoires} from '../components/lib/api'
 
-const histoires = ({ allPosts: { edges } }) => {
+
+
+const histoires = ({histoiresPartagees}) => {
     const texte = ' Voici des témoignages, récits ou histoires collectées sur internet ou lors d’ateliers. Toutes les manières d’affronter au quotidien les situations de violences et de torts en dehors du système pénal sont trop invisibilisées. Les institutions pénales nous affaiblissent en s’accaparant nos conflits et les façons de les régler. Alors nous savons trop peu comment résoudre collectivement des problèmes qui font pleinement partie de nos vies. Partager des histoires alternatives permet donc d’avoir de nouvelles idées, de se défaire de certains réflexes et d’apprendre des erreurs ou méthodes des autres. Nous serions très heureux de partager les vôtres aussi. Vous pouvez nous envoyer un mail à : collectif_matsuda (at) riseup.net.'
     const titre = 'Partager nos histoires'
 
-console.log(edges)
+    const histoires = histoiresPartagees.posts.edges
+
     return (
         <div>
             <Layout>
+                <Seo title={titre} />
+                <Intro src={foule} texte={texte} title={titre} />
+                <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
 
-            <Seo title={titre}/>
+                    {histoires.map((histoire) => (
 
-                {/* <div className=' p-6 flex flex-raw '>
-                    <div className=''>
-                       
-                        <div className='violetBack '>
-                            <div className='transforme -translate-x-5 -translate-y-5 shadow-md'>
-                                <Image
-                                    src={pig}
-                                    alt="illustration"
-                                    //   width={500}
-
-                                    quality={100}
-                                    //   height='auto'
-                                    layout="intrinsic"
+                        <Link href={`/Post/${histoire.node.slug}`}>
+                            <a>
+                                <div className='border-t pb-6 hover:bg-gray-50 ' key={histoire.node.slug}
                                 >
+                                    <div className='text-gray-500 pt-3'>
+                                        {histoire.node.partagerNosHistoires?.date}
+                                    </div>
+                                    <div className='font-bold '>
+                                        {histoire.node.partagerNosHistoires?.titreDeLarticle}
+                                    </div>
+                                    <div className='text-gray-500'>
+                                        {histoire.node.partagerNosHistoires?.auteur}
+                                    </div>
+                                    <div className='text-left font-bold md:text-4xl text-red-700 transform -translate-y-6'>
+                                        __
+                                    </div>
+                                    <div>
+                                        {histoire.node.partagerNosHistoires?.resume}
+                                    </div>
 
-                                </Image>
-                            </div>
+                                </div>
+                            </a>
+                        </Link>
+                    ))}
 
-                        </div>
+                </div>
 
-                    </div>
-                    <div className='pl-6 '>
-                    <p className='titreNav text-xl '>
-                            Partager nos histoires
-                        </p>
-                        <p className='pt-6 px-6 '>
-                            Voici des témoignages, récits ou histoires collectées sur internet ou lors d’ateliers. Toutes les manières d’affronter au quotidien les situations de violences et de torts en dehors du système pénal sont trop invisibilisées. Les institutions pénales nous affaiblissent en s’accaparant nos conflits et les façons de les régler. Alors nous savons trop peu comment résoudre collectivement des problèmes qui font pleinement partie de nos vies. Partager des histoires alternatives permet donc d’avoir de nouvelles idées, de se défaire de certains réflexes et d’apprendre des erreurs ou méthodes des autres. Nous serions très heureux de partager les vôtres aussi. Vous pouvez nous envoyer un mail à : collectif_matsuda@riseup.net.
-                        </p>
-                    </div>
 
-                </div> */}
-
-                <Intro src={foule} texte={texte} title={titre}/>
-              
-
-                <section>
+                {/* <section>
         {edges.map(({ node }) => (
           <div className='' key={node.id}>
          
           </div>
         ))}
-      </section>
+      </section> */}
 
 
 
@@ -71,11 +71,10 @@ export default histoires
 
 
 export async function getStaticProps() {
-    const allPosts = await getAllPostsWithSlug();
+    const histoiresPartagees = await getHistoires();
     return {
-      props: {
-        allPosts
-      }
+        props: {
+            histoiresPartagees
+        }
     };
-  }
-  
+}

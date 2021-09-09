@@ -24,15 +24,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/actualites": [
+    "/partirDesRessourcesExistantes": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/actualites.js"
+      "static/chunks/pages/partirDesRessourcesExistantes.js"
     ],
-    "/groupes": [
+    "/sourcesEtTraductions": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/groupes.js"
+      "static/chunks/pages/sourcesEtTraductions.js"
     ]
   },
   "ampFirstPages": []

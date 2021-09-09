@@ -28,7 +28,7 @@ const sourcesEtTraductions = () => {
         { isSommaire: true, sommaire: "IV. Le mouvement abolitionniste aujourd’hui", titreOrignal: '', titreTraduit: '', auteur: '', href: '', link: '' },
         { isSommaire: true, sommaire: "Abolition Now ! (Matsuda)", titreOrignal: '', titreTraduit: '', auteur: '', href: '', link: '' },
         { isSommaire: false, sommaire: "Campagne #8toabolition", titreOrignal: ' #8toAbolition', titreTraduit: ' Campagne #8toabolition', auteur: ' 8toAbolition', href: ' https://www.8toabolition.com/', link: '' },
-        { isSommaire: false, sommaire: "Partir des ressources existantes", titreOrignal: '  MPD150 Report', titreTraduit: '  Partir des ressources existantes', auteur: ' MPD 150', href: '', link: '/partirDesRessourcesExistantes' },
+        { isSommaire: false, sommaire: "Partir des ressources existantes", titreOrignal: '  MPD150 Report', titreTraduit: '  Partir des ressources existantes', auteur: ' MPD 150', href: 'https://www.mpd150.com/report/ ', link: '/partirDesRessourcesExistantes' },
         { isSommaire: false, sommaire: "Ateliers pour imaginer un monde sans police", titreOrignal: 'Transformative Justice - A Curriculum Guide', titreTraduit: 'Ateliers pour imaginer un monde sans police', auteur: `  NIA et ${<a href="http://criticalresistance.org/abolition-of-policing-workshop/" target="_blank" >Critical Resistance</a>}`, href: 'https://project-nia.org/uploads/images/tjcurriculum_design_small-finalrev.pdf', link: '' },
         { isSommaire: false, sommaire: "S’exercer à l’abolition jour après jour", titreOrignal: ' Practising Everyday Abolition', titreTraduit: 'S’exercer à l’abolition jour après jour', auteur: 'S. Lamble', href: ' https://abolitionistfutures.com/latest-news/practising-everyday-abolition', link: '' },
         { isSommaire: true, sommaire: "   Organisation abolitionniste et transformation de la justice (M. Kaba et A. Young)", titreOrignal: '', titreTraduit: '', auteur: '', href: '', link: '' },
@@ -68,7 +68,7 @@ const sourcesEtTraductions = () => {
                     </div>
                 </div>
 
-                <div className='text-sm md:text-base'>
+                <div className='text-sm md:text-base z-50'>
                     <Accordion>
                         {data.map(item => {
                             return (
@@ -81,24 +81,24 @@ const sourcesEtTraductions = () => {
                                         <div className='grid grid-cols-3 group sabonRoman '>
                                             <div className='z-10 pl-4  '>
                                                 {item.isSommaire ?
-                                                    <a className='bg-white px-2 text-gray-400' >
+                                                    <a className=' px-2 text-gray-400' >
                                                         {item.sommaire}
                                                     </a>
                                                     :
-                                                    <a className='bg-white px-2 text-gray-800 group-hover:underline' >
+                                                    <a className='bg-white px-2 text-gray-800 group-hover:underline cursorMain' >
                                                         {item.sommaire}
                                                     </a>
                                                 }
 
                                             </div>
-                                            <div className='z-50 '>
-                                                <a className='bg-white   px-2  group-hover:underline'>
+                                            <div className='z-10 '>
+                                                <a className='bg-white   px-2  group-hover:underline cursorMain'>
                                                     {item.titreOrignal}
                                                 </a>
                                             </div>
 
-                                            <div className='z-50 '>
-                                                <a className='bg-white px-2  group-hover:underline'>
+                                            <div className='z-10 '>
+                                                <a className='bg-white px-2  group-hover:underline cursorMain'>
                                                     {item.titreTraduit}
                                                 </a>
                                             </div>
@@ -124,7 +124,7 @@ const sourcesEtTraductions = () => {
                                                 <a href={item.href} target="_blank" className="pl-4 ">
                                                     {/* <button className=' rounded-full py-1 px-2 violetBack text-white '> */}
                                                     <div className='text-right mr-6'>
-                                                        <button className='border rounded-full px-3 py-1   text-black' >
+                                                        <button className='border rounded-full px-3 py-1 hover:bg-gray-50  text-black' >
                                                             Lire le texte original
                                                         </button>
                                                     </div>
@@ -142,7 +142,7 @@ const sourcesEtTraductions = () => {
                                             <Link href={item.link} className=''>
                                                 <a className='pl-4 flex flex-col' >
                                                     <div className='text-right mr-6 pt-6 '>
-                                                        <button className='border rounded-full px-3 py-1  text-black' >
+                                                        <button className='border rounded-full px-3 py-1 hover:bg-gray-50 text-black' >
                                                             Lire la traduction complète
                                                         </button>
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { HeartIcon } from '@heroicons/react/solid'
 
 const Footer = () => {
   const navigation = {
@@ -28,15 +29,32 @@ const Footer = () => {
         <div className='text-center text-gray-400 '>
           collectif_matsuda@riseup.net
         </div>
-        <div className="mt-3 flex justify-center space-x-6">
+        <div className="mt-2 flex justify-center space-x-6">
           {navigation.social.map((item) => (
-            <a key={item.name} href={item.href} target="_blank" className="text-gray-400 hover:text-gray-500">
+            <a key={item.name} href={item.href} target="_blank" className="text-blue-500 hover:text-gray-500">
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
             </a>
           ))}
         </div>
-        <p className="mt-3 text-center text-base text-gray-400"> Made with love by {`{TEAM ACAB}`} </p>
+        <div className="flex flex-col items-center">
+
+          <div className="mt-3 text-center text-base text-gray-400">
+            Made with
+            <div className='transform translate-x-7'>
+              <HeartIcon className="h-5 w-5  text-red-600" />
+             
+            </div>
+             <div>
+                by {`{team17}`}
+              </div>
+          </div>
+          <div>
+
+          </div>
+
+        </div>
+
       </div>
     </>
   )

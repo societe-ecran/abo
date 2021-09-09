@@ -33,7 +33,7 @@ export default function Home() {
                     src={visuel}
                     alt="Visuel couverture"
                     // width={500}
-                    quality={100}
+                    quality={50}
                     // height='auto'
                     layout="intrinsic"
                   />

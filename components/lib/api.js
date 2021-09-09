@@ -10,7 +10,7 @@ async function fetchAPI(query, { variables } = {}) {
   // build out the fetch() call using the API_URL
   // environment variable pulled in at the start
   // Note the merging of the query and variables
-  const res = await fetch('https://redirectiondivergences.com/graphql/', {
+  const res = await fetch('https://www.redirectiondfghjhgf.com/graphql/', {
     method: 'POST',
     headers,
     body: JSON.stringify({ query, variables })
@@ -79,10 +79,22 @@ export async function getPost(slug) {
   const data = await fetchAPI(
     `
     fragment PostFields on Post {
-      title
-      excerpt
       slug
       date
+      partagerNosHistoires {
+        auteur
+        date
+        resume
+        source
+        titreDeLarticle
+      }
+      categories {
+        edges {
+          node {
+            name
+          }
+        }
+      }
       featuredImage {
         node {
           sourceUrl
@@ -106,3 +118,95 @@ export async function getPost(slug) {
 
   return data;
 }
+
+
+
+
+
+export async function getCollectifs() {
+  const data = await fetchAPI(
+    `
+    query MyQuery {
+      posts(where: {categoryName: "groupesEtCollectifs"}) {
+        edges {
+          node {
+            content
+          }
+        }
+      }
+    }
+    `
+  );
+
+  return data;
+}
+
+export async function getHistoires() {
+  const data = await fetchAPI(
+    `
+      query MyQuery {
+      posts(where: {categoryName: "PartagerNosHistoires"}) {
+        edges {
+          node {
+            partagerNosHistoires {
+              auteur
+              date
+              resume
+              source
+              titreDeLarticle
+            }
+            slug
+          }
+        }
+      }
+    }
+    `
+  );
+
+  return data;
+}
+
+
+export async function getDates() {
+  const data = await fetchAPI(
+    `
+    query MyQuery {
+      posts(where: {categoryName: "DatesDeLaTournee"}) {
+        edges {
+          node {
+            datestournee {
+              dateDeLaPresentation
+              ville
+            }
+            content
+          }
+        }
+      }
+    }
+    `
+  );
+
+  return data;
+}
+
+
+export async function getPage(id) {
+  const data = await fetchAPI(
+    `
+    query MyQuery {
+      page(id: $id) {
+        traductionsCompletes {
+          auteur
+          date
+          traduction
+        }
+        title
+        content
+      }
+    }
+    `
+  );
+
+  return data;
+}
+

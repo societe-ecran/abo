@@ -17,7 +17,7 @@ const ArticleHeader = (props) => {
                         alt="illustration"
                         //   width={500}
 
-                        quality={100}
+                        quality={50}
                         //   height='auto'
                         layout="intrinsic"
                     >
@@ -31,17 +31,24 @@ const ArticleHeader = (props) => {
         </div>
         <div className='pl-6 
         // grid place-content-center 
-        '>
+        '> 
+        <p className='pt-3 px-6 text-gray-600 '>
+              {props?.date}
+              </p>
         <h1 className='titreNav text-xl '>
-             {props.title}
+             {props?.title}
             </h1>
-            <p className='pt-6 px-6 '>
-              {props.author}
+            <p className='pt-6 px-6 text-gray-600 '>
+              {props?.author}
+              </p>
+              <p className='pt-3 px-6 text-gray-600 underline '>
+              <a href={props?.source} target="_blank">
+              {props?.source}
+              </a>
+          
               </p>
 
-              <p className='pt-6 px-6 '>
-              {props.date}
-              </p>
+             
         </div>
    
 
