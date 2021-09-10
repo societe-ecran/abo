@@ -10,9 +10,9 @@ import { useRouter } from 'next/router'
 const Post = ({ postData }) => {
     const router = useRouter()
 
-    if(!router.isFallback &&!postData?.slug){
-        return<p>hMMMMM.....</p>
-    }
+    // if(!router.isFallback &&!postData?.slug){
+    //     return<p>hMMMMM.....</p>
+    // }
     let titre = 'ggg'
     let auteur = 'fff'
     let source = 'ff'
@@ -63,7 +63,7 @@ export async function getStaticPaths() {
     console.log()
     return {
         paths: allPosts.edges.map(({ node }) => `/Post/${node.slug}`) || [],
-        fallback: true,
+        fallback: false,
     }
 }
 
