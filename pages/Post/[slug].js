@@ -45,7 +45,7 @@ const Post = ({ postData }) => {
                         </div> */}
                     <div>
 
-                    { typeof postData !== "undefined"}    {postData.title}
+                    { typeof postData !== undefined}    {postData.title}
                     </div>
 
                 </>
