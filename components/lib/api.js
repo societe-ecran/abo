@@ -82,7 +82,7 @@ export async function getPost(slug) {
       slug
       date
       content
-     
+     title
 
       categories {
         edges {

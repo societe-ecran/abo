@@ -17,12 +17,13 @@ const Post = ({ postData }) => {
 
   const data=postData
 
-    if (data.categories.edges[0].node.name == 'PartagerNosHistoires') {
-        titre = data.partagerNosHistoires.titreDeLarticle
-        auteur = data.partagerNosHistoires.auteur,
-            source = data.partagerNosHistoires.source,
-            date = data.partagerNosHistoires.date
-    }
+    // if (data.categories.edges[0].node.name == 'PartagerNosHistoires') {
+    //     titre=data.title
+    //     titre = data.partagerNosHistoires.titreDeLarticle
+    //     auteur = data.partagerNosHistoires.auteur,
+    //         source = data.partagerNosHistoires.source,
+    //         date = data.partagerNosHistoires.date
+    // }
 
     const texte = data.content
 
@@ -31,7 +32,7 @@ const Post = ({ postData }) => {
             <Layout>
                 <Seo title={titre} />
 
-                {data.categories.edges[0].node.name == 'PartagerNosHistoires' &&
+                {/* {data.categories.edges[0].node.name == 'PartagerNosHistoires' && */}
                     <>
                         <ArticleHeader src={foule} title={titre} date={date} author={auteur} source={source} />
                         <div className="xl:px-64 lg:px-32 md:px-24 lg:bg-gray-50 ">
@@ -39,7 +40,7 @@ const Post = ({ postData }) => {
                       
                         </div>
                     </>
-                }
+                {/* } */}
             </Layout>
         </div>
     )

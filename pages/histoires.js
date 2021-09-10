@@ -35,6 +35,7 @@ const histoires = ({
                                     </div>
                                     <div className='font-bold '>
                                         {histoire.node.partagerNosHistoires.titreDeLarticle}
+                                    
                                     </div>
                                     <div className='text-gray-500'>
                                         {histoire.node.partagerNosHistoires.auteur}
