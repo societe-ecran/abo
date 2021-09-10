@@ -15,8 +15,6 @@ const Post = ({ postData }) => {
 
     console.log(postData)
 
-  const data=postData
-
     // if (data.categories.edges[0].node.name == 'PartagerNosHistoires') {
     //     titre=data.title
     //     titre = data.partagerNosHistoires.titreDeLarticle
@@ -35,9 +33,9 @@ const Post = ({ postData }) => {
 
                 {/* {data.categories.edges[0].node.name == 'PartagerNosHistoires' && */}
                     <>
-                        <ArticleHeader src={foule} title={titre} date={date} author={auteur} source={source} />
+                        <ArticleHeader src={foule} title={postData.title} date={date} author={auteur} source={source} />
                         <div className="xl:px-64 lg:px-32 md:px-24 lg:bg-gray-50 ">
-                            {/* <div className='titreNav text-gray-800  xl:px-32 lg:px-28 md:px-12 px-3 lg:text-lg bg-white' dangerouslySetInnerHTML={{ __html: texte }} /> */}
+                            <div className='titreNav text-gray-800  xl:px-32 lg:px-28 md:px-12 px-3 lg:text-lg bg-white' dangerouslySetInnerHTML={{ __html: postData.content }} />
                       
                         </div>
                     </>
