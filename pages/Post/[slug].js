@@ -16,24 +16,24 @@ const Post = ({ postData }) => {
     // console.log(postData.partagerNosHistoires)
 
   
-    
 
 
-    if (postData.categories.edges[0].node.name == 'PartagerNosHistoires') {
-        titre = postData.partagerNosHistoires.titreDeLarticle
-        auteur = postData.partagerNosHistoires.auteur,
-            source = postData.partagerNosHistoires.source,
-            date = postData.partagerNosHistoires.date
-    }
 
-    const texte = postData.content
+    // if (postData.categories.edges[0].node.name == 'PartagerNosHistoires') {
+    //     titre = postData.partagerNosHistoires.titreDeLarticle
+    //     auteur = postData.partagerNosHistoires.auteur,
+    //         source = postData.partagerNosHistoires.source,
+    //         date = postData.partagerNosHistoires.date
+    // }
+
+    // const texte = postData.content
 
     return (
         <div>
             <Layout>
                 <Seo title={titre} />
 
-                {postData.categories.edges[0].node.name == 'PartagerNosHistoires' &&
+                {/* {postData.categories.edges[0].node.name == 'PartagerNosHistoires' &&
                     <>
                         <ArticleHeader src={foule} title={titre} date={date} author={auteur} source={source} />
                         <div className="xl:px-64 lg:px-32 md:px-24 lg:bg-gray-50 ">
@@ -41,7 +41,7 @@ const Post = ({ postData }) => {
                       
                         </div>
                     </>
-                }
+                } */}
             </Layout>
         </div>
     )
