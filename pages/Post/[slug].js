@@ -13,27 +13,25 @@ const Post = ({ postData }) => {
     let source = 'ff'
     let date = 'fff'
 
-    // console.log(postData.partagerNosHistoires)
+    console.log({postData})
 
-  
+  const data=postData
 
+    if (data.categories.edges[0].node.name == 'PartagerNosHistoires') {
+        titre = data.partagerNosHistoires.titreDeLarticle
+        auteur = data.partagerNosHistoires.auteur,
+            source = data.partagerNosHistoires.source,
+            date = data.partagerNosHistoires.date
+    }
 
-
-    // if (postData.categories.edges[0].node.name == 'PartagerNosHistoires') {
-    //     titre = postData.partagerNosHistoires.titreDeLarticle
-    //     auteur = postData.partagerNosHistoires.auteur,
-    //         source = postData.partagerNosHistoires.source,
-    //         date = postData.partagerNosHistoires.date
-    // }
-
-    // const texte = postData.content
+    const texte = data.content
 
     return (
         <div>
             <Layout>
                 <Seo title={titre} />
 
-                {/* {postData.categories.edges[0].node.name == 'PartagerNosHistoires' &&
+                {data.categories.edges[0].node.name == 'PartagerNosHistoires' &&
                     <>
                         <ArticleHeader src={foule} title={titre} date={date} author={auteur} source={source} />
                         <div className="xl:px-64 lg:px-32 md:px-24 lg:bg-gray-50 ">
@@ -41,7 +39,7 @@ const Post = ({ postData }) => {
                       
                         </div>
                     </>
-                } */}
+                }
             </Layout>
         </div>
     )
@@ -68,3 +66,12 @@ export async function getStaticProps({ params }) {
         }
     };
 }
+
+// export async function getStaticProps({ params }) {
+//     const data = await getPost(params.slug);
+//     return {
+//         props: {
+//             postData: data.post
+//         }
+//     };
+// }

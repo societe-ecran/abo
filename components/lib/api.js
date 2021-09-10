@@ -60,7 +60,7 @@ export async function getAllPostsWithSlug() {
   const data = await fetchAPI(
     `
     {
-      posts(first: 10000) {
+      posts {
         edges {
           node {
             slug
@@ -81,13 +81,9 @@ export async function getPost(slug) {
     fragment PostFields on Post {
       slug
       date
-      partagerNosHistoires {
-        auteur
-        date
-        resume
-        source
-        titreDeLarticle
-      }
+      content
+     
+
       categories {
         edges {
           node {
@@ -105,6 +101,13 @@ export async function getPost(slug) {
       post(id: $id, idType: $idType) {
         ...PostFields
         content
+        categories {
+          edges {
+            node {
+              name
+            }
+          }
+        }
       }
     }
   `,
@@ -119,6 +122,13 @@ export async function getPost(slug) {
   return data;
 }
 
+// partagerNosHistoires {
+//   auteur
+//   date
+//   resume
+//   source
+//   titreDeLarticle
+// }
 
 
 

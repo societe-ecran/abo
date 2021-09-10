@@ -1,7 +1,10 @@
 import React from 'react'
 import { HeartIcon } from '@heroicons/react/solid'
+import { useRouter } from 'next/router'
 
 const Footer = () => {
+  const router = useRouter()
+
   const navigation = {
 
     social: [
@@ -19,6 +22,10 @@ const Footer = () => {
   }
   return (
     <>
+
+    {router.pathname !== '/groupes' &&
+    <div>
+
       <div className="relative mt-12 pt-12">
         <div className="absolute inset-0 flex items-center" aria-hidden="true">
           <div className="w-full border-t border-gray-300" />
@@ -56,6 +63,11 @@ const Footer = () => {
         </div>
 
       </div>
+    </div>
+
+    
+     }
+      
     </>
   )
 }

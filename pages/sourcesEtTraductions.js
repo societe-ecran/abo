@@ -71,6 +71,7 @@ const sourcesEtTraductions = () => {
                 <div className='text-sm md:text-base z-50'>
                     <Accordion>
                         {data.map(item => {
+                            console.log(item.link)
                             return (
                                 <AccordionItem title={
                                     <div>
@@ -142,9 +143,13 @@ const sourcesEtTraductions = () => {
                                             <Link href={item.link} className=''>
                                                 <a className='pl-4 flex flex-col' >
                                                     <div className='text-right mr-6 pt-6 '>
+
+                                                        { item.link !== "" &&
                                                         <button className='border rounded-full px-3 py-1 hover:bg-gray-50 text-black' >
                                                             Lire la traduction complète
                                                         </button>
+                                                        }
+                                                        
 
                                                     </div>
 

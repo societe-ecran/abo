@@ -126,7 +126,8 @@ export default function Example() {
                         >
                           <div className='flex flex-col '>
                             <span className="">Le livre </span>
-                            {router.pathname == '/actualites' || router.pathname == '/leLivre' || router.pathname == '/sourcesEtTraductions' ?
+                            {router.pathname == '/actualites' || router.pathname == '/leLivre' || router.pathname == '/sourcesEtTraductions' || 
+                            router.pathname == '/Traductions/neverGiveUp' ||  router.pathname == "Traductions/auWendy's" || router.pathname == "/Traductions/partirDesRessourcesExistantes" || router.pathname == "/Traductions/exercerAbolition" || router.pathname == "/Traductions/sistasMakinMove" ?
                               <div className='text-center font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                                 __
                               </div>

@@ -6,8 +6,8 @@ const ArticleHeader = (props) => {
 
 
     return (
-        <div className=' py-12 md:px-20 flex flex-raw '>
-        <div className=''>
+        <>
+        <div className=' py-12 md:px-20 flex  sm:flex-raw '>
             <div className='violetBack'>
                 <div className='transforme -translate-x-5 -translate-y-5 shadow-md'>
                     <div className='w-64'>
@@ -22,10 +22,8 @@ const ArticleHeader = (props) => {
                     >
                     </Image>
                     </div>
-                   
-
                 </div>
-            </div>
+         
 
         </div>
         <div className='pl-6 
@@ -34,13 +32,13 @@ const ArticleHeader = (props) => {
         <p className='pt-2 pb-3 px-6 text-gray-600 '>
               {props?.date}
               </p>
-        <h1 className='titreNav text-2xl '>
+        <h1 className='titreNav text-lg md:text-2xl '>
              {props?.title}
             </h1>
-            <p className='pt-3 px-6 text-gray-600 text-xl '>
+            <p className='pt-3 px-6 text-gray-600 text-base md:text-xl '>
               {props?.author}
               </p>
-              <p className='pt-3 px-6 text-gray-600 underline '>
+              <p className='pt-3 px-6 text-gray-600 text-sm md:text-base underline '>
               <a href={props?.source} target="_blank">
               {props?.source}
               </a>
@@ -54,7 +52,7 @@ const ArticleHeader = (props) => {
    
 
     </div>
-
+</>
     )
 }
 
