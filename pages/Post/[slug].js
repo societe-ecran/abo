@@ -5,15 +5,20 @@ import Layout from '../../components/Layout'
 import Seo from '../../components/seo/Seo'
 import foule from '../../public/foule.jpg'
 import ArticleHeader from '../../components/ArticleHeader'
+import { useRouter } from 'next/router'
 
 const Post = ({ postData }) => {
+    const router = useRouter()
 
+    if(!router.isFallback &&!postData?.slug){
+        return<p>hMMMMM.....</p>
+    }
     let titre = 'ggg'
     let auteur = 'fff'
     let source = 'ff'
     let date = 'fff'
 
-    console.log(postData)
+    console.log(typeof postData)
 
     // if (data.categories.edges[0].node.name == 'PartagerNosHistoires') {
     //     titre=data.title
@@ -40,7 +45,7 @@ const Post = ({ postData }) => {
                         </div> */}
                     <div>
 
-                        {postData.title}
+                    { typeof postData !== "undefined"}    {postData.title}
                     </div>
 
                 </>
@@ -63,15 +68,6 @@ export async function getStaticPaths() {
 }
 
 
-export async function getStaticProps({ params }) {
-    const data = await getPost(params.slug);
-    return {
-        props: {
-            postData: data.post
-        }
-    };
-}
-
 // export async function getStaticProps({ params }) {
 //     const data = await getPost(params.slug);
 //     return {
@@ -80,3 +76,12 @@ export async function getStaticProps({ params }) {
 //         }
 //     };
 // }
+
+export async function getStaticProps({ params }) {
+    const data = await getPost(params.slug);
+    return {
+        props: {
+            postData: data.post
+        }
+    };
+}
