@@ -10,12 +10,12 @@ import {getHistoires} from '../components/lib/api'
 
 
 const histoires = ({
-    // histoiresPartagees
+    histoiresPartagees
 }) => {
     const texte = ' Voici des témoignages, récits ou histoires collectées sur internet ou lors d’ateliers. Toutes les manières d’affronter au quotidien les situations de violences et de torts en dehors du système pénal sont trop invisibilisées. Les institutions pénales nous affaiblissent en s’accaparant nos conflits et les façons de les régler. Alors nous savons trop peu comment résoudre collectivement des problèmes qui font pleinement partie de nos vies. Partager des histoires alternatives permet donc d’avoir de nouvelles idées, de se défaire de certains réflexes et d’apprendre des erreurs ou méthodes des autres. Nous serions très heureux de partager les vôtres aussi. Vous pouvez nous envoyer un mail à : collectif_matsuda (at) riseup.net.'
     const titre = 'Partager nos histoires'
 
-    // const histoires = histoiresPartagees.posts.edges
+    const histoires = histoiresPartagees.posts.edges
 
     return (
         <div>
@@ -24,7 +24,7 @@ const histoires = ({
                 <Intro src={foule} texte={texte} title={titre} />
                 <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
 
-                    {/* {histoires.map((histoire) => (
+                    {histoires.map((histoire) => (
 
                         <Link href={`/Post/${histoire.node.slug}`}>
                             <a>
@@ -49,7 +49,7 @@ const histoires = ({
                                 </div>
                             </a>
                         </Link>
-                    ))} */}
+                    ))}
 
                 </div>
 
@@ -61,11 +61,11 @@ const histoires = ({
 export default histoires
 
 
-// export async function getStaticProps() {
-//     const histoiresPartagees = await getHistoires();
-//     return {
-//         props: {
-//             histoiresPartagees
-//         }
-//     };
-// }
+export async function getStaticProps() {
+    const histoiresPartagees = await getHistoires();
+    return {
+        props: {
+            histoiresPartagees
+        }
+    };
+}

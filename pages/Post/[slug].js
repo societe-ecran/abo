@@ -15,7 +15,8 @@ const Post = ({ postData }) => {
 
     // console.log(postData.partagerNosHistoires)
 
-    console.log()
+  
+    
 
 
     if (postData.categories.edges[0].node.name == 'PartagerNosHistoires') {
