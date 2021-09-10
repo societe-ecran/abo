@@ -13,7 +13,7 @@ const Post = ({ postData }) => {
     let source = 'ff'
     let date = 'fff'
 
-    console.log({postData})
+    console.log(postData)
 
   const data=postData
 
@@ -25,7 +25,8 @@ const Post = ({ postData }) => {
     //         date = data.partagerNosHistoires.date
     // }
 
-    const texte = data.content
+    // const texte = data.content
+
 
     return (
         <div>
@@ -36,7 +37,7 @@ const Post = ({ postData }) => {
                     <>
                         <ArticleHeader src={foule} title={titre} date={date} author={auteur} source={source} />
                         <div className="xl:px-64 lg:px-32 md:px-24 lg:bg-gray-50 ">
-                            <div className='titreNav text-gray-800  xl:px-32 lg:px-28 md:px-12 px-3 lg:text-lg bg-white' dangerouslySetInnerHTML={{ __html: texte }} />
+                            {/* <div className='titreNav text-gray-800  xl:px-32 lg:px-28 md:px-12 px-3 lg:text-lg bg-white' dangerouslySetInnerHTML={{ __html: texte }} /> */}
                       
                         </div>
                     </>
