@@ -83,6 +83,12 @@ export async function getPost(slug) {
       date
       content
      title
+     article {
+      auteur
+      date
+      resume
+      source
+    }
       categories {
         edges {
           node {
@@ -238,7 +244,7 @@ export async function getHistoires() {
       posts(where: {categoryName: "PartagerNosHistoires"}) {
         edges {
           node {
-            partagerNosHistoires {
+            article {
               auteur
               date
               resume
@@ -264,12 +270,11 @@ export async function getAllerPlusloin() {
       posts {
         edges {
           node {
-            allerplusloin {
+            article {
               auteur
               date
               resume
               source
-              titreOriginal
             }
             content
             slug

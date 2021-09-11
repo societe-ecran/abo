@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const allerPlusLoin = (data) => {
-    // console.log(data.data.edges)
+    console.log(data.data.edges)
     const router = useRouter()
     const {
         query: { id },
@@ -94,13 +94,13 @@ const allerPlusLoin = (data) => {
 
 
     const groupsTypes = [
-        { name: "Réformes et luttes" },
         { name: "Justice transformatrice" },
-        { name: "Toutes les thématiques" },
+        { name: "Réformes et luttes" }
+
+
     ]
 
     const groupsTypes2 = [
-        { name: "tous les médias" },
         { name: "articles" },
         { name: "Podcasts" },
         { name: "fanzines" },
@@ -176,31 +176,85 @@ const allerPlusLoin = (data) => {
                                     {groupsTypes.map((tab) => (
                                         <Tab label={tab.name} {...a11yProps(0)} />
                                     ))}
-
                                 </Tabs>
                             </div>
 
                             <div className='pl-20'>
                                 <TabPanel value={value} index={0}>
-
+                                    {/* Justice transformatrice */}
+                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
+                                        {data.data.edges.map((post) => (
+                                            <>
+                                                {post.node.tags.edges.length !== 0 && post.node.tags.edges.map(tag => {
+                                                    if (tag.node.name == 'Justice transformatrice') { return true }
+                                                })
+                                                    &&
+                                                    <Link href={`/Post/${post.node.slug}`}>
+                                                        <a>
+                                                            <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
+                                                            >
+                                                                {/* <div className='text-gray-500 pt-3 italic'>
+                                                                            {post.node.tags.edges[0].node.name},   {post.node.tags.edges[1].node.name}
+                                                                        </div> */}
+                                                                <div className='font-bold '>
+                                                                    {post.node.title}
+                                                                </div>
+                                                                <div className='text-gray-500 '>
+                                                                    {post.node.article.auteur}
+                                                                </div>
+                                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
+                                                                    __
+                                                                </div>
+                                                                <div className=' '>
+                                                                    {post.node.article.resume}
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </Link>
+                                                }
+                                            </>
+                                        ))}
+                                    </div>
                                 </TabPanel>
                                 <TabPanel value={value} index={1}>
-                                    Item Two
-                                </TabPanel>
-                                <TabPanel value={value} index={2}>
-                                    rffrfr
-                                </TabPanel>
-                                <TabPanel value={value} index={3}>
-                                    Item Four
-                                </TabPanel>
-                                <TabPanel value={value} index={4}>
-                                    Item Five
-                                </TabPanel>
-                                <TabPanel value={value} index={5}>
-                                    Item Six
-                                </TabPanel>
-                                <TabPanel value={value} index={6}>
-                                    Item Seven
+                                    {/* Reforme et lutte */}
+                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
+                                        {data.data.edges.map((post) => (
+                                            <>
+                                                {post.node.tags.edges.length !== 0 && post.node.tags.edges.map(tag => {
+                                                    if (tag.node.name == 'Réformes et luttes') { 
+                                                       
+                                                         return ( console.log('what'), true) }
+                                                })
+
+                                                    &&
+
+                                                    <Link href={`/Post/${post.node.slug}`}>
+                                                        <a>
+                                                            <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
+                                                            >
+                                                                {/* <div className='text-gray-500 pt-3 italic'>
+                                                                            {post.node.tags.edges[0].node.name},   {post.node.tags.edges[1].node.name}
+                                                                        </div> */}
+                                                                <div className='font-bold '>
+                                                                    {post.node.title}
+                                                                </div>
+                                                                <div className='text-gray-500 '>
+                                                                    {post.node.article.auteur}
+                                                                </div>
+                                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
+                                                                    __
+                                                                </div>
+                                                                <div className=' '>
+                                                                    {post.node.article.resume}
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </Link>
+                                                }
+                                            </>
+                                        ))}
+                                    </div>
                                 </TabPanel>
                             </div>
 
@@ -220,7 +274,6 @@ const allerPlusLoin = (data) => {
                                     aria-label="Vertical tabs "
                                     className={classes.tabs}
                                 >
-
                                     {groupsTypes2.map((tab) => (
                                         <Tab label={tab.name} {...a11yProps(0)} />
                                     ))}
@@ -229,131 +282,190 @@ const allerPlusLoin = (data) => {
                             </div>
 
                             <div className='pl-20'>
-                                <TabPanel value={value} index={0}>
-                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
 
+                                <TabPanel value={value} index={0}>
+                                    {/* ARTICLES */}
+                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
                                         {data.data.edges.map((post) => (
+
                                             <>
-                                                {post.node.categories.edges[0].node.name == 'Médias' &&
+                                                {post.node.tags.edges.length !== 0 && post.node.tags.edges.map(tag => {
+                                                    if (tag.node.name == 'article') { return true }
+                                                })
+
+                                                    &&
 
                                                     <Link href={`/Post/${post.node.slug}`}>
                                                         <a>
                                                             <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
                                                             >
-                                                                <div className='text-gray-500 pt-3 italic'>
+                                                                {/* <div className='text-gray-500 pt-3 italic'>
                                                                     {post.node.categories.edges[0].node.name}
-                                                                </div>
+                                                                </div> */}
                                                                 <div className='font-bold '>
                                                                     {post.node.title}
                                                                 </div>
                                                                 <div className='text-gray-500 '>
-                                                                    {post.node.allerplusloin.auteur}
+                                                                    {post.node.article.auteur}
                                                                 </div>
                                                                 <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                                                                     __
                                                                 </div>
                                                                 <div className=' '>
-                                                                    {post.node.allerplusloin.resume}
+                                                                    {post.node.article.resume}
                                                                 </div>
-
-
                                                             </div>
                                                         </a>
                                                     </Link>
                                                 }
-
                                             </>
-                                        ))}
 
+                                        ))}
                                     </div>
                                 </TabPanel>
+
                                 <TabPanel value={value} index={1}>
-                                    {/* ARTICLES */}
-                                    {data.data.edges.map((post) => (
-                                        <>
-                                            {post.node.categories.edges[0].node.name == 'Médias' &&
-
-                                                <>
-                                                    {post.node.tags.edges.length !== 0 && post.node.tags.edges[0].node.name == 'article' &&
-
-                                                        <Link href={`/Post/${post.node.slug}`}>
-                                                            <a>
-                                                                <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
-                                                                >
-                                                                    <div className='text-gray-500 pt-3 italic'>
-                                                                        {post.node.categories.edges[0].node.name}
-                                                                    </div>
-                                                                    <div className='font-bold '>
-                                                                        {post.node.title}
-                                                                    </div>
-                                                                    <div className='text-gray-500 '>
-                                                                        {post.node.allerplusloin.auteur}
-                                                                    </div>
-                                                                    <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
-                                                                        __
-                                                                    </div>
-                                                                    <div className=' '>
-                                                                        {post.node.allerplusloin.resume}
-                                                                    </div>
-                                                                </div>
-                                                            </a>
-                                                        </Link>
-                                                    }
-                                                </>
-                                            }
-                                        </>
-                                    ))}
-                                </TabPanel>
-
-                                <TabPanel value={value} index={2}>
                                     {/* PODCASTS */}
                                     <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
-                                    {data.data.edges.map((post) => (
-                                        <>
-                                            {post.node.categories.edges[0].node.name == 'Médias' &&
-                                                <>
-                                                    { post.node.tags.edges.length !== 0 &&  post.node.tags.edges[0].node.name == 'Podcast' &&
+                                        {data.data.edges.map((post) => (
 
-                                                        <Link href={`/Post/${post.node.slug}`}>
-                                                            <a>
-                                                                <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
-                                                                >
-                                                                    <div className='text-gray-500 pt-3 italic'>
-                                                                        {post.node.categories.edges[0].node.name}
-                                                                    </div>
-                                                                    <div className='font-bold '>
-                                                                        {post.node.title}
-                                                                    </div>
-                                                                    <div className='text-gray-500 '>
-                                                                        {post.node.allerplusloin.auteur}
-                                                                    </div>
-                                                                    <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
-                                                                        __
-                                                                    </div>
-                                                                    <div className=' '>
-                                                                        {post.node.allerplusloin.resume}
-                                                                    </div>
+                                            <>
+                                                {post.node.tags.edges.length !== 0 && post.node.tags.edges[0].node.name == 'Podcast' &&
+
+                                                    <Link href={`/Post/${post.node.slug}`}>
+                                                        <a>
+                                                            <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
+                                                            >
+                                                                {/* <div className='text-gray-500 pt-3 italic'>
+                                                                    {post.node.categories.edges[0].node.name}
+                                                                </div> */}
+                                                                <div className='font-bold '>
+                                                                    {post.node.title}
                                                                 </div>
-                                                            </a>
-                                                        </Link>
-                                                    }
-                                                </>
-                                            }
-                                        </>
-                                    ))}
+                                                                <div className='text-gray-500 '>
+                                                                    {post.node.article.auteur}
+                                                                </div>
+                                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
+                                                                    __
+                                                                </div>
+                                                                <div className=' '>
+                                                                    {post.node.article.resume}
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </Link>
+                                                }
+                                            </>
+
+                                        ))}
+                                    </div>
+                                </TabPanel>
+                                <TabPanel value={value} index={2}>
+                                    {/* FANZINES */}
+                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
+                                        {data.data.edges.map((post) => (
+
+
+                                            <>
+                                                {post.node.tags.edges.length !== 0 && post.node.tags.edges[0].node.name == 'FANZINE' &&
+
+                                                    <Link href={`/Post/${post.node.slug}`}>
+                                                        <a>
+                                                            <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
+                                                            >
+                                                                {/* <div className='text-gray-500 pt-3 italic'>
+                                                                    {post.node.categories.edges[0].node.name}
+                                                                </div> */}
+                                                                <div className='font-bold '>
+                                                                    {post.node.title}
+                                                                </div>
+                                                                <div className='text-gray-500 '>
+                                                                    {post.node.article.auteur}
+                                                                </div>
+                                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
+                                                                    __
+                                                                </div>
+                                                                <div className=' '>
+                                                                    {post.node.article.resume}
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </Link>
+                                                }
+                                            </>
+
+                                        ))}
                                     </div>
                                 </TabPanel>
                                 <TabPanel value={value} index={3}>
-                                    Item Four
+                                    {/* Filmographie */}
+                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
+                                        {data.data.edges.map((post) => (
+
+
+                                            <>
+                                                {post.node.tags.edges.length !== 0 && post.node.tags.edges[0].node.name == 'Filmographie' &&
+
+                                                    <Link href={`/Post/${post.node.slug}`}>
+                                                        <a>
+                                                            <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
+                                                            >
+                                                                {/* <div className='text-gray-500 pt-3 italic'>
+                                                                    {post.node.categories.edges[0].node.name}
+                                                                </div> */}
+                                                                <div className='font-bold '>
+                                                                    {post.node.title}
+                                                                </div>
+                                                                <div className='text-gray-500 '>
+                                                                    {post.node.article.auteur}
+                                                                </div>
+                                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
+                                                                    __
+                                                                </div>
+                                                                <div className=' '>
+                                                                    {post.node.article.resume}
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </Link>
+                                                }
+                                            </>
+
+                                        ))}
+                                    </div>
                                 </TabPanel>
                                 <TabPanel value={value} index={4}>
-                                    Item Five
-                                </TabPanel>
-                                <TabPanel value={value} index={5}>
-                                    Item Six
-                                </TabPanel>
-                                <TabPanel value={value} index={6}>
-                                    Item Seven
+                                    {/* Bibliographie */}
+                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
+                                        {data.data.edges.map((post) => (
+                                            <>
+                                                {post.node.tags.edges.length !== 0 && post.node.tags.edges[0].node.name == 'bibliographie' &&
+                                                    <Link href={`/Post/${post.node.slug}`}>
+                                                        <a>
+                                                            <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
+                                                            >
+                                                                {/* <div className='text-gray-500 pt-3 italic'>
+                                                                    {post.node.categories.edges[0].node.name}
+                                                                </div> */}
+                                                                <div className='font-bold '>
+                                                                    {post.node.title}
+                                                                </div>
+                                                                <div className='text-gray-500 '>
+                                                                    {post.node.article.auteur}
+                                                                </div>
+                                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
+                                                                    __
+                                                                </div>
+                                                                <div className=' '>
+                                                                    {post.node.article.resume}
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </Link>
+                                                }
+                                            </>
+                                        ))}
+                                    </div>
                                 </TabPanel>
                             </div>
 

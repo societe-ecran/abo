@@ -23,7 +23,7 @@ const Footer = () => {
   return (
     <>
 
-    {router.pathname !== '/groupes' &&
+    {router.pathname !== '/groupes' || router.pathname !== '/AllerPlusLoin'  &&
     <div>
 
       <div className="relative mt-12 pt-12">
