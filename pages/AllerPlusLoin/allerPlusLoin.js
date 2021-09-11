@@ -1,8 +1,8 @@
 import { React, useState } from 'react'
-import Layout from '../components/Layout'
-import Intro from '../components/Intro'
-import occupy from '../public/occupycityhall.png'
-import Seo from '../components/seo/Seo'
+import Layout from '../../components/Layout'
+import Intro from '../../components/Intro'
+import occupy from '../../public/occupycityhall.png'
+import Seo from '../../components/seo/Seo'
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
@@ -10,7 +10,8 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { useRouter } from 'next/router'
-
+import { getAllerPlusloin } from '../../components/lib/api'
+import Link from 'next/link'
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -64,7 +65,8 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const allerPlusLoin = () => {
+const allerPlusLoin = (data) => {
+    // console.log(data.data.edges)
     const router = useRouter()
     const {
         query: { id },
@@ -77,33 +79,33 @@ const allerPlusLoin = () => {
     };
 
     // const [tabViewed, settabViewed] = useState(JSON.parse(id))
-        const [tabViewed, settabViewed] = useState(0)
+    const [tabViewed, settabViewed] = useState(0)
     const triMedias = () => {
         settabViewed(1)
     }
     const triThématiques = () => {
         settabViewed(0)
     }
-console.log(tabViewed)
+    // console.log(tabViewed)
 
     const texte = '  Régulièrement alimentée, cette section présente différents types de ressources pour mieux comprendre l’histoire de la police et du système pénal, connaître des luttes et stratégies qui s’y sont opposées, partager des façons de prendre en charge les torts, apprendre d’élans et expériences passés et actuels. En somme différents outils pour aider à défaire la police, la justice et la prison.'
     const titre = 'Aller plus loin'
     const description = "Régulièrement alimentée, cette section présente différents types de ressources pour mieux comprendre l’histoire de la police et du système pénal, connaître des luttes et stratégies qui s’y sont opposées, partager des façons de prendre en charge les torts, apprendre d’élans et expériences passés et actuels. "
 
+
     const groupsTypes = [
-        { name: "Histoire" },
         { name: "Réformes et luttes" },
         { name: "Justice transformatrice" },
         { name: "Toutes les thématiques" },
     ]
 
     const groupsTypes2 = [
-        { name: "Bibliographie" },
-        { name: "Filmographie" },
+        { name: "tous les médias" },
+        { name: "articles" },
         { name: "Podcasts" },
         { name: "fanzines" },
-        { name: "articles" },
-        { name: "tous les médias" },
+        { name: "Filmographie" },
+        { name: "Bibliographie" },
     ]
 
     return (
@@ -153,7 +155,7 @@ console.log(tabViewed)
 
                     }
 
-        
+
                 </div>
 
                 {tabViewed == 0 ?
@@ -180,13 +182,13 @@ console.log(tabViewed)
 
                             <div className='pl-20'>
                                 <TabPanel value={value} index={0}>
-                                    Item One
+
                                 </TabPanel>
                                 <TabPanel value={value} index={1}>
                                     Item Two
                                 </TabPanel>
                                 <TabPanel value={value} index={2}>
-                                    Item Three
+                                    rffrfr
                                 </TabPanel>
                                 <TabPanel value={value} index={3}>
                                     Item Four
@@ -228,13 +230,118 @@ console.log(tabViewed)
 
                             <div className='pl-20'>
                                 <TabPanel value={value} index={0}>
-                                    Item One
+                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
+
+                                        {data.data.edges.map((post) => (
+                                            <>
+                                                {post.node.categories.edges[0].node.name == 'Médias' &&
+
+                                                    <Link href={`/Post/${post.node.slug}`}>
+                                                        <a>
+                                                            <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
+                                                            >
+                                                                <div className='text-gray-500 pt-3 italic'>
+                                                                    {post.node.categories.edges[0].node.name}
+                                                                </div>
+                                                                <div className='font-bold '>
+                                                                    {post.node.title}
+                                                                </div>
+                                                                <div className='text-gray-500 '>
+                                                                    {post.node.allerplusloin.auteur}
+                                                                </div>
+                                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
+                                                                    __
+                                                                </div>
+                                                                <div className=' '>
+                                                                    {post.node.allerplusloin.resume}
+                                                                </div>
+
+
+                                                            </div>
+                                                        </a>
+                                                    </Link>
+                                                }
+
+                                            </>
+                                        ))}
+
+                                    </div>
                                 </TabPanel>
                                 <TabPanel value={value} index={1}>
-                                    Item Two
+                                    {/* ARTICLES */}
+                                    {data.data.edges.map((post) => (
+                                        <>
+                                            {post.node.categories.edges[0].node.name == 'Médias' &&
+
+                                                <>
+                                                    {post.node.tags.edges.length !== 0 && post.node.tags.edges[0].node.name == 'article' &&
+
+                                                        <Link href={`/Post/${post.node.slug}`}>
+                                                            <a>
+                                                                <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
+                                                                >
+                                                                    <div className='text-gray-500 pt-3 italic'>
+                                                                        {post.node.categories.edges[0].node.name}
+                                                                    </div>
+                                                                    <div className='font-bold '>
+                                                                        {post.node.title}
+                                                                    </div>
+                                                                    <div className='text-gray-500 '>
+                                                                        {post.node.allerplusloin.auteur}
+                                                                    </div>
+                                                                    <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
+                                                                        __
+                                                                    </div>
+                                                                    <div className=' '>
+                                                                        {post.node.allerplusloin.resume}
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </Link>
+                                                    }
+                                                </>
+                                            }
+                                        </>
+                                    ))}
                                 </TabPanel>
+
                                 <TabPanel value={value} index={2}>
-                                    Item Three
+                                    {/* PODCASTS */}
+                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
+                                    {data.data.edges.map((post) => (
+                                        <>
+                                            {post.node.categories.edges[0].node.name == 'Médias' &&
+                                                <>
+                                                    { post.node.tags.edges.length !== 0 &&  post.node.tags.edges[0].node.name == 'Podcast' &&
+
+                                                        <Link href={`/Post/${post.node.slug}`}>
+                                                            <a>
+                                                                <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
+                                                                >
+                                                                    <div className='text-gray-500 pt-3 italic'>
+                                                                        {post.node.categories.edges[0].node.name}
+                                                                    </div>
+                                                                    <div className='font-bold '>
+                                                                        {post.node.title}
+                                                                    </div>
+                                                                    <div className='text-gray-500 '>
+                                                                        {post.node.allerplusloin.auteur}
+                                                                    </div>
+                                                                    <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
+                                                                        __
+                                                                    </div>
+                                                                    <div className=' '>
+                                                                        {post.node.allerplusloin.resume}
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </Link>
+                                                    }
+                                                </>
+                                            }
+                                        </>
+                                    ))}
+                                    </div>
                                 </TabPanel>
                                 <TabPanel value={value} index={3}>
                                     Item Four
@@ -263,3 +370,13 @@ console.log(tabViewed)
 }
 
 export default allerPlusLoin
+
+
+export async function getStaticProps() {
+    const data = await getAllerPlusloin();
+    return {
+        props: {
+            data: data.posts
+        }
+    };
+}

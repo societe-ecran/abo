@@ -31,13 +31,13 @@ export default function Example() {
     {
       name: 'Médias',
       description: 'articles, fanzines, bibliographie, filmographie, podcasts',
-      href: '/allerPlusLoin',
+      href: '/AllerPlusLoin/allerPlusLoin',
       number:1
     },
     {
       name: 'Thématiques',
       description: 'histoire, réformes et luttes, justice transformatrice',
-      href: '/allerPlusLoin',
+      href: '/AllerPlusLoin/allerPlusLoin',
       number:0
     }
   ]
@@ -213,7 +213,7 @@ export default function Example() {
                                 {AllerPlusLoin.map((item) => (
                                   <Link
                                     href={{
-                                      pathname: "/allerPlusLoin",
+                                      pathname: "/AllerPlusLoin/allerPlusLoin",
                                       query: { id:item.number },
                                     }}
 

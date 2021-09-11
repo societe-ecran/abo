@@ -27,32 +27,32 @@ async function fetchAPI(query, { variables } = {}) {
 }
 
 
-export async function getAllPosts(preview) {
-  const data = await fetchAPI(
-    `
-    query AllPosts {
-      posts(first: 20, where: { orderby: { field: DATE, order: DESC}}) {
-        edges {
-          node {
-            id
-            date
-            title
-            slug
-            extraPostInfo {
-              authorExcerpt
-              thumbImage {
-                mediaItemUrl
-              }
-            }
-          }
-        }
-      }
-    }
-    `
-  );
+// export async function getAllPosts(preview) {
+//   const data = await fetchAPI(
+//     `
+//     query AllPosts {
+//       posts(first: 20, where: { orderby: { field: DATE, order: DESC}}) {
+//         edges {
+//           node {
+//             id
+//             date
+//             title
+//             slug
+//             extraPostInfo {
+//               authorExcerpt
+//               thumbImage {
+//                 mediaItemUrl
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//     `
+//   );
 
-  return data?.posts;
-}
+//   return data?.posts;
+// }
 
 
 
@@ -83,14 +83,60 @@ export async function getPost(slug) {
       date
       content
      title
-     partagerNosHistoires {
-      auteur
-      date
-      resume
-      source
-      titreDeLarticle
+      categories {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
     }
-    
+    query PostBySlug($id: ID!, $idType: PostIdType!) {
+      post(id: $id, idType: $idType) {
+        ...PostFields
+        content
+        categories {
+          edges {
+            node {
+              name
+            }
+          }
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        id: slug,
+        idType: 'SLUG'
+      }
+    }
+  );
+
+  return data;
+}
+
+
+// partagerNosHistoires {
+//   auteur
+//   date
+//   resume
+//   source
+// }
+
+export async function getAllAllerPlusLoin(slug) {
+  const data = await fetchAPI(
+    `
+    fragment PostFields on Post {
+      slug
+      date
+      content
+     title
       categories {
         edges {
           node {
@@ -132,7 +178,6 @@ export async function getPost(slug) {
 
 
 
-
 // export async function getPost(slug) {
 //   const data = await fetchAPI(
 //     `
@@ -162,10 +207,6 @@ export async function getPost(slug) {
 
 //   return data;
 // }
-
-
-
-
 
 
 
@@ -202,9 +243,9 @@ export async function getHistoires() {
               date
               resume
               source
-              titreDeLarticle
             }
             slug
+            title
           }
         }
       }
@@ -214,6 +255,52 @@ export async function getHistoires() {
 
   return data;
 }
+
+
+export async function getAllerPlusloin() {
+  const data = await fetchAPI(
+    `
+    query MyQuery {
+      posts {
+        edges {
+          node {
+            allerplusloin {
+              auteur
+              date
+              resume
+              source
+              titreOriginal
+            }
+            content
+            slug
+            title
+            tags {
+              edges {
+                node {
+                  name
+                }
+              }
+            }
+            categories {
+              edges {
+                node {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    `
+  );
+
+  return data;
+}
+
+
+
 
 
 export async function getDates() {

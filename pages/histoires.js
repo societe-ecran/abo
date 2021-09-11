@@ -17,6 +17,8 @@ const histoires = ({
 
     const histoires = histoiresPartagees.posts.edges
 
+    console.log(histoires)
+
     return (
         <div>
             <Layout>
@@ -34,7 +36,7 @@ const histoires = ({
                                         {histoire.node.partagerNosHistoires.date}
                                     </div>
                                     <div className='font-bold '>
-                                        {histoire.node.partagerNosHistoires.titreDeLarticle}
+                                        {histoire.node.title}
                                     
                                     </div>
                                     <div className='text-gray-500'>

@@ -13,37 +13,29 @@ const Post = ({ postData }) => {
     // if(!router.isFallback &&!postData?.slug){
     //     return<p>hMMMMM.....</p>
     // }
-    let titre = 'ggg'
-    let auteur = 'fff'
-    let source = 'ff'
-    let date = 'fff'
 
     console.log(postData)
-
-    // if (data.categories.edges[0].node.name == 'PartagerNosHistoires') {
-    //     titre=data.title
-    //     titre = data.partagerNosHistoires.titreDeLarticle
-    //     auteur = data.partagerNosHistoires.auteur,
-    //         source = data.partagerNosHistoires.source,
-    //         date = data.partagerNosHistoires.date
-    // }
-
-    // const texte = data.content
 
 
     return (
         <div>
             <Layout>
-                <Seo title={titre} />
+                <Seo title={postData.title} description='Partager des histoires' />
 
-                {postData.categories.edges[0].node.name == 'PartagerNosHistoires' &&
+                {/* {postData.categories.edges[0].node.name == 'PartagerNosHistoires' && */}
                     <>
-                        <ArticleHeader src={foule} title={postData.title} date={postData.partagerNosHistoires.date} author={postData.partagerNosHistoires.auteur} source={postData.partagerNosHistoires.source} />
+                        <ArticleHeader src={foule} title={postData.title} 
+                        // date={postData.partagerNosHistoires.date} author={postData.partagerNosHistoires.auteur} source={postData.partagerNosHistoires.source} 
+
+                        />
                         <div className="xl:px-64 lg:px-32 md:px-24 lg:bg-gray-50 ">
                             <div className='titreNav text-gray-800  xl:px-32 lg:px-28 md:px-12 px-3 lg:text-lg bg-white' dangerouslySetInnerHTML={{ __html: postData.content }} />
                             {postData.content}
                         </div>
-                    </>}
+                    </>
+                    {/* } */}
+
+
 
                 {/* { typeof postData !== undefined &&  <>  {postData.title} </> }  
                 { typeof postData !== undefined &&  <>  {postData.content} </> }   */}
