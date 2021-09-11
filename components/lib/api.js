@@ -75,85 +75,49 @@ export async function getAllPostsWithSlug() {
 
 
 
-// export async function getPost(slug) {
-//   const data = await fetchAPI(
-//     `
-//     fragment PostFields on Post {
-//       slug
-//       date
-//       content
-//      title
-
-//       categories {
-//         edges {
-//           node {
-//             name
-//           }
-//         }
-//       }
-//       featuredImage {
-//         node {
-//           sourceUrl
-//         }
-//       }
-//     }
-//     query PostBySlug($id: ID!, $idType: PostIdType!) {
-//       post(id: $id, idType: $idType) {
-//         ...PostFields
-//         content
-//         categories {
-//           edges {
-//             node {
-//               name
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `,
-//     {
-//       variables: {
-//         id: slug,
-//         idType: 'SLUG'
-//       }
-//     }
-//   );
-
-//   return data;
-// }
-
-// partagerNosHistoires {
-//   auteur
-//   date
-//   resume
-//   source
-//   titreDeLarticle
-// }
-
-
-
-
-
 export async function getPost(slug) {
   const data = await fetchAPI(
     `
-
-    query PostBySlug($id: ID!, $idType: PostIdType!) {
-      post(id: $id, idType: $idType) {
-        title
-        excerpt
-        slug
-        date
-        featuredImage {
+    fragment PostFields on Post {
+      slug
+      date
+      content
+     title
+     partagerNosHistoires {
+      auteur
+      date
+      resume
+      source
+      titreDeLarticle
+    }
+    
+      categories {
+        edges {
           node {
-            sourceUrl
+            name
           }
         }
-        content
+      }
+      featuredImage {
+        node {
+          sourceUrl
+        }
       }
     }
-  `
-  ,
+    query PostBySlug($id: ID!, $idType: PostIdType!) {
+      post(id: $id, idType: $idType) {
+        ...PostFields
+        content
+        categories {
+          edges {
+            node {
+              name
+            }
+          }
+        }
+      }
+    }
+  `,
     {
       variables: {
         id: slug,
@@ -164,6 +128,40 @@ export async function getPost(slug) {
 
   return data;
 }
+
+
+
+
+
+// export async function getPost(slug) {
+//   const data = await fetchAPI(
+//     `
+//     query PostBySlug($id: ID!, $idType: PostIdType!) {
+//       post(id: $id, idType: $idType) {
+//         title
+//         excerpt
+//         slug
+//         date
+//         featuredImage {
+//           node {
+//             sourceUrl
+//           }
+//         }
+//         content
+//       }
+//     }
+//   `
+//   ,
+//     {
+//       variables: {
+//         id: slug,
+//         idType: 'SLUG'
+//       }
+//     }
+//   );
+
+//   return data;
+// }
 
 
 

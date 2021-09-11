@@ -18,7 +18,7 @@ const Post = ({ postData }) => {
     let source = 'ff'
     let date = 'fff'
 
-    console.log(typeof postData)
+    console.log(postData)
 
     // if (data.categories.edges[0].node.name == 'PartagerNosHistoires') {
     //     titre=data.title
@@ -36,20 +36,17 @@ const Post = ({ postData }) => {
             <Layout>
                 <Seo title={titre} />
 
-                {/* {data.categories.edges[0].node.name == 'PartagerNosHistoires' && */}
-                <>
-                    {/* <ArticleHeader src={foule} title={postData.title} date={date} author={auteur} source={source} />
+                {postData.categories.edges[0].node.name == 'PartagerNosHistoires' &&
+                    <>
+                        <ArticleHeader src={foule} title={postData.title} date={postData.partagerNosHistoires.date} author={postData.partagerNosHistoires.auteur} source={postData.partagerNosHistoires.source} />
                         <div className="xl:px-64 lg:px-32 md:px-24 lg:bg-gray-50 ">
                             <div className='titreNav text-gray-800  xl:px-32 lg:px-28 md:px-12 px-3 lg:text-lg bg-white' dangerouslySetInnerHTML={{ __html: postData.content }} />
-                      
-                        </div> */}
-                    <div>
+                            {postData.content}
+                        </div>
+                    </>}
 
-                    { typeof postData !== undefined}    {postData.title}
-                    </div>
-
-                </>
-                {/* } */}
+                {/* { typeof postData !== undefined &&  <>  {postData.title} </> }  
+                { typeof postData !== undefined &&  <>  {postData.content} </> }   */}
             </Layout>
         </div>
     )
@@ -67,15 +64,6 @@ export async function getStaticPaths() {
     }
 }
 
-
-// export async function getStaticProps({ params }) {
-//     const data = await getPost(params.slug);
-//     return {
-//         props: {
-//             postData: data.post
-//         }
-//     };
-// }
 
 export async function getStaticProps({ params }) {
     const data = await getPost(params.slug);
