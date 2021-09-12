@@ -58,8 +58,6 @@ export default function actualites({ datesTournee }) {
                             var month = new Date(item.node.datestournee.dateDeLaPresentation).getMonth()
                             var corectMonth = (month += 1)
 
-                            let realmonth=goodWord(corectMonth)
-
                             return (
                                 <div className='text-sm  md:text-baseshadow md:mx-6 md:my-6 px-3 py-3 rounded-lg border violetBack sabonRoman'>
 
