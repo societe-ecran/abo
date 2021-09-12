@@ -19,7 +19,7 @@ const Seo = (props) => {
             <link rel="icon" href="/favicon.ico" />
             <link rel="preconnect" href="<https://app.snipcart.com>" />
             <link rel="preconnect" href="<https://cdn.snipcart.com>" />
-            {/* <link rel="stylesheet" href="<https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css>" /> */}
+            <link rel="stylesheet" href="<https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css>" />
             {/* <link rel="shortcut icon" href="../public/favicon.ico" /> */}
             <script src="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.js"></script>
             <div hidden id="snipcart" data-api-key={process.env.SNIPCART_API} ></div>
