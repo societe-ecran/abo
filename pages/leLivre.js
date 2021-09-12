@@ -50,15 +50,17 @@ const leLivre = () => {
                                 </span>
                             </div>
 
-
+       
                             <div className=" md:hidden">
                     <div>
                         <div className="pt-6 pb-6">
-                            <button className="snipcart-add-item rounded-full py-2 px-4 violetBack text-white  "
+                            <button className="snipcart-add-item 
+                      rounded-full py-2 px-4 violetBack text-white 
+                             "
                                 data-item-id="livre"
                                 data-item-price="14"
                                 data-item-weight="494"
-                                data-item-url="/leLivre"
+                                data-item-url="https://www.abolirlapolice.org/leLivre"
                                 data-item-description="Paru le 10 septembre 2021. 336 pages.  ISBN: 979-10-96195-14-5 "
                                 // data-item-image="../public/couv.jpg"
                                 data-item-name="Abolir la police. Échos des États-Unis">
