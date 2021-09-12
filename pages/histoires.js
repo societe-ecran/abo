@@ -18,7 +18,6 @@ const histoires = ({
 
     const histoires = histoiresPartagees.posts.edges
 
-    console.log(histoires)
 
     return (
         <div>

@@ -13,7 +13,6 @@ export default function actualites({ datesTournee }) {
     const titre = 'Actualités'
     const description = "Vous trouverez ici les actualités du collectif : dates de tournée, dernières publications et fils twitter."
 
-    console.log(new Date(datesTournee.posts.edges[0].node.datestournee.dateDeLaPresentation))
 
     const data = datesTournee.posts.edges
 
@@ -28,19 +27,18 @@ export default function actualites({ datesTournee }) {
     });
 
 
-    const month = [{ nb: 1, name: "janvier " }, { nb: 2, name: "février " }, { nb: 3, name: "mars " }, { nb: 4, name: "avril " }, { nb: 5, name: "mai" }, { nb: 6, name: "juin " }, { nb: 7, name: "juillet " }, { nb: 8, name: "août " }, { nb: 9, name: "septembre " }, { nb: "10", name: "octobre " }, { nb: '11', name: "novembre " }, { nb: 12, name: "décembre " }]
-    const goodWord = function (corectMois) {
-        month.map(moi => {
-            if (corectMois == moi.nb) {
-                return (moi.name)
-            }
-        })
-    }
+    // const month = [{ nb: 1, name: "janvier " }, { nb: 2, name: "février " }, { nb: 3, name: "mars " }, { nb: 4, name: "avril " }, { nb: 5, name: "mai" }, { nb: 6, name: "juin " }, { nb: 7, name: "juillet " }, { nb: 8, name: "août " }, { nb: 9, name: "septembre " }, { nb: "10", name: "octobre " }, { nb: '11', name: "novembre " }, { nb: 12, name: "décembre " }]
+    // const goodWord = function (corectMois) {
+    //     month.map(moi => {
+    //         if (corectMois == moi.nb) {
+    //             return (moi.name)
+    //         }
+    //     })
+    // }
 
-    const test=2
+  
 
-    const real =goodWord(test)
-    console.log(real)
+
     return (
         <Layout>
             <Seo title={titre} description={description} />

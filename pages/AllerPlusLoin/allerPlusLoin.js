@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const allerPlusLoin = (data) => {
-    console.log(data.data.edges)
+
     const router = useRouter()
     const {
         query: { id },
@@ -225,7 +225,7 @@ const allerPlusLoin = (data) => {
                                                 {post.node.tags.edges.length !== 0 && post.node.tags.edges.map(tag => {
                                                     if (tag.node.name == 'Réformes et luttes') { 
                                                        
-                                                         return ( console.log('what'), true) }
+                                                         return (  true) }
                                                 })
 
                                                     &&

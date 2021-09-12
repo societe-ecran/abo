@@ -71,7 +71,7 @@ const sourcesEtTraductions = () => {
                 <div className='text-sm md:text-base z-50'>
                     <Accordion>
                         {data.map(item => {
-                            console.log(item.link)
+                         
                             return (
                                 <AccordionItem title={
                                     <div>

@@ -14,8 +14,6 @@ const Post = ({ postData }) => {
     //     return<p>hMMMMM.....</p>
     // }
 
-    console.log(postData)
-
 
     return (
         <div>
@@ -48,7 +46,7 @@ export default Post
 
 export async function getStaticPaths() {
     const allPosts = await getAllPostsWithSlug()
-    console.log()
+
     return {
         paths: allPosts.edges.map(({ node }) => `/Post/${node.slug}`) || [],
         fallback: false,
