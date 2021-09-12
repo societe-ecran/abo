@@ -216,6 +216,7 @@ const allerPlusLoin = (data) => {
                                         ))}
                                     </div>
                                 </TabPanel>
+                                
                                 <TabPanel value={value} index={1}>
                                     {/* Reforme et lutte */}
                                     <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
