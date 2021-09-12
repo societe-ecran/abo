@@ -224,7 +224,7 @@ const leLivre = () => {
                 
                     <div>
                         <div className="pt-6 pb-6">
-                            <button class="snipcart-add-item rounded-full py-2 px-4 violetBack text-white  "
+                            <button className="snipcart-add-item rounded-full py-2 px-4 violetBack text-white  "
                                 data-item-id="livre"
                                 data-item-price="14"
                                 data-item-url="/leLivre"
