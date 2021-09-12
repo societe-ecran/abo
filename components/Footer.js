@@ -1,9 +1,8 @@
 import React from 'react'
 import { HeartIcon } from '@heroicons/react/solid'
-import { useRouter } from 'next/router'
 
 const Footer = () => {
-  const router = useRouter()
+
 
   const navigation = {
 
@@ -23,7 +22,6 @@ const Footer = () => {
   return (
     <>
 
-    {router.pathname !== '/groupes' || router.pathname !== '/AllerPlusLoin'  &&
     <div>
 
       <div className="relative mt-12 pt-12">
@@ -66,7 +64,7 @@ const Footer = () => {
     </div>
 
     
-     }
+     
       
     </>
   )

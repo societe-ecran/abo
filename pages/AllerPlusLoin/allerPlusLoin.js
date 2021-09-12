@@ -1,7 +1,7 @@
 import { React, useState } from 'react'
 import Layout from '../../components/Layout'
 import Intro from '../../components/Intro'
-import occupy from '../../public/occupycityhall.png'
+import occupy from '../../public/occupycityhall.jpg'
 import Seo from '../../components/seo/Seo'
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -94,7 +94,7 @@ const allerPlusLoin = (data) => {
 
 
     const groupsTypes = [
-        { name: "Justice transformatrice" },
+        { name: "Vivre sans" },
         { name: "Réformes et luttes" }
 
 
@@ -216,7 +216,7 @@ const allerPlusLoin = (data) => {
                                         ))}
                                     </div>
                                 </TabPanel>
-                                
+
                                 <TabPanel value={value} index={1}>
                                     {/* Reforme et lutte */}
                                     <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>

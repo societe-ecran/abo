@@ -1,33 +1,49 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import { Timeline } from 'react-twitter-widgets'
-import { Accordion, AccordionItem } from 'react-sanfona';
-import pigs from '../public/pigs.png'
+import pigs from '../public/pigs.jpg'
 import tags from '../public/tags.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
 import Seo from '../components/seo/Seo'
-import {getDates} from '../components/lib/api'
+import { getDates } from '../components/lib/api'
+import Footer from '../components/Footer'
 
-export default function actualites({datesTournee}) {
+export default function actualites({ datesTournee }) {
     const titre = 'Actualités'
     const description = "Vous trouverez ici les actualités du collectif : dates de tournée, dernières publications et fils twitter."
 
-    console.log(datesTournee.posts.edges[0])
+    console.log(new Date(datesTournee.posts.edges[0].node.datestournee.dateDeLaPresentation))
 
     const data = datesTournee.posts.edges
-    
-    
-    // [
-    //     { ville: 'Paris', date: '12 octobre 2021', lieu: 'A la bibli', horaires: '19:00', présentation: 'Six ans après les attentats du 13 novembre 2015, qui ont fait 130 morts et plusieurs centaines de blessés au Bataclan, au Stade de France et dans les rues de Paris, le plus grand ' },
-    //     { ville: 'Rennes', date: '12 octobre 2021', lieu: 'Piscine', horaires: '19:00', présentation: 'Six ans après les attentats du 13 novembre 2015, qui ont fait 130 morts et plusieurs centaines de blessés au Bataclan, au Stade de France et dans les rues de Paris, le plus grand ' },
-    //     { ville: 'Lille', date: '12 octobre 2021', lieu: 'Librairie', horaires: '19:00', présentation: 'Six ans après les attentats du 13 novembre 2015, qui ont fait 130 morts et plusieurs centaines de blessés au Bataclan, au Stade de France et dans les rues de Paris, le plus grand ' }
-    // ]
 
 
+    data.sort(function (a, b) {
+        var AdateFormat = a.node.datestournee.dateDeLaPresentation
+        var BdateFormat = b.node.datestournee.dateDeLaPresentation
+        return (
+            new Date(AdateFormat) -
+            new Date(BdateFormat)
+        );
+    });
+
+
+    const month = [{ nb: 1, name: "janvier " }, { nb: 2, name: "février " }, { nb: 3, name: "mars " }, { nb: 4, name: "avril " }, { nb: 5, name: "mai" }, { nb: 6, name: "juin " }, { nb: 7, name: "juillet " }, { nb: 8, name: "août " }, { nb: 9, name: "septembre " }, { nb: "10", name: "octobre " }, { nb: '11', name: "novembre " }, { nb: 12, name: "décembre " }]
+    const goodWord = function (corectMois) {
+        month.map(moi => {
+            if (corectMois == moi.nb) {
+                return (moi.name)
+            }
+        })
+    }
+
+    const test=2
+
+    const real =goodWord(test)
+    console.log(real)
     return (
         <Layout>
-            <Seo title={titre} description={description}/>
+            <Seo title={titre} description={description} />
             <div className="">
                 <div className=''>
                     <div className=' pb-3 pt-12 '>
@@ -41,18 +57,23 @@ export default function actualites({datesTournee}) {
 
                     <div className='grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-0 mx-3 md:pt-6 md:px-12 '>
                         {data.map(item => {
+                            var month = new Date(item.node.datestournee.dateDeLaPresentation).getMonth()
+                            var corectMonth = (month += 1)
+
+                            let realmonth=goodWord(corectMonth)
+
                             return (
                                 <div className='text-sm  md:text-baseshadow md:mx-6 md:my-6 px-3 py-3 rounded-lg border violetBack sabonRoman'>
 
                                     <div className='text-white'>
-                                        {item.node.datestournee.dateDeLaPresentation}
+                                        {new Date(item.node.datestournee.dateDeLaPresentation).getDate()} / {corectMonth} / {new Date(item.node.datestournee.dateDeLaPresentation).getFullYear()}
                                     </div>
                                     <div className='md:text-xl'>
                                         {item.node.datestournee.ville}
                                     </div>
                                     <div className='text-white'>
-                                    <div className='titreNav text-white' dangerouslySetInnerHTML={{ __html: item.node.content}} />
-                                       
+                                        <div className='titreNav text-white' dangerouslySetInnerHTML={{ __html: item.node.content }} />
+
                                     </div>
                                     <div className='text-center font-bold md:text-2xl text-red-700'>
                                         __
@@ -126,63 +147,62 @@ export default function actualites({datesTournee}) {
                 </div>
 
 
-                    <div className='md:grid md:grid-cols-2 px-3 md:px-24'>
+                <div className='md:grid md:grid-cols-2 px-3 md:px-24'>
 
-                        <div className='hidden md:flex px-12 items-center'>
-                            <Image
-                                src={tags}
-                                alt="Couverture Abolir la police"
-                                quality={50}
-                                layout="intrinsic"
-                                // width={309}
-                                // height={468}
-                                className=''
-                            // blurDataURL="data:..." automatically provided
-                            // Optionally allows to add a blurred version of the image while loading
-                            // placeholder="blur"
-                            />
+                    <div className='hidden md:flex px-12 items-center'>
+                        <Image
+                            src={tags}
+                            alt="Couverture Abolir la police"
+                            quality={50}
+                            layout="intrinsic"
+                            // width={309}
+                            // height={468}
+                            className=''
+                        // blurDataURL="data:..." automatically provided
+                        // Optionally allows to add a blurred version of the image while loading
+                        // placeholder="blur"
+                        />
+                    </div>
+
+                    <div className='pt-6'>
+                        <div className=' border-t font-bold text-xl pt-1 pb-2'>
+                            Aller plus loin
+
                         </div>
 
-                            <div className='pt-6'>
-                                <div className=' border-t font-bold text-xl pt-1 pb-2'>
-                                    Aller plus loin
+                        <div>
+                            Régulièrement alimentée, cette section présente différents types de ressources pour mieux comprendre l’histoire de la police et du système pénal, connaître des luttes et stratégies qui s’y sont opposées, partager des façons de prendre en charge les torts, apprendre d’élans et expériences passés et actuels. En somme différents outils pour aider à défaire la police, la justice et la prison.
+                        </div>
+                        <div className=' text-gray-500 font-bold text-xl pt-1 text-right'>
+                            <Link href="/allerPlusLoin">
+                                <a>Lire</a>
+                            </Link>
+                        </div>
 
-                                </div>
+                        <div className=' border-t font-bold text-xl pt-1 mt-6 pb-2'>
+                            Partager des histoires
 
-                                <div>
-                                    Régulièrement alimentée, cette section présente différents types de ressources pour mieux comprendre l’histoire de la police et du système pénal, connaître des luttes et stratégies qui s’y sont opposées, partager des façons de prendre en charge les torts, apprendre d’élans et expériences passés et actuels. En somme différents outils pour aider à défaire la police, la justice et la prison.
-                                </div>
-                                <div className=' text-gray-500 font-bold text-xl pt-1 text-right'>
-                                    <Link href="/allerPlusLoin">
-                                        <a>Lire</a>
-                                    </Link>
-                                </div>
-
-                                <div className=' border-t font-bold text-xl pt-1 mt-6 pb-2'>
-                                    Partager des histoires
-
-                                </div>
-                                <div>
-                                    Voici des témoignages, récits ou histoires collectées sur internet ou lors d’ateliers. Toutes les manières d’affronter au quotidien les situations de violences et de torts en dehors du système pénal sont trop invisibilisées. Les institutions pénales nous affaiblissent en s’accaparant nos conflits et les façons de les régler. Alors nous savons trop peu comment résoudre collectivement des problèmes qui font pleinement partie de nos vies. Partager des histoires alternatives permet donc d’avoir de nouvelles idées, de se défaire de certains réflexes et d’apprendre des erreurs ou méthodes des autres.
-                                </div>
-                                <div className=' text-gray-500 font-bold text-xl pt-1 text-right'>
-                                    <Link href="/histoires">
-                                        <a>Lire</a>
-                                    </Link>
-                                </div>
-                                <div className=' border-t font-bold text-xl pt-1 mt-6 pb-2'>
-                                    Groupes et collectifs
-                                </div>
-                                <div>
-                                    Les groupes ou collectifs rassemblés ici ne se disent pas nécessairement abolitionnistes. Mais ils mènent des luttes pour se défendre de la police, de la justice ou de la prison, ici et maintenant. Nous ne faisons que relayer ces organisations contre les violences d’État pour qu’il soit plus facile de les contacter et de connaître les forces en présence. Si vous participez à un collectif qui n’est pas répertorié ici et que vous aimeriez qu’il y soit, n’hésitez pas à nous envoyer un mail !
-                                </div>
-                                <div className=' text-gray-500 font-bold text-xl pt-1 text-right'>
-                                    <Link href="/">
-                                        <a>Lire</a>
-                                    </Link>
-                                </div>
-                            </div>
+                        </div>
+                        <div>
+                            Voici des témoignages, récits ou histoires collectées sur internet ou lors d’ateliers. Toutes les manières d’affronter au quotidien les situations de violences et de torts en dehors du système pénal sont trop invisibilisées. Les institutions pénales nous affaiblissent en s’accaparant nos conflits et les façons de les régler. Alors nous savons trop peu comment résoudre collectivement des problèmes qui font pleinement partie de nos vies. Partager des histoires alternatives permet donc d’avoir de nouvelles idées, de se défaire de certains réflexes et d’apprendre des erreurs ou méthodes des autres. Nous serions très heureux de partager les vôtres aussi. Vous pouvez nous envoyer un mail à : <div className="font-bold"> collectif_matsuda (at) riseup.net</div>                       </div>
+                        <div className=' text-gray-500 font-bold text-xl pt-1 text-right'>
+                            <Link href="/histoires">
+                                <a>Lire</a>
+                            </Link>
+                        </div>
+                        <div className=' border-t font-bold text-xl pt-1 mt-6 pb-2'>
+                            Groupes et collectifs
+                        </div>
+                        <div>
+                            Les groupes ou collectifs rassemblés ici ne se disent pas nécessairement abolitionnistes. Mais ils mènent des luttes pour se défendre de la police, de la justice ou de la prison, ici et maintenant. Nous ne faisons que relayer ces organisations contre les violences d’État pour qu’il soit plus facile de les contacter et de connaître les forces en présence. Si vous participez à un collectif qui n’est pas répertorié ici et que vous aimeriez qu’il y soit, n’hésitez pas à nous envoyer un mail !
+                        </div>
+                        <div className=' text-gray-500 font-bold text-xl pt-1 text-right'>
+                            <Link href="/">
+                                <a>Lire</a>
+                            </Link>
+                        </div>
                     </div>
+                </div>
 
                 <div className='md:grid md:grid-cols-3 px-3 md:px-3'>
 
@@ -190,7 +210,7 @@ export default function actualites({datesTournee}) {
                     </div>
                     <div className=''>
 
-                        <div className='text-center text-3xl pt-12 pb-6'>
+                        <div className='text-3xl font-Bold px-12 titreNav transforme pt-12  text-center text-gray-500'>
                             On Twitter
                         </div>
 
@@ -205,7 +225,7 @@ export default function actualites({datesTournee}) {
                                         }}
                                         options={{
                                             chrome: "noheader, nofooter",
-                                            width: "600", height: "800"
+                                            width: "500", height: "800"
                                         }}
                                     />
                                 </div>
@@ -214,6 +234,14 @@ export default function actualites({datesTournee}) {
                     </div>
                 </div>
             </div>
+ <Footer/>
+
+            <footer>
+               
+
+           
+
+               </footer>
         </Layout>
     )
 }
