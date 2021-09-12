@@ -195,7 +195,10 @@ export default function Example() {
                               <div className='text-center font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                                 __
                               </div>
-                              : ""}
+                              :
+                               <div className='text-center font-bold md:text-2xl text-white transform -translate-y-6'>
+                                __
+                              </div>}
                           </div>
                         </Popover.Button>
                         <Transition
@@ -252,7 +255,7 @@ export default function Example() {
                       >
                         <div className='flex flex-col'>
                           <Link href='/histoires'>
-                            <a> Partager nos histoires </a>
+                            <a> Partager des histoires </a>
                           </Link>
 
 

@@ -159,7 +159,7 @@ export default function actualites({datesTournee}) {
                                 </div>
 
                                 <div className=' border-t font-bold text-xl pt-1 mt-6 pb-2'>
-                                    Partager nos histoires
+                                    Partager des histoires
 
                                 </div>
                                 <div>
