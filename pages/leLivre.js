@@ -57,10 +57,10 @@ const leLivre = () => {
                             <button className="snipcart-add-item 
                       rounded-full py-2 px-4 violetBack text-white 
                              " 
-                             data-item-weight='494'
+                                data-item-weight='49'
                                 data-item-id="livre"
                                 data-item-price="14"
-                                data-item-url="/leLivre"
+                                data-item-url="leLivre"
                                 data-item-description="Paru le 10 septembre 2021. 336 pages.  ISBN: 979-10-96195-14-5 "
                                 // data-item-image="../public/couv.jpg"
                                 data-item-name="Abolir la police. Échos des États-Unis">
