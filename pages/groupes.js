@@ -109,7 +109,7 @@ const groupes = ({  collectif }) => {
                             >
 
                                 {groupsTypes.map((tab) => (
-                                    <Tab label={tab.name} {...a11yProps(0)} />
+                                    <Tab label={tab.name} {...a11yProps(0)} key={tab.name}/>
                                 ))}
 
                             </Tabs>

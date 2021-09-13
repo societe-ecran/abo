@@ -5,7 +5,7 @@ import Intro from '../components/Intro'
 import { getAllPostsWithSlug } from '../components/lib/api';
 import Link from 'next/link'
 import Seo from '../components/seo/Seo'
-import {getHistoires} from '../components/lib/api'
+import { getHistoires } from '../components/lib/api'
 
 
 
@@ -27,31 +27,32 @@ const histoires = ({
                 <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
 
                     {histoires.map((histoire) => (
+                        <div key={histoire.node.title}>
+                            <Link href={`/Post/${histoire.node.slug}`}>
+                                <a>
+                                    <div className='border-t pb-6 hover:bg-gray-50 ' key={histoire.node.slug}
+                                    >
+                                        <div className='text-gray-500 pt-3'>
+                                            {histoire.node.article.date}
+                                        </div>
+                                        <div className='font-bold '>
+                                            {histoire.node.title}
 
-                        <Link href={`/Post/${histoire.node.slug}`}>
-                            <a>
-                                <div className='border-t pb-6 hover:bg-gray-50 ' key={histoire.node.slug}
-                                >
-                                    <div className='text-gray-500 pt-3'>
-                                        {histoire.node.article.date}
-                                    </div>
-                                    <div className='font-bold '>
-                                        {histoire.node.title}
-                                    
-                                    </div>
-                                    <div className='text-gray-500'>
-                                        {histoire.node.article.auteur}
-                                    </div>
-                                    <div className='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
-                                        __
-                                    </div>
-                                    <div>
-                                        {histoire.node.article.resume}
-                                    </div>
+                                        </div>
+                                        <div className='text-gray-500'>
+                                            {histoire.node.article.auteur}
+                                        </div>
+                                        <div className='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
+                                            __
+                                        </div>
+                                        <div>
+                                            {histoire.node.article.resume}
+                                        </div>
 
-                                </div>
-                            </a>
-                        </Link>
+                                    </div>
+                                </a>
+                            </Link>
+                        </div>
                     ))}
 
                 </div>

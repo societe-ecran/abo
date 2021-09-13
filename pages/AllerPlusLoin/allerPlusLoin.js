@@ -10,7 +10,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { useRouter } from 'next/router'
-import { getAllerPlusloin } from '../../components/lib/api'
+import { getAllerPlusloin, getCollectifs } from '../../components/lib/api'
 import Link from 'next/link'
 
 function TabPanel(props) {
@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const allerPlusLoin = (data) => {
-
+    console.log(data)
     const router = useRouter()
     const {
         query: { id },
@@ -107,6 +107,46 @@ const allerPlusLoin = (data) => {
         { name: "Filmographie" },
         { name: "Bibliographie" },
     ]
+
+    // const articlesReforme = []
+
+    // console.log(data.data.edges[0].node.tags.edges.length)
+    // const reformes = () => {
+    //     for (let i = 0; i < 100; i++) {
+          
+    //             for (let j = 0; j < 100; j++) {
+    //                 if ( typeof data.data.edges[i].node.tags.edges !== undefined && data.data.edges[i].node.tags.edges[j].node.name == "Justice transformatrice") {
+    //                     articlesReforme.push(data.data.edges[i])
+    //                 }
+
+    //             }
+
+
+            
+    //     }
+    // }
+
+    // reformes()
+
+    // console.log(articlesReforme)
+
+    // post.node.tags.edges.map(tag => {
+    //     if (tag.node.name == 'Réformes et luttes') {
+
+    //         articlesReforme.push()
+    //     }
+    // })
+
+
+// const  allo = async function()  {
+//     const res = await getCollectifs()
+
+// return res
+// }
+// const test= allo()
+// console.log(test)
+
+
 
     return (
         <div>
@@ -174,7 +214,7 @@ const allerPlusLoin = (data) => {
                                 >
 
                                     {groupsTypes.map((tab) => (
-                                        <Tab label={tab.name} {...a11yProps(0)} />
+                                        <Tab key={tab.name} label={tab.name} {...a11yProps(0)} />
                                     ))}
                                 </Tabs>
                             </div>
@@ -184,7 +224,7 @@ const allerPlusLoin = (data) => {
                                     {/* Justice transformatrice */}
                                     <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
                                         {data.data.edges.map((post) => (
-                                            <>
+                                            <div key={post.node.slug}>
                                                 {post.node.tags.edges.length !== 0 && post.node.tags.edges.map(tag => {
                                                     if (tag.node.name == 'Justice transformatrice') { return true }
                                                 })
@@ -212,7 +252,7 @@ const allerPlusLoin = (data) => {
                                                         </a>
                                                     </Link>
                                                 }
-                                            </>
+                                            </div>
                                         ))}
                                     </div>
                                 </TabPanel>
@@ -223,9 +263,10 @@ const allerPlusLoin = (data) => {
                                         {data.data.edges.map((post) => (
                                             <>
                                                 {post.node.tags.edges.length !== 0 && post.node.tags.edges.map(tag => {
-                                                    if (tag.node.name == 'Réformes et luttes') { 
-                                                       
-                                                         return (  true) }
+                                                    if (tag.node.name == 'Réformes et luttes') {
+
+                                                        return (true)
+                                                    }
                                                 })
 
                                                     &&
