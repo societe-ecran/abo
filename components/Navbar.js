@@ -18,7 +18,7 @@ export default function Example() {
     {
       name: "L'acheter",
       description: '',
-      href: '/leLivre',
+      href: 'https://achat-livre-abolir.vercel.app/' ,
     },
     {
       name: 'Sources et traductions complètes',
@@ -97,7 +97,6 @@ export default function Example() {
 
                 {/* Mobile menu button */}
                 <Disclosure.Button className="flex flex-end items-center p-2 justify-right rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
-                  {/* <span className="sr-only">Open main menu</span> */}
                   {open ? (
                     <XIcon className="block h-8 w-8" aria-hidden="true" />
                   ) : (
@@ -112,7 +111,6 @@ export default function Example() {
 
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
-
 
 
 
@@ -190,7 +188,10 @@ export default function Example() {
                 text-black group bg-orange-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
                         >
                           <div className='flex flex-col'>
-                            <span>Aller plus loin </span>
+                          <Link href='/histoires'>
+                            <a> Aller plus loin  </a>
+                          </Link>
+                          
                             {router.pathname == '/allerPlusLoin' ?
                               <div className='text-center font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                                 __
@@ -201,7 +202,7 @@ export default function Example() {
                               </div>}
                           </div>
                         </Popover.Button>
-                        <Transition
+                        {/* <Transition
                           as={Fragment}
                           enter="transition ease-out duration-200"
                           enterFrom="opacity-0 translate-y-1"
@@ -240,7 +241,7 @@ export default function Example() {
                               </div>
                             </div>
                           </Popover.Panel>
-                        </Transition>
+                        </Transition> */}
                       </>
                     )}
                   </Popover>
@@ -282,7 +283,10 @@ export default function Example() {
                 text-black group bg-orange-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
                         >
                           <div className='flex flex-col'>
-                            <span className="">Trouver des groupes près de chez vous </span>
+                          <Link href='/groupes'>
+                             <span className="">Trouver des groupes près de chez vous </span>
+                          </Link>
+                         
                             {router.pathname == '/groupes' ?
                               <div className='text-center font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                                 __
@@ -290,7 +294,7 @@ export default function Example() {
                               : ""}
                           </div>
                         </Popover.Button>
-                        <Transition
+                        {/* <Transition
                           as={Fragment}
                           enter="transition ease-out duration-200"
                           enterFrom="opacity-0 translate-y-1"
@@ -302,9 +306,9 @@ export default function Example() {
                           <Popover.Panel className="absolute  max-w-sm px-4 mt-1 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl">
                             <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                               <div className="relative z-50  bg-white p-7 ">
-                              
+                             
                                 {Groupes.map((item) => (
-                                  <Link
+                                   <Link
                                     href={{
                                       pathname: "/groupes",
                                       query: { id: item.number },
@@ -322,13 +326,13 @@ export default function Example() {
                                           {item.description}
                                         </p>
                                       </div>
-                                    </a>
+                                </a>
                                   </Link>
-                                ))}
+                                ))}    
                               </div>
                             </div>
                           </Popover.Panel>
-                        </Transition>
+                        </Transition> */}
                       </>
                     )}
                   </Popover>

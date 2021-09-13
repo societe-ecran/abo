@@ -5,11 +5,11 @@ import couv from '../public/couv.jpg'
 import Seo from '../components/seo/Seo'
 
 const leLivre = () => {
-    const titre = 'Abolir la police - le livre'
-    const description = "En traduisant plusieurs textes écrits aux États-Unis ces dix dernières années, ce recueil souhaite autant documenter que transmettre ce nouvel abolitionnisme : vivre sans police."
+    // const titre = 'Abolir la police - le livre'
+    // const description = "En traduisant plusieurs textes écrits aux États-Unis ces dix dernières années, ce recueil souhaite autant documenter que transmettre ce nouvel abolitionnisme : vivre sans police."
     return (
         <div>
-            <Layout>
+            {/* <Layout>
                 <Seo title={titre} />
                 <div className=" pt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
                     <div className=" px-3 md:px-6  lg:px-12 flex flex-col">
@@ -21,9 +21,6 @@ const leLivre = () => {
                             width={309}
                             height={468}
                             className=''
-                        // blurDataURL="data:..." automatically provided
-                        // Optionally allows to add a blurred version of the image while loading
-                        // placeholder="blur"
                         />
 
 
@@ -251,30 +248,8 @@ const leLivre = () => {
                 </div>
 
 
-                {/* <div className=" px-32 pt-6">
-                        <svg
-                            className="h-12 w-12 text-black opacity-25"
-                            fill="currentColor"
-                            viewBox="0 0 32 32"
-                            aria-hidden="true"
-                        >
-                            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-                        </svg>
 
-                        <div className="italic sabonRoman ">
-                            «L’abolition n’est pas une absence, c’est une présence. Ce que le monde deviendra existe déjà en fragments et en morceaux, en expériences et en possibilités. Alors, que ceux qui ressentent dans leurs tripes une profonde anxiété à l’idée que l’abolition signifie tout abattre, brûler la terre et commencer quelque chose de nouveau, laissent tomber.
-                            L’abolition, c’est construire l’avenir à partir du présent, de toutes les manières possibles.»
-                            <br />
-                            <p className="text-gray-500 indent">
-                                Ruth Wilson Gilmore
-                            </p>
-
-                        </div>
-                    </div> */}
-
-
-
-            </Layout>
+            </Layout> */}
         </div>
     )
 }

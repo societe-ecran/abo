@@ -82,7 +82,7 @@ const groupes = ({  collectif }) => {
     const groupsTypes = [
         { name: "Comités vérité et justice" },
         { name: "Collectifs face au maintien de l'ordre" },
-        { name: "Collectif anti-repression" },
+        { name: "Collectifs anti-repression" },
         { name: "Luttes anti-carcérales" },
         // { name: "COLLECTIFS POUR LA DÉCOLONISATION" }
     ]
