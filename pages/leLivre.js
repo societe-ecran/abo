@@ -55,10 +55,9 @@ const leLivre = () => {
                                 <div>
                                     <div className="pt-6 pb-6">
                                         <button className="snipcart-add-item   rounded-full py-2 px-4 violetBack text-white   "
-
                                             data-item-width='12'
                                             data-item-length='12'
-                                            data-item-weight='49'
+                                            data-item-weight='4'
                                             data-item-id="livre"
                                             data-item-price="14"
                                             data-item-url="leLivre"
