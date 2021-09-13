@@ -248,6 +248,7 @@ export async function getStaticProps() {
     return {
         props: {
             datesTournee
-        }
+        },
+        revalidate: 30
     };
 }

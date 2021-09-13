@@ -531,6 +531,7 @@ export async function getStaticProps() {
     return {
         props: {
             data: data.posts
-        }
+        },
+        revalidate: 30
     };
 }

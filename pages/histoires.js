@@ -70,6 +70,7 @@ export async function getStaticProps() {
     return {
         props: {
             histoiresPartagees
-        }
+        },
+        revalidate: 30
     };
 }

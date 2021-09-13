@@ -153,7 +153,8 @@ export default groupes
 export async function getStaticProps(context) {
     const  collectif= await getCollectifs()
     return {
-        props: { collectif }
+        props: { collectif },
+        revalidate: 30
     }
     
 }
