@@ -50,92 +50,93 @@ const leLivre = () => {
                                 </span>
                             </div>
 
-       
+
                             <div className=" md:hidden">
-                    <div>
-                        <div className="pt-6 pb-6">
-                            <button className="snipcart-add-item 
-                      rounded-full py-2 px-4 violetBack text-white 
-                             " 
-                                data-item-weight='49'
-                                data-item-id="livre"
-                                data-item-price="14"
-                                data-item-url="leLivre"
-                                data-item-description="Paru le 10 septembre 2021. 336 pages.  ISBN: 979-10-96195-14-5 "
-                                // data-item-image="../public/couv.jpg"
-                                data-item-name="Abolir la police. Échos des États-Unis">
-                                Acheter
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                                <div>
+                                    <div className="pt-6 pb-6">
+                                        <button className="snipcart-add-item   rounded-full py-2 px-4 violetBack text-white   "
 
-                <div className=' text-sm md:text-base md:hidden flex flex-col  '>
-                        <div className='flex flex-col md:items-end sabonRoman  '>
-                            <div>
-                            <h2>
-                                Introduction
-                            </h2>
-                            </div>
-                            
-                            <h2 className='indent'>
-                                I. Le soulèvement George Floyd
-                            </h2>
-
-                            <div>
-                                <h2 className='indent'>
-                                    II. De l’esclavage au Black Power
-                                </h2>
-                            </div>
-                            <div>
-                                <h2 className='indent'>
-                                    III. Police : réforme impossible
-                                </h2>
-                            </div>
-                            <div>
-                                <h2 className='indent'>
-                                    IV. Le mouvement abolitionniste aujourd’hui
-                                </h2>
-
-                            </div>
-                            <div>
-                                <h2 className='indent'>
-                                    V. Féminisme et abolitionnisme
-                                </h2>
-
-                            </div>
-                            <h2>
-                                Conclusion
-                            </h2>
-                        </div>
-                        <div className=" hidden md:block">
-                            <div className="">
-                                <span className="border-b border-gray-300  ">
-                                    10 septembre 2021
-                                </span>
-                            </div>
-                            <div >
-                                <span className="border-b border-gray-300">
-                                    336 pages
-                                </span>
-                            </div>
-                            <div className="">
-                                <span className="border-b border-gray-300">
-                                    ISBN: 979-10-96195-14-5
-                                </span>
-
-                            </div>
-                            <div className="">
-                                <span className="border-b border-gray-300">
-                                    14 euros
-                                </span>
+                                            data-item-width='12'
+                                            data-item-length='12'
+                                            data-item-weight='49'
+                                            data-item-id="livre"
+                                            data-item-price="14"
+                                            data-item-url="leLivre"
+                                            data-item-description="Paru le 10 septembre 2021. 336 pages.  ISBN: 979-10-96195-14-5 "
+                                            data-item-image="../public/couvMin.jpg"
+                                            data-item-name="Livre">
+                                            Acheter
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
 
-                        </div>
+                            <div className=' text-sm md:text-base md:hidden flex flex-col  '>
+                                <div className='flex flex-col md:items-end sabonRoman  '>
+                                    <div>
+                                        <h2>
+                                            Introduction
+                                        </h2>
+                                    </div>
 
-                    </div>
+                                    <h2 className='indent'>
+                                        I. Le soulèvement George Floyd
+                                    </h2>
 
-                
+                                    <div>
+                                        <h2 className='indent'>
+                                            II. De l’esclavage au Black Power
+                                        </h2>
+                                    </div>
+                                    <div>
+                                        <h2 className='indent'>
+                                            III. Police : réforme impossible
+                                        </h2>
+                                    </div>
+                                    <div>
+                                        <h2 className='indent'>
+                                            IV. Le mouvement abolitionniste aujourd’hui
+                                        </h2>
+
+                                    </div>
+                                    <div>
+                                        <h2 className='indent'>
+                                            V. Féminisme et abolitionnisme
+                                        </h2>
+
+                                    </div>
+                                    <h2>
+                                        Conclusion
+                                    </h2>
+                                </div>
+                                <div className=" hidden md:block">
+                                    <div className="">
+                                        <span className="border-b border-gray-300  ">
+                                            10 septembre 2021
+                                        </span>
+                                    </div>
+                                    <div >
+                                        <span className="border-b border-gray-300">
+                                            336 pages
+                                        </span>
+                                    </div>
+                                    <div className="">
+                                        <span className="border-b border-gray-300">
+                                            ISBN: 979-10-96195-14-5
+                                        </span>
+
+                                    </div>
+                                    <div className="">
+                                        <span className="border-b border-gray-300">
+                                            14 euros
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
 
 
                         </div>
@@ -221,26 +222,26 @@ const leLivre = () => {
                             </div>
 
                             <div className=" hidden md:block">
-                
-                    <div>
-                        <div className="pt-6 pb-6">
-                            <button className="snipcart-add-item rounded-full py-2 px-4 violetBack text-white  "
-                                data-item-id="livre"
-                                data-item-price="14"
-                                data-item-url="/leLivre"
-                                data-item-description="Paru le 10 septembre 2021. 336 pages.  ISBN: 979-10-96195-14-5 "
-                                // data-item-image="../public/couv.jpg"
-                                data-item-name="Abolir la police. Échos des États-Unis">
-                                Acheter
-                            </button>
+
+                                <div>
+                                    <div className="pt-6 pb-6">
+                                        <button className="snipcart-add-item rounded-full py-2 px-4 violetBack text-white  "
+                                            data-item-id="livre"
+                                            data-item-price="14"
+                                            data-item-url="/leLivre"
+                                            data-item-description="Paru le 10 septembre 2021. 336 pages.  ISBN: 979-10-96195-14-5 "
+                                            // data-item-image="../public/couv.jpg"
+                                            data-item-name="Abolir la police. Échos des États-Unis">
+                                            Acheter
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
 
                         </div>
-                    </div>
-                </div>
-
-
-
-                        </div>
 
 
 
@@ -249,7 +250,7 @@ const leLivre = () => {
                     </div>
 
                 </div>
-         
+
 
                 {/* <div className=" px-32 pt-6">
                         <svg
