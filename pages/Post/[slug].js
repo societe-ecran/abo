@@ -13,28 +13,20 @@ const Post = ({ postData }) => {
     // if(!router.isFallback &&!postData?.slug){
     //     return<p>hMMMMM.....</p>
     // }
-console.log("oooff")
+console.log(postData)
 
     return (
         <div>
             <Layout>
                 <Seo title={postData.title} description='Partager des histoires' />
-                {/* {postData.categories.edges[0].node.name == 'PartagerNosHistoires' && */}
                     <>
-                        <ArticleHeader src={foule} title={postData.title} date={postData.article.date} author={postData.article.auteur} source={postData.article.source}
-                        // date={postData.partagerNosHistoires.date} author={postData.partagerNosHistoires.auteur} source={postData.partagerNosHistoires.source} 
-                        />
+                        <ArticleHeader src={foule} title={postData.title} date={postData.article.date} author={postData.article.auteur} source={postData.article.source} />
                         
                         <div className="xl:px-64 lg:px-32 md:px-24 lg:bg-gray-50 ">
                             <div className='text-sm md:text-base sabonRoman text-gray-800  xl:px-32 lg:px-28 md:px-12 px-3 lg:text-lg bg-white' dangerouslySetInnerHTML={{ __html: postData.content }} />
                         </div>
                     </>
-                    {/* } */}
-
-
-
-                {/* { typeof postData !== undefined &&  <>  {postData.title} </> }  
-                { typeof postData !== undefined &&  <>  {postData.content} </> }   */}
+             
             </Layout>
         </div>
     )
