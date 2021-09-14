@@ -24,7 +24,7 @@ const histoires = ({
             <Layout>
                 <Seo title={titre} />
                 <Intro src={foule} texte={texte} title={titre} />
-                <div className=''>
+                <div className='hidden'>
                     <Image
                         src={couvMin}
                         alt="Visuel couverture"
