@@ -15,11 +15,8 @@ const histoires = ({
     const texte = "Voici des  témoignages, récits ou histoires collectées sur internet ou lors d’ateliers. Toutes les manières d’affronter au quotidien les situations de violences et de torts en dehors du système pénal sont trop invisibilisées. Les institutions pénales nous affaiblissent en s’accaparant nos conflits et les façons de les régler. Alors nous savons trop peu comment résoudre collectivement des problèmes qui font pleinement partie de nos vies. Partager des histoires alternatives permet donc d’avoir de nouvelles idées, de se défaire de certains réflexes et d’apprendre des erreurs ou méthodes des autres. Nous serions très heureux de partager les vôtres aussi. Vous pouvez nous envoyer un mail à : collectif_matsuda (at) riseup.net"
     // const textComplet= {`${}`} <span className =" font-bold"> collectif_matsuda (at) riseup.net </span>
     const titre = 'Partager des histoires'
-
     const histoires = histoiresPartagees.posts.edges
-    console.log(histoiresPartagees.posts.edges)
 
-// console.log(histoiresPartagees.posts.edges)
     return (
         <div>
             <Layout>
