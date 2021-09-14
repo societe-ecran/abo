@@ -12,7 +12,7 @@ const Seo = (props) => {
                 <meta property="og:description" content={props.description} />
                 <meta property="og:url" content="https://www.abolirlapolice.org/" />
                 <meta property="og:type" content="website" />
-                <meta property="og:image" content={`https://www.abolirlapolice.org/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fpublic%2FcouvMin.64099324a2cd6af6ed4653b63dca91f1.jpg&w=256&q=50`} />
+                <meta property="og:image" content={`https://achat-livre-abolir.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fpublic%2Fcouv.93478b6c9ee7db2c15aef8dc9bfe9289.jpg&w=1920&q=100`} />
                 <meta charSet="utf-8" />
                 <meta name="author" content="{Team17}" />
                 <meta name="twitter:title" content="collectifmatsu1" />
