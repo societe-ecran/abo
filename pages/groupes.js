@@ -113,7 +113,7 @@ const groupes = ({ collectif }) => {
                             </Tabs>
                         </div>
 
-                        <div className='md:pl-16 -pr-4 text-sm md:text-base max-w-xs'>
+                        <div className='md:pl-16 -pr-4 text-sm md:text-base'>
                             <TabPanel value={value} index={0}>
                                 <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[2].node.content }} />
                             </TabPanel>
