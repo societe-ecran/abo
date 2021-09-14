@@ -11,11 +11,6 @@ export default function Example() {
   const router = useRouter()
   const LeLivre = [
     {
-      name: "Actualités",
-      description: '',
-      href: '/actualites',
-    },
-    {
       name: "L'acheter",
       description: '',
       href: 'https://achat-livre-abolir.vercel.app/',

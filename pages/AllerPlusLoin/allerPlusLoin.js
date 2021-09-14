@@ -66,7 +66,6 @@ const useStyles = makeStyles((theme) => ({
 
 
 const allerPlusLoin = (data) => {
-    console.log(data)
 // if(typeof data.featuredImage.node.link !== undefined){  console.log(data.featuredImage.node.link) }    
     // const router = useRouter()
     // const {
