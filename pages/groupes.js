@@ -11,6 +11,9 @@ import Intro from '../components/Intro'
 import statue from '../public/statueNB.jpg'
 import Seo from '../components/seo/Seo'
 import { getCollectifs } from '../components/lib/api'
+import { Accordion, AccordionItem } from 'react-sanfona';
+import { ArrowRightIcon } from '@heroicons/react/solid'
+
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -62,8 +65,8 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const groupes = ({  collectif }) => {
-  
+const groupes = ({ collectif }) => {
+
     const router = useRouter()
     const {
         query: { id },
@@ -93,7 +96,7 @@ const groupes = ({  collectif }) => {
                 <Seo title={titre} />
                 <Intro title='Groupes et collectifs' texte={texte} src={statue} />
 
-                <div className='pt-6  md:pl-6 '>
+                <div className='hidden md:block pt-6  md:pl-6 '>
                     <div className={classes.root}>
                         <div className='text-xs md:text-base'>
                             <Tabs
@@ -105,26 +108,65 @@ const groupes = ({  collectif }) => {
                                 className={classes.tabs}
                             >
                                 {groupsTypes.map((tab) => (
-                                    <Tab label={tab.name} {...a11yProps(0)} key={tab.name}/>
+                                    <Tab label={tab.name} {...a11yProps(0)} key={tab.name} />
                                 ))}
                             </Tabs>
                         </div>
 
                         <div className='md:pl-16 -pr-4 text-sm md:text-base max-w-xs'>
                             <TabPanel value={value} index={0}>
-                            <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[2].node.content }} />
+                                <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[2].node.content }} />
                             </TabPanel>
                             <TabPanel value={value} index={1}>
-                               <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[1].node.content }} />
+                                <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[1].node.content }} />
                             </TabPanel>
                             <TabPanel value={value} index={2}>
-                            <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[3].node.content }} />
+                                <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[3].node.content }} />
                             </TabPanel>
                             <TabPanel value={value} index={3}>
-                                <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[0].node.content}} />
+                                <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[0].node.content }} />
                             </TabPanel>
                         </div>
                     </div>
+                </div>
+
+                <div className='md:hidden pb-24 px-3'>
+                    <Accordion>
+
+                        <AccordionItem title={<div className='flex border-t pt-2 pb-2 bg-gray-50'><div className=''>Comités vérité et justice </div><div className='pl-6 flex justify-center align-center items-center'> <ArrowRightIcon className="h-4 w-4 " /></div></div>}
+                            expanded={0}
+                            expandedClassName=''
+                            duration={1000}
+
+                        >
+                            <div className=' pl-6 pt-3 titreNav text-sm text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[2].node.content }} />
+                        </AccordionItem>
+                        <AccordionItem title={<div className='flex border-t pt-2 pb-2 bg-gray-50'><div className=''>Collectifs face au maintien de l'ordre</div><div className='pl-6 flex justify-center align-center items-center'> <ArrowRightIcon className="h-4 w-4 " /></div></div>}
+                            expanded={0}
+                            expandedClassName=''
+                            duration={1000}
+
+                        >
+                            <div className='  pl-6 pt-3 titreNav text-sm text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[1].node.content }} />
+                        </AccordionItem>
+                        <AccordionItem title={<div className='flex border-t pt-2 pb-2 bg-gray-50'><div className=''>Collectifs anti-repression</div><div className='pl-6 flex justify-center align-center items-center'> <ArrowRightIcon className="h-4 w-4 " /></div></div>}
+                            expanded={0}
+                            expandedClassName=''
+                            duration={1000}
+
+                        >
+                            <div className=' pl-6 pt-3 titreNav text-sm text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[3].node.content }} />
+                        </AccordionItem>
+                        <AccordionItem title={<div className='flex border-t pt-2 pb-2 bg-gray-50'><div className=''>Luttes anti-carcérales</div><div className='pl-6 flex justify-center align-center items-center'> <ArrowRightIcon className="h-4 w-4 " /></div></div>}
+                            expanded={0}
+                            expandedClassName=''
+                            duration={1000}
+
+                        >
+                            <div className=' pl-6 pt-3 titreNav text-sm text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[0].node.content }} />
+                        </AccordionItem>
+
+                    </Accordion>
                 </div>
 
 
@@ -143,10 +185,10 @@ export default groupes
 // }
 
 export async function getStaticProps(context) {
-    const  collectif= await getCollectifs()
+    const collectif = await getCollectifs()
     return {
         props: { collectif },
         revalidate: 30
     }
-    
+
 }
