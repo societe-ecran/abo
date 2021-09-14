@@ -138,201 +138,244 @@ const allerPlusLoin = (data) => {
 
 
     return (
-        <div>
+        <div >
             <Layout>
                 <Seo title={titre} description={description} />
                 <Intro src={occupy} title={"Aller plus loin"} texte={texte} />
 
-                <div className='text-center text-xl'>
-                    Trié par
-                </div>
-                <div className="flex justify-center text-xl pt-3 px-12">
+                <div className='hidden'>
+                    <div className='text-center text-xl'>
+                        Trié par
+                    </div>
+                    <div className="flex justify-center text-xl md:pt-3 px-12">
 
+
+                        {tabViewed == 0 ?
+                            <>
+                                <button className=' hover:bg-gray-50 rounded-md' onClick={triThématiques}>
+                                    Thématiques
+                                    <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
+                                        __
+                                    </div>
+                                </button>
+
+                                <button className='hover:bg-gray-50 rounded-md pl-6 ' onClick={triMedias}>
+                                    Médias
+                                    <div className='text-center font-bold md:text-4xl text-white transform -translate-y-6'>
+                                        __
+                                    </div>
+                                </button>
+                            </>
+                            :
+                            <>
+                                <button className=' ' onClick={triThématiques}>
+                                    Thématiques
+                                    <div className='text-center font-bold md:text-4xl text-white transform -translate-y-6'>
+                                        __
+                                    </div>
+                                </button>
+
+                                <button className=' pl-6' onClick={triMedias}>
+                                    Médias
+                                    <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
+                                        __
+                                    </div>
+                                </button>
+                            </>
+
+                        }
+
+
+                    </div>
 
                     {tabViewed == 0 ?
-                        <>
-                            <button className=' hover:bg-gray-50 rounded-md' onClick={triThématiques}>
-                                Thématiques
-                                <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
-                                    __
-                                </div>
-                            </button>
 
-                            <button className='hover:bg-gray-50 rounded-md pl-6 ' onClick={triMedias}>
-                                Médias
-                                <div className='text-center font-bold md:text-4xl text-white transform -translate-y-6'>
-                                    __
+
+                        <div className='px-0 md:pl-6'>
+                            <div className={classes.root}>
+                                <div>
+                                    <Tabs
+                                        orientation="vertical"
+                                        // variant="scrollable"
+                                        value={value}
+                                        onChange={handleChange}
+                                        aria-label="Vertical tabs "
+                                        className={classes.tabs}
+                                    >
+
+                                        {groupsTypes.map((tab) => (
+                                            <Tab key={tab.name} label={tab.name} {...a11yProps(0)} />
+                                        ))}
+                                    </Tabs>
                                 </div>
-                            </button>
-                        </>
+
+                                <div className='md:pl-20'>
+                                    <TabPanel value={value} index={0}>
+                                        {/* Vivre sans */}
+                                        <div className='text-sm md:text-base md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6'>
+                                            {data.data.edges.map((post) => (
+                                                <>
+                                                    {post.node.tags.edges.length !== 0
+                                                        // && post.node.tags.edges.map(tag => {
+                                                        //     if (tag.node.name == 'Réformes et luttes') {
+                                                        //         return (true)
+                                                        //     }
+                                                        // })
+                                                        &&
+                                                        <Link href={`/Post/${post.node.slug}`}>
+                                                            <a>
+                                                                <div className='border-t pt-1 pb-6 hover:bg-gray-50 ' key={post.node.slug}
+                                                                >
+                                                                    <div className='font-bold '>
+                                                                        {post.node.title}
+                                                                    </div>
+                                                                    <div className='text-gray-500 '>
+                                                                        {post.node.article.auteur}
+                                                                    </div>
+                                                                    <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
+                                                                        __
+                                                                    </div>
+                                                                    <div className=' '>
+                                                                        {post.node.article.resume}
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </Link>
+                                                    }
+                                                </>
+                                            ))}
+                                        </div>
+                                    </TabPanel>
+
+                                    <TabPanel value={value} index={1}>
+                                        {/* Reforme et lutte */}
+                                        Articles à venir
+                                    </TabPanel>
+                                </div>
+
+                            </div>
+                        </div>
+
                         :
-                        <>
-                            <button className=' ' onClick={triThématiques}>
-                                Thématiques
-                                <div className='text-center font-bold md:text-4xl text-white transform -translate-y-6'>
-                                    __
-                                </div>
-                            </button>
 
-                            <button className=' pl-6' onClick={triMedias}>
-                                Médias
-                                <div className='text-center font-bold md:text-4xl text-red-700 transform -translate-y-6'>
-                                    __
+                        <div className='px-0 md:pl-6'>
+                            <div className={classes.root}>
+                                <div>
+                                    <Tabs
+                                        orientation="vertical"
+                                        // variant="scrollable"
+                                        value={value}
+                                        onChange={handleChange}
+                                        aria-label="Vertical tabs "
+                                        className={classes.tabs}
+                                    >
+                                        {groupsTypes2.map((tab) => (
+                                            <Tab label={tab.name} {...a11yProps(0)} />
+                                        ))}
+                                    </Tabs>
                                 </div>
-                            </button>
-                        </>
 
+                                <div className='pl-20'>
+
+                                    <TabPanel value={value} index={0}>
+                                        {/* ARTICLES */}
+                                        <div className='text-sm md:text-base md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6'>
+                                            {data.data.edges.map((post) => (
+                                                <>
+                                                    {post.node.tags.edges.length !== 0
+                                                        // && post.node.tags.edges.map(tag => {
+                                                        //     if (tag.node.name == 'Réformes et luttes') {
+                                                        //         return (true)
+                                                        //     }
+                                                        // })
+                                                        &&
+                                                        <Link href={`/Post/${post.node.slug}`}>
+                                                            <a>
+                                                                <div className='border-t pt-1 pb-6 hover:bg-gray-50 ' key={post.node.slug}
+                                                                >
+                                                                    <div className='font-bold '>
+                                                                        {post.node.title}
+                                                                    </div>
+                                                                    <div className='text-gray-500 '>
+                                                                        {post.node.article.auteur}
+                                                                    </div>
+                                                                    <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
+                                                                        __
+                                                                    </div>
+                                                                    <div className=' '>
+                                                                        {post.node.article.resume}
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </Link>
+                                                    }
+                                                </>
+                                            ))}
+                                        </div>
+                                    </TabPanel>
+
+                                    <TabPanel value={value} index={1}>
+                                        {/* PODCASTS */}
+                                        Articles à venir
+                                    </TabPanel>
+                                    <TabPanel value={value} index={2}>
+                                        {/* FANZINES */}
+                                        Articles à venir
+                                    </TabPanel>
+                                    <TabPanel value={value} index={3}>
+                                        {/* Filmographie */}
+                                        Articles à venir
+                                    </TabPanel>
+                                    <TabPanel value={value} index={4}>
+                                        {/* Bibliographie */}
+                                        Articles à venir
+                                    </TabPanel>
+                                </div>
+                            </div>
+                        </div>
                     }
-
 
                 </div>
 
-                {tabViewed == 0 ?
 
 
-                    <div className='pl-6'>
-                        <div className={classes.root}>
-                            <div>
-                                <Tabs
-                                    orientation="vertical"
-                                    // variant="scrollable"
-                                    value={value}
-                                    onChange={handleChange}
-                                    aria-label="Vertical tabs "
-                                    className={classes.tabs}
-                                >
+                <div className='md:hidden px-12 text-sm md:text-base pb-6'>
+                    {data.data.edges.map((post) => (
+                        <>
+                            {post.node.tags.edges.length !== 0
+                                // && post.node.tags.edges.map(tag => {
+                                //     if (tag.node.name == 'Réformes et luttes') {
+                                //         return (true)
+                                //     }
+                                // })
+                                &&
+                                <div className='pb-6'>
+                                    <Link href={`/Post/${post.node.slug}`}>
+                                        <a>
+                                            <div className='border-t pt-1 pb-6 hover:bg-gray-50 ' key={post.node.slug}
+                                            >
+                                                <div className='font-bold '>
+                                                    {post.node.title}
+                                                </div>
+                                                <div className='text-gray-500 '>
+                                                    {post.node.article.auteur}
+                                                </div>
+                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
+                                                    __
+                                                </div>
+                                                <div className=' '>
+                                                    {post.node.article.resume}
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </Link>
+                                </div>
+                            }
+                        </>
+                    ))}
+                </div>
 
-                                    {groupsTypes.map((tab) => (
-                                        <Tab key={tab.name} label={tab.name} {...a11yProps(0)} />
-                                    ))}
-                                </Tabs>
-                            </div>
 
-                            <div className='pl-20'>
-                                <TabPanel value={value} index={0}>
-                                    {/* Vivre sans */}
-                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6'>
-                                        {data.data.edges.map((post) => (
-                                            <>
-                                                {post.node.tags.edges.length !== 0
-                                                    // && post.node.tags.edges.map(tag => {
-                                                    //     if (tag.node.name == 'Réformes et luttes') {
-                                                    //         return (true)
-                                                    //     }
-                                                    // })
-                                                    &&
-                                                    <Link href={`/Post/${post.node.slug}`}>
-                                                        <a>
-                                                            <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
-                                                            >
-                                                                <div className='font-bold '>
-                                                                    {post.node.title}
-                                                                </div>
-                                                                <div className='text-gray-500 '>
-                                                                    {post.node.article.auteur}
-                                                                </div>
-                                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
-                                                                    __
-                                                                </div>
-                                                                <div className=' '>
-                                                                    {post.node.article.resume}
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </Link>
-                                                }
-                                            </>
-                                        ))}
-                                    </div>
-                                </TabPanel>
-
-                                <TabPanel value={value} index={1}>
-                                    {/* Reforme et lutte */}
-                                    Articles à venir
-                                </TabPanel>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    :
-
-                    <div className='pl-6'>
-                        <div className={classes.root}>
-                            <div>
-                                <Tabs
-                                    orientation="vertical"
-                                    // variant="scrollable"
-                                    value={value}
-                                    onChange={handleChange}
-                                    aria-label="Vertical tabs "
-                                    className={classes.tabs}
-                                >
-                                    {groupsTypes2.map((tab) => (
-                                        <Tab label={tab.name} {...a11yProps(0)} />
-                                    ))}
-                                </Tabs>
-                            </div>
-
-                            <div className='pl-20'>
-
-                                <TabPanel value={value} index={0}>
-                                    {/* ARTICLES */}
-                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6'>
-                                        {data.data.edges.map((post) => (
-                                            <>
-                                                {post.node.tags.edges.length !== 0
-                                                    // && post.node.tags.edges.map(tag => {
-                                                    //     if (tag.node.name == 'Réformes et luttes') {
-                                                    //         return (true)
-                                                    //     }
-                                                    // })
-                                                    &&
-                                                    <Link href={`/Post/${post.node.slug}`}>
-                                                        <a>
-                                                            <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
-                                                            >
-                                                                <div className='font-bold '>
-                                                                    {post.node.title}
-                                                                </div>
-                                                                <div className='text-gray-500 '>
-                                                                    {post.node.article.auteur}
-                                                                </div>
-                                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
-                                                                    __
-                                                                </div>
-                                                                <div className=' '>
-                                                                    {post.node.article.resume}
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </Link>
-                                                }
-                                            </>
-                                        ))}
-                                    </div>
-                                </TabPanel>
-
-                                <TabPanel value={value} index={1}>
-                                    {/* PODCASTS */}
-                                    Articles à venir
-                                </TabPanel>
-                                <TabPanel value={value} index={2}>
-                                    {/* FANZINES */}
-                                    Articles à venir
-                                </TabPanel>
-                                <TabPanel value={value} index={3}>
-                                    {/* Filmographie */}
-                                    Articles à venir
-                                </TabPanel>
-                                <TabPanel value={value} index={4}>
-                                    {/* Bibliographie */}
-                                    Articles à venir
-                                </TabPanel>
-                            </div>
-                        </div>
-                    </div>
-                }
 
             </Layout>
         </div>

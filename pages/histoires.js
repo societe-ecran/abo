@@ -56,7 +56,7 @@ const histoires = ({
                                         <div className='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                                             __
                                         </div>
-                                        <div>
+                                        <div className='text-sm md:text-base'>
                                             {histoire.node.article.resume}
                                         </div>
 

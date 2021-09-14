@@ -405,7 +405,7 @@ export default function Example() {
               </div>
 
               <div className='transition duration-150 ease-in-out rounded-lg py-3 hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50'>
-                <Link href='/allerPlusLoin'>
+                <Link href='/AllerPlusLoin/allerPlusLoin'>
                   <a>
                     Aller plus loin
                   </a>

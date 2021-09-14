@@ -68,7 +68,7 @@ const sourcesEtTraductions = () => {
                     </div>
                 </div>
 
-                <div className='text-sm md:text-base z-50'>
+                <div className='text-xs md:text-base z-50'>
                     <Accordion>
                         {data.map(item => {
                          
@@ -80,7 +80,7 @@ const sourcesEtTraductions = () => {
                                             <div className="ligne z-0"></div>}
 
                                         <div className='grid grid-cols-3 group sabonRoman '>
-                                            <div className='z-10 pl-4  '>
+                                            <div className='z-10 pl-1 md:pl-4  '>
                                                 {item.isSommaire ?
                                                     <a className=' px-2 text-gray-400' >
                                                         {item.sommaire}
@@ -99,7 +99,7 @@ const sourcesEtTraductions = () => {
                                             </div>
 
                                             <div className='z-10 '>
-                                                <a className='bg-white px-2  group-hover:underline cursorMain'>
+                                                <a className='bg-white md:px-2 pr-1 pl-2  group-hover:underline cursorMain'>
                                                     {item.titreTraduit}
                                                 </a>
                                             </div>
