@@ -6,15 +6,13 @@ import visuel from '../public/VisuelCouverture.png'
 import Seo from '../components/seo/Seo'
 
 export default function Home() {
-  const titre = 'Abolir la police - Accueil'
-  const description = "Bienvenue sur ce site qui vise à diffuser les idées, pratiques et luttes pour l’abolition du système pénal (police, justice, prison) auprès des francophones."
+  const titre = 'Abolir la police'
+  const description = "Ce site vise à diffuser les idées, pratiques et luttes pour l’abolition du système pénal (police, justice, prison) auprès des francophones."
+  
   return (
     <>
-
-
-
       <Layout>
-        <Seo title={titre} />
+        <Seo title={titre} description={description} />
 
         <div className=" hidden md:block w-full h-screen">
           <div className="grid grid-cols-2">

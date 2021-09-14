@@ -12,7 +12,7 @@ const Seo = (props) => {
                 <meta property="og:description" content={props.description} />
                 <meta property="og:url" content="https://www.abolirlapolice.org/" />
                 <meta property="og:type" content="website" />
-                <meta property="og:image" content="https://www.abolirlapolice.org/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fpublic%2FcouvMin.64099324a2cd6af6ed4653b63dca91f1.jpg&w=256&q=50" />
+                <meta property="og:image" content={`https://www.abolirlapolice.org/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fpublic%2FcouvMin.64099324a2cd6af6ed4653b63dca91f1.jpg&w=256&q=50`} />
                 <meta charSet="utf-8" />
                 <meta name="author" content="{Team17}" />
                 <meta name="twitter:title" content="collectifmatsu1" />
@@ -25,7 +25,7 @@ const Seo = (props) => {
                 <meta name="twitter:site" content="@CollectifMatsu1" />
                 <meta name="twitter:title" content="Abolir la police" />
                 <meta name="twitter:description" content="Le site vise à diffuser les idées, pratiques et luttes pour l’abolition du système pénal (police, justice, prison) auprès des francophones." />
-                <meta name="twitter:image" content="https://www.abolirlapolice.org/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fpublic%2FcouvMin.64099324a2cd6af6ed4653b63dca91f1.jpg&w=256&q=50" />
+                <meta name="twitter:image" content={`https://www.abolirlapolice.org/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fpublic%2FcouvMin.64099324a2cd6af6ed4653b63dca91f1.jpg&w=256&q=50`} />
                 <meta name="twitter:image:alt" content="couverture" />
 
                 {/* <div hidden id="snipcart" data-api-key={process.env.SNIPCART_API} ></div>

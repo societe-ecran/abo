@@ -69,7 +69,6 @@ export default function Example() {
       href: '/groupes',
       number: 3
     },
-
   ]
 
 

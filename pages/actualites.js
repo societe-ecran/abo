@@ -99,10 +99,10 @@ export default function actualites({ datesTournee }) {
                             George Floyd, un Afro-Américain de 46 ans, meurt étouffé par la police. Une vague de contestations, inédite depuis les années 1960, s’empare du pays. Manifestations, mobilisations sur les réseaux sociaux, pillages : la singularité de ce mouvement tient autant à son ampleur qu’à la radicalité de ses propositions. Il ne s’agit plus de dénoncer les dérives de l’institution policière, mais de questionner son existence même.
                         </div>
                         <div className=' text-gray-500 font-bold text-xl pt-1 text-right md:text-left'>
-                            <Link href="/leLivre">
-                                <a>Lire</a>
+                            
+                                <a href="https://achat-livre-abolir.vercel.app/">Lire</a>
 
-                            </Link>
+                         
                         </div>
                         <div className=' border-t font-bold text-xl pt-1 mt-6 pb-2  md:pt-3'>
                             Sources et traductions complètes
@@ -192,7 +192,7 @@ export default function actualites({ datesTournee }) {
                             Les groupes ou collectifs rassemblés ici ne se disent pas nécessairement abolitionnistes. Mais ils mènent des luttes pour se défendre de la police, de la justice ou de la prison, ici et maintenant. Nous ne faisons que relayer ces organisations contre les violences d’État pour qu’il soit plus facile de les contacter et de connaître les forces en présence. Si vous participez à un collectif qui n’est pas répertorié ici et que vous aimeriez qu’il y soit, n’hésitez pas à nous envoyer un mail !
                         </div>
                         <div className=' text-gray-500 font-bold text-xl pt-1 text-right'>
-                            <Link href="/">
+                            <Link href="/groupes">
                                 <a>Lire</a>
                             </Link>
                         </div>
