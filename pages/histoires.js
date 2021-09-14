@@ -17,6 +17,7 @@ const histoires = ({
     const titre = 'Partager des histoires'
 
     const histoires = histoiresPartagees.posts.edges
+    console.log(histoiresPartagees.posts.edges)
 
 // console.log(histoiresPartagees.posts.edges)
     return (
