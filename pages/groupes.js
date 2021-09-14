@@ -88,12 +88,12 @@ const groupes = ({  collectif }) => {
     ]
 
     return (
-        <div>
+        <div className=''>
             <Layout>
                 <Seo title={titre} />
                 <Intro title='Groupes et collectifs' texte={texte} src={statue} />
 
-                <div className='pt-6 pl-3 md:pl-6'>
+                <div className='pt-6  md:pl-6 '>
                     <div className={classes.root}>
                         <div className='text-xs md:text-base'>
                             <Tabs
@@ -110,7 +110,7 @@ const groupes = ({  collectif }) => {
                             </Tabs>
                         </div>
 
-                        <div className='md:pl-16 -pr-4 text-sm md:text-base'>
+                        <div className='md:pl-16 -pr-4 text-sm md:text-base max-w-xs'>
                             <TabPanel value={value} index={0}>
                             <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[2].node.content }} />
                             </TabPanel>
