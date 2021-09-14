@@ -26,7 +26,7 @@ console.log("oooff")
                         />
                         
                         <div className="xl:px-64 lg:px-32 md:px-24 lg:bg-gray-50 ">
-                            <div className='titreNav text-gray-800  xl:px-32 lg:px-28 md:px-12 px-3 lg:text-lg bg-white' dangerouslySetInnerHTML={{ __html: postData.content }} />
+                            <div className='text-sm md:text-base sabonRoman text-gray-800  xl:px-32 lg:px-28 md:px-12 px-3 lg:text-lg bg-white' dangerouslySetInnerHTML={{ __html: postData.content }} />
                         </div>
                     </>
                     {/* } */}
