@@ -60,7 +60,7 @@ export async function getAllPostsWithSlug() {
   const data = await fetchAPI(
     `
     {
-      posts {
+      posts (first: 100) {
         edges {
           node {
             slug
@@ -241,7 +241,7 @@ export async function getHistoires() {
   const data = await fetchAPI(
     `
       query MyQuery {
-      posts(where: {categoryName: "PartagerNosHistoires"}) {
+      posts(first: 100, where: {categoryName: "PartagerNosHistoires"}) {
         edges {
           node {
             article {
@@ -267,9 +267,14 @@ export async function getAllerPlusloin() {
   const data = await fetchAPI(
     `
     query MyQuery {
-      posts {
+      posts (first: 100){
         edges {
           node {
+            featuredImage {
+              node {
+                link
+              }
+            }
             article {
               auteur
               date
