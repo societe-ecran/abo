@@ -22,7 +22,7 @@ const Post = ({ postData }) => {
 
                 {/* {postData.categories.edges[0].node.name == 'PartagerNosHistoires' && */}
                     <>
-                        <ArticleHeader src={foule} title={postData.title} date={postData.article.date} author={postData.article.auteur} source={postData.article.auteur}
+                        <ArticleHeader src={foule} title={postData.title} date={postData.article.date} author={postData.article.auteur} source={postData.article.source}
                         // date={postData.partagerNosHistoires.date} author={postData.partagerNosHistoires.auteur} source={postData.partagerNosHistoires.source} 
                         />
                         

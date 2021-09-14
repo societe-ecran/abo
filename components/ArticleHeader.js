@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const ArticleHeader = (props) => {
 
-
+console.log(props.source)
     return (
         <>
         <div className=' py-12 md:px-20 flex  sm:flex-raw '>
@@ -39,7 +39,7 @@ const ArticleHeader = (props) => {
               {props?.author}
               </p>
               <p className='pt-3 px-6 text-gray-600 text-sm md:text-base underline '>
-              <a href={props?.source} target="_blank">
+              <a href={props.source} target="_blank">
               {props?.source}
               </a>
               </p>

@@ -222,7 +222,7 @@ const allerPlusLoin = (data) => {
                             <div className='pl-20'>
                                 <TabPanel value={value} index={0}>
                                     {/* Justice transformatrice */}
-                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
+                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12  '>
                                         {data.data.edges.map((post) => (
                                             <div key={post.node.slug}>
                                                 {post.node.tags.edges.length !== 0 && post.node.tags.edges.map(tag => {
@@ -259,7 +259,7 @@ const allerPlusLoin = (data) => {
 
                                 <TabPanel value={value} index={1}>
                                     {/* Reforme et lutte */}
-                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
+                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6  '>
                                         {data.data.edges.map((post) => (
                                             <>
                                                 {post.node.tags.edges.length !== 0 && post.node.tags.edges.map(tag => {
@@ -305,7 +305,7 @@ const allerPlusLoin = (data) => {
 
                     :
 
-                    <div className='pt-6 pl-6'>
+                    <div className='pl-6'>
                         <div className={classes.root}>
                             <div>
                                 <Tabs
@@ -327,7 +327,7 @@ const allerPlusLoin = (data) => {
 
                                 <TabPanel value={value} index={0}>
                                     {/* ARTICLES */}
-                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
+                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6  '>
                                         {data.data.edges.map((post) => (
 
                                             <>

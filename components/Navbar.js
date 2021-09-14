@@ -188,7 +188,7 @@ export default function Example() {
                 text-black group bg-orange-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
                         >
                           <div className='flex flex-col'>
-                          <Link href='/histoires'>
+                          <Link href="/AllerPlusLoin/allerPlusLoin">
                             <a> Aller plus loin  </a>
                           </Link>
                           
@@ -202,7 +202,7 @@ export default function Example() {
                               </div>}
                           </div>
                         </Popover.Button>
-                        {/* <Transition
+                        <Transition
                           as={Fragment}
                           enter="transition ease-out duration-200"
                           enterFrom="opacity-0 translate-y-1"
@@ -241,7 +241,7 @@ export default function Example() {
                               </div>
                             </div>
                           </Popover.Panel>
-                        </Transition> */}
+                        </Transition>
                       </>
                     )}
                   </Popover>
