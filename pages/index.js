@@ -65,8 +65,8 @@ export default function Home() {
 
 
 
-        <div className="md:hidden h-full violetBack">
-            <div className='flex items-center  px-3 py-3'>
+        <div className="md:hidden grid grid-col-1 h-screen items-center violetBack">
+            <div className='px-3 py-3'>
               <Link
                 href='/actualites'>
                 <a> <div className='text-3xl menthe pb-6  HarbourBold '>
