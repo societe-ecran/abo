@@ -29,14 +29,14 @@ const sourcesEtTraductions = () => {
         { isSommaire: true, sommaire: "- Abolition Now ! (Matsuda)", titreOrignal: '', titreTraduit: '', auteur: '', href: '', link: '' },
         { isSommaire: false, sommaire: "- Campagne #8toabolition", titreOrignal: ' #8toAbolition', titreTraduit: ' Campagne #8toabolition', auteur: ' 8toAbolition', href: ' https://www.8toabolition.com/', link: '' },
         { isSommaire: false, sommaire: "- Partir des ressources existantes", titreOrignal: '  MPD150 Report', titreTraduit: '  Partir des ressources existantes', auteur: ' MPD 150', href: 'https://www.mpd150.com/report/ ', link: '/Traductions/partirDesRessourcesExistantes' },
-        { isSommaire: false, sommaire: "- Ateliers pour imaginer un monde sans police", titreOrignal: 'Transformative Justice - A Curriculum Guide', titreTraduit: 'Ateliers pour imaginer un monde sans police', auteur: `  NIA et Critical Resistance" target="_blank" >Critical Resistance</a>}`, href: 'https://project-nia.org/uploads/images/tjcurriculum_design_small-finalrev.pdf', link: '' },
+        { isSommaire: false, sommaire: "- Ateliers pour imaginer un monde sans police", titreOrignal: 'Transformative Justice - A Curriculum Guide', titreTraduit: 'Ateliers pour imaginer un monde sans police', auteur: `NIA et Critical Resistance"`, href: 'https://project-nia.org/uploads/images/tjcurriculum_design_small-finalrev.pdf', link: '' },
         { isSommaire: false, sommaire: "- S’exercer à l’abolition jour après jour", titreOrignal: ' Practising Everyday Abolition', titreTraduit: 'S’exercer à l’abolition jour après jour', auteur: 'S. Lamble', href: ' https://abolitionistfutures.com/latest-news/practising-everyday-abolition', link: '/Traductions/exercerAbolition' },
         { isSommaire: true, sommaire: "- Organisation abolitionniste et transformation de la justice (M. Kaba et A. Young)", titreOrignal: '', titreTraduit: '', auteur: '', href: '', link: '' },
         { isSommaire: true, sommaire: "V. Féminisme et abolitionnisme", titreOrignal: '', titreTraduit: '', auteur: '', href: '', link: '' },
         { isSommaire: true, sommaire: "- Construire des réponses féministes (Matsuda)", titreOrignal: '', titreTraduit: '', auteur: '', href: '', link: '' },
         { isSommaire: false, sommaire: "- Introduction à la lettre au mouvement contre le viol", titreOrignal: 'Letter to the Anti-Rape Movement', titreTraduit: 'Lettre au mouvement contre le viol', auteur: ' M. Kaba', href: 'https://issuu.com/projectnia/docs/letter-to-the-antirape-movement', link: '' },
         { isSommaire: false, sommaire: "- « A la fois beau, difficile et puissant» ", titreOrignal: '    Beautiful, difficult, powerful. Ending sexual assault through tranformative justice', titreTraduit: '   « A la fois beau, difficile et puissant »', auteur: 'Chrysalis', href: ' http://www.blackandpink.org/wp-content/upLoads/Beautiful-Difficult-Powerful.pdf', link: '' },
-        { isSommaire: false, sommaire: "- Quand la communauté réagit à la violence conjugale", titreOrignal: '  Quand la communauté réagit à la violence conjugale', titreTraduit: 'Community Responds to Domestic Violence', auteur: '   Stop Violence Everyday', href: 'http://publichealth.lacounty.gov/dvcouncil/minutes/2019/04/STOP-Community%20Responds%20to%20Violence.pdf', link: '' },
+        { isSommaire: false, sommaire: "- Quand la communauté réagit à la violence conjugale", titreOrignal: 'Community Responds to Domestic Violence  ', titreTraduit: 'Quand la communauté réagit à la violence conjugale ', auteur: '   Stop Violence Everyday', href: 'http://publichealth.lacounty.gov/dvcouncil/minutes/2019/04/STOP-Community%20Responds%20to%20Violence.pdf', link: '' },
         { isSommaire: false, sommaire: "- Sistas Makin’ Moves !", titreOrignal: " Sistas Makin' Moves !", titreTraduit: '  Sistas Makin’ Moves !', auteur: "  Sista II sista ", href: 'https://collectiveliberation.org/wp-content/uploads/2013/01/Sista_II_Sista_Sistas_Makin_Moves.pdf', link: '/Traductions/sistasMakinMove' },
     ]
 
@@ -68,7 +68,7 @@ const sourcesEtTraductions = () => {
                     </div>
                 </div>
 
-                <div className='text-xs md:text-base z-50'>
+                <div className='text-xs md:text-base z-50 pb-36'>
                     <Accordion>
                         {data.map(item => {
                          
