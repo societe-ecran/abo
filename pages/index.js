@@ -76,8 +76,8 @@ export default function Home() {
                   <div className='sabonRoman text-sm text-white font-bold'>
                     Bienvenue sur ce site qui vise à diffuser les idées, pratiques et luttes pour l’abolition du système pénal (police, justice, prison)
                     auprès des francophones. C’est une façon de prolonger le travail autour du livre <span className='italic underlineWhite '>Abolir la police. Échos des États-Unis</span> (paru en septembre 2021).
-                    Ce site est donc un outil pour aller plus loin dans le partage de ressources autour de l’abolitionnisme, c’est-à-dire sur les façons de <span className="font-bold text-black">vivre ensemble sans
-                      recourir au système pénal et en luttant contre lui.</span>
+                    Ce site est donc un outil pour aller plus loin dans le partage de ressources autour de l’abolitionnisme, c’est-à-dire sur les façons de vivre ensemble sans
+                      recourir au système pénal et en luttant contre lui.
                    <p> <br />Le site  sera alimenté régulièrement mais sans parution périodique. Vous trouverez autant des <span className='text-white'>articles de fond </span>que des <span className='text-white'></span>billets d’actualité, des traductions que des textes écrits en français, des bibliographies et des podcasts. Une section recensera des <span className='text-white'>témoignages </span>(que nous vous invitons à nous envoyer) sur des situations dans lesquelles il a été possible de se passer du système pénal.
                     <br /></p>
                     <div className='pt-2'>

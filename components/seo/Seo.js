@@ -21,11 +21,12 @@ const Seo = (props) => {
                 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
                 <link rel="icon" href="/favicon.ico" />
 
+                <meta name="twitter:card" content="summary" />
                 <meta name="twitter:site" content="@CollectifMatsu1" />
                 <meta name="twitter:title" content="Abolir la police" />
-                <meta name="twitter:description" content="Le site qui vise à diffuser les idées, pratiques et luttes pour l’abolition du système pénal (police, justice, prison) auprès des francophones." />
+                <meta name="twitter:description" content="Le site vise à diffuser les idées, pratiques et luttes pour l’abolition du système pénal (police, justice, prison) auprès des francophones." />
                 <meta name="twitter:image" content="../../public/couvMin.jpg" />
-
+                <meta name="twitter:image:alt" content="couverture" />
 
                 <div hidden id="snipcart" data-api-key={process.env.SNIPCART_API} ></div>
                 <link rel="stylesheet" href="<https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css>" />

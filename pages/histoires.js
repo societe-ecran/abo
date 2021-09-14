@@ -6,8 +6,8 @@ import { getAllPostsWithSlug } from '../components/lib/api';
 import Link from 'next/link'
 import Seo from '../components/seo/Seo'
 import { getHistoires } from '../components/lib/api'
-
-
+import Image from 'next/image'
+import couvMin from '../public/couvMin.jpg'
 
 const histoires = ({
     histoiresPartagees
@@ -24,7 +24,19 @@ const histoires = ({
             <Layout>
                 <Seo title={titre} />
                 <Intro src={foule} texte={texte} title={titre} />
+                <div className=''>
+                    <Image
+                        src={couvMin}
+                        alt="Visuel couverture"
+                        // width={500}
+                        quality={50}
+                        // height='auto'
+                        layout="intrinsic"
+                    />
+                </div>
+
                 <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
+
 
                     {histoires.map((histoire) => (
                         <div key={histoire.node.title}>
