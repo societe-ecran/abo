@@ -420,8 +420,15 @@ export default function Example() {
                 </Link>
               </div>
 
+              <div className='transition duration-150 ease-in-out rounded-lg py-3  hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50'>
+                <Link href='/groupes'>
+                  <a>
+                  Trouver des groupes près de chez vous
+                  </a>
+                </Link>
+              </div>
 
-              <div className='pt-2'>
+              {/* <div className='pt-2'>
                 Trouver des groupes près de chez vous
 
                 <div className='pl-5 pb-4'>
@@ -450,7 +457,7 @@ export default function Example() {
                   ))}
 
                 </div>
-              </div>
+              </div> */}
             </div>
           </Disclosure.Panel>
         </>

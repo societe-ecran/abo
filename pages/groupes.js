@@ -90,15 +90,12 @@ const groupes = ({  collectif }) => {
     return (
         <div>
             <Layout>
-
                 <Seo title={titre} />
-
                 <Intro title='Groupes et collectifs' texte={texte} src={statue} />
 
-                <div className='pt-6 pl-6'>
+                <div className='pt-6 pl-3 md:pl-6'>
                     <div className={classes.root}>
-                        <div>
-
+                        <div className='text-xs md:text-base'>
                             <Tabs
                                 orientation="vertical"
                                 // variant="scrollable"
@@ -107,15 +104,13 @@ const groupes = ({  collectif }) => {
                                 aria-label="Vertical tabs "
                                 className={classes.tabs}
                             >
-
                                 {groupsTypes.map((tab) => (
                                     <Tab label={tab.name} {...a11yProps(0)} key={tab.name}/>
                                 ))}
-
                             </Tabs>
                         </div>
 
-                        <div className='pl-20'>
+                        <div className='md:pl-16 -pr-4 text-sm md:text-base'>
                             <TabPanel value={value} index={0}>
                             <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[2].node.content }} />
                             </TabPanel>
@@ -128,12 +123,9 @@ const groupes = ({  collectif }) => {
                             <TabPanel value={value} index={3}>
                                 <div className='titreNav text-gray-800' dangerouslySetInnerHTML={{ __html: collectif.posts.edges[0].node.content}} />
                             </TabPanel>
-
                         </div>
-
                     </div>
                 </div>
-
 
 
             </Layout>
