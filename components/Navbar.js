@@ -259,7 +259,7 @@ export default function Example() {
                           </Link>
 
 
-                          {router.pathname == '/AllerPlusLoin/allerPlusLoin' ?
+                          {router.pathname.includes("Post") ||router.pathname == '/AllerPlusLoin/allerPlusLoin'  ?
                             <div className='text-center font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                               __
                             </div>
