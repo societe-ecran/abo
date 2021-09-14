@@ -96,8 +96,6 @@ const allerPlusLoin = (data) => {
     const groupsTypes = [
         { name: "Vivre sans" },
         { name: "Réformes et luttes" }
-
-
     ]
 
     const groupsTypes2 = [
@@ -113,39 +111,30 @@ const allerPlusLoin = (data) => {
     // console.log(data.data.edges[0].node.tags.edges.length)
     // const reformes = () => {
     //     for (let i = 0; i < 100; i++) {
-          
+
     //             for (let j = 0; j < 100; j++) {
     //                 if ( typeof data.data.edges[i].node.tags.edges !== undefined && data.data.edges[i].node.tags.edges[j].node.name == "Justice transformatrice") {
     //                     articlesReforme.push(data.data.edges[i])
     //                 }
-
-    //             }
-
-
-            
+    //             }        
     //     }
     // }
 
     // reformes()
 
-    // console.log(articlesReforme)
-
     // post.node.tags.edges.map(tag => {
     //     if (tag.node.name == 'Réformes et luttes') {
-
     //         articlesReforme.push()
     //     }
     // })
 
 
-// const  allo = async function()  {
-//     const res = await getCollectifs()
-
-// return res
-// }
-// const test= allo()
-// console.log(test)
-
+    // const  allo = async function()  {
+    //     const res = await getCollectifs()
+    // return res
+    // }
+    // const test= allo()
+    // console.log(test)
 
 
     return (
@@ -201,7 +190,7 @@ const allerPlusLoin = (data) => {
                 {tabViewed == 0 ?
 
 
-                    <div className=' pl-6'>
+                    <div className='pl-6'>
                         <div className={classes.root}>
                             <div>
                                 <Tabs
@@ -221,63 +210,21 @@ const allerPlusLoin = (data) => {
 
                             <div className='pl-20'>
                                 <TabPanel value={value} index={0}>
-                                    {/* Justice transformatrice */}
-                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12  '>
-                                        {data.data.edges.map((post) => (
-                                            <div key={post.node.slug}>
-                                                {post.node.tags.edges.length !== 0 && post.node.tags.edges.map(tag => {
-                                                    if (tag.node.name == 'Justice transformatrice') { return true }
-                                                })
-                                                    &&
-                                                    <Link href={`/Post/${post.node.slug}`}>
-                                                        <a>
-                                                            <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
-                                                            >
-                                                                {/* <div className='text-gray-500 pt-3 italic'>
-                                                                            {post.node.tags.edges[0].node.name},   {post.node.tags.edges[1].node.name}
-                                                                        </div> */}
-                                                                <div className='font-bold '>
-                                                                    {post.node.title}
-                                                                </div>
-                                                                <div className='text-gray-500 '>
-                                                                    {post.node.article.auteur}
-                                                                </div>
-                                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
-                                                                    __
-                                                                </div>
-                                                                <div className=' '>
-                                                                    {post.node.article.resume}
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </Link>
-                                                }
-                                            </div>
-                                        ))}
-                                    </div>
-                                </TabPanel>
-
-                                <TabPanel value={value} index={1}>
-                                    {/* Reforme et lutte */}
-                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6  '>
+                                    {/* Vivre sans */}
+                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6'>
                                         {data.data.edges.map((post) => (
                                             <>
-                                                {post.node.tags.edges.length !== 0 && post.node.tags.edges.map(tag => {
-                                                    if (tag.node.name == 'Réformes et luttes') {
-
-                                                        return (true)
-                                                    }
-                                                })
-
+                                                {post.node.tags.edges.length !== 0
+                                                    // && post.node.tags.edges.map(tag => {
+                                                    //     if (tag.node.name == 'Réformes et luttes') {
+                                                    //         return (true)
+                                                    //     }
+                                                    // })
                                                     &&
-
                                                     <Link href={`/Post/${post.node.slug}`}>
                                                         <a>
                                                             <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
                                                             >
-                                                                {/* <div className='text-gray-500 pt-3 italic'>
-                                                                            {post.node.tags.edges[0].node.name},   {post.node.tags.edges[1].node.name}
-                                                                        </div> */}
                                                                 <div className='font-bold '>
                                                                     {post.node.title}
                                                                 </div>
@@ -297,6 +244,11 @@ const allerPlusLoin = (data) => {
                                             </>
                                         ))}
                                     </div>
+                                </TabPanel>
+
+                                <TabPanel value={value} index={1}>
+                                    {/* Reforme et lutte */}
+                                    Articles à venir
                                 </TabPanel>
                             </div>
 
@@ -319,7 +271,6 @@ const allerPlusLoin = (data) => {
                                     {groupsTypes2.map((tab) => (
                                         <Tab label={tab.name} {...a11yProps(0)} />
                                     ))}
-
                                 </Tabs>
                             </div>
 
@@ -327,23 +278,20 @@ const allerPlusLoin = (data) => {
 
                                 <TabPanel value={value} index={0}>
                                     {/* ARTICLES */}
-                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6  '>
+                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6'>
                                         {data.data.edges.map((post) => (
-
                                             <>
-                                                {post.node.tags.edges.length !== 0 && post.node.tags.edges.map(tag => {
-                                                    if (tag.node.name == 'article') { return true }
-                                                })
-
+                                                {post.node.tags.edges.length !== 0
+                                                    // && post.node.tags.edges.map(tag => {
+                                                    //     if (tag.node.name == 'Réformes et luttes') {
+                                                    //         return (true)
+                                                    //     }
+                                                    // })
                                                     &&
-
                                                     <Link href={`/Post/${post.node.slug}`}>
                                                         <a>
                                                             <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
                                                             >
-                                                                {/* <div className='text-gray-500 pt-3 italic'>
-                                                                    {post.node.categories.edges[0].node.name}
-                                                                </div> */}
                                                                 <div className='font-bold '>
                                                                     {post.node.title}
                                                                 </div>
@@ -361,162 +309,30 @@ const allerPlusLoin = (data) => {
                                                     </Link>
                                                 }
                                             </>
-
                                         ))}
                                     </div>
                                 </TabPanel>
 
                                 <TabPanel value={value} index={1}>
                                     {/* PODCASTS */}
-                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
-                                        {data.data.edges.map((post) => (
-
-                                            <>
-                                                {post.node.tags.edges.length !== 0 && post.node.tags.edges[0].node.name == 'Podcast' &&
-
-                                                    <Link href={`/Post/${post.node.slug}`}>
-                                                        <a>
-                                                            <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
-                                                            >
-                                                                {/* <div className='text-gray-500 pt-3 italic'>
-                                                                    {post.node.categories.edges[0].node.name}
-                                                                </div> */}
-                                                                <div className='font-bold '>
-                                                                    {post.node.title}
-                                                                </div>
-                                                                <div className='text-gray-500 '>
-                                                                    {post.node.article.auteur}
-                                                                </div>
-                                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
-                                                                    __
-                                                                </div>
-                                                                <div className=' '>
-                                                                    {post.node.article.resume}
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </Link>
-                                                }
-                                            </>
-
-                                        ))}
-                                    </div>
+                                    Articles à venir
                                 </TabPanel>
                                 <TabPanel value={value} index={2}>
                                     {/* FANZINES */}
-                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
-                                        {data.data.edges.map((post) => (
-
-
-                                            <>
-                                                {post.node.tags.edges.length !== 0 && post.node.tags.edges[0].node.name == 'FANZINE' &&
-
-                                                    <Link href={`/Post/${post.node.slug}`}>
-                                                        <a>
-                                                            <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
-                                                            >
-                                                                {/* <div className='text-gray-500 pt-3 italic'>
-                                                                    {post.node.categories.edges[0].node.name}
-                                                                </div> */}
-                                                                <div className='font-bold '>
-                                                                    {post.node.title}
-                                                                </div>
-                                                                <div className='text-gray-500 '>
-                                                                    {post.node.article.auteur}
-                                                                </div>
-                                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
-                                                                    __
-                                                                </div>
-                                                                <div className=' '>
-                                                                    {post.node.article.resume}
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </Link>
-                                                }
-                                            </>
-
-                                        ))}
-                                    </div>
+                                    Articles à venir
                                 </TabPanel>
                                 <TabPanel value={value} index={3}>
                                     {/* Filmographie */}
-                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
-                                        {data.data.edges.map((post) => (
-
-
-                                            <>
-                                                {post.node.tags.edges.length !== 0 && post.node.tags.edges[0].node.name == 'Filmographie' &&
-
-                                                    <Link href={`/Post/${post.node.slug}`}>
-                                                        <a>
-                                                            <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
-                                                            >
-                                                                {/* <div className='text-gray-500 pt-3 italic'>
-                                                                    {post.node.categories.edges[0].node.name}
-                                                                </div> */}
-                                                                <div className='font-bold '>
-                                                                    {post.node.title}
-                                                                </div>
-                                                                <div className='text-gray-500 '>
-                                                                    {post.node.article.auteur}
-                                                                </div>
-                                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
-                                                                    __
-                                                                </div>
-                                                                <div className=' '>
-                                                                    {post.node.article.resume}
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </Link>
-                                                }
-                                            </>
-
-                                        ))}
-                                    </div>
+                                    Articles à venir
                                 </TabPanel>
                                 <TabPanel value={value} index={4}>
                                     {/* Bibliographie */}
-                                    <div className='px-3 md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6 pt-6 '>
-                                        {data.data.edges.map((post) => (
-                                            <>
-                                                {post.node.tags.edges.length !== 0 && post.node.tags.edges[0].node.name == 'bibliographie' &&
-                                                    <Link href={`/Post/${post.node.slug}`}>
-                                                        <a>
-                                                            <div className='border-t pb-6 hover:bg-gray-50 ' key={post.node.slug}
-                                                            >
-                                                                {/* <div className='text-gray-500 pt-3 italic'>
-                                                                    {post.node.categories.edges[0].node.name}
-                                                                </div> */}
-                                                                <div className='font-bold '>
-                                                                    {post.node.title}
-                                                                </div>
-                                                                <div className='text-gray-500 '>
-                                                                    {post.node.article.auteur}
-                                                                </div>
-                                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
-                                                                    __
-                                                                </div>
-                                                                <div className=' '>
-                                                                    {post.node.article.resume}
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </Link>
-                                                }
-                                            </>
-                                        ))}
-                                    </div>
+                                    Articles à venir
                                 </TabPanel>
                             </div>
-
                         </div>
                     </div>
-
                 }
-
-
 
             </Layout>
         </div>

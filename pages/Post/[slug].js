@@ -5,21 +5,20 @@ import Layout from '../../components/Layout'
 import Seo from '../../components/seo/Seo'
 import foule from '../../public/foule.jpg'
 import ArticleHeader from '../../components/ArticleHeader'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 
 const Post = ({ postData }) => {
-    const router = useRouter()
+    // const router = useRouter()
 
     // if(!router.isFallback &&!postData?.slug){
     //     return<p>hMMMMM.....</p>
     // }
-
+console.log("oooff")
 
     return (
         <div>
             <Layout>
                 <Seo title={postData.title} description='Partager des histoires' />
-
                 {/* {postData.categories.edges[0].node.name == 'PartagerNosHistoires' && */}
                     <>
                         <ArticleHeader src={foule} title={postData.title} date={postData.article.date} author={postData.article.auteur} source={postData.article.source}
@@ -59,7 +58,8 @@ export async function getStaticProps({ params }) {
     return {
         props: {
             postData: data.post
-        },
-        revalidate: 30
+        }
+        // ,
+        // revalidate: 30
     };
 }

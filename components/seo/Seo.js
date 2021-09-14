@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import Script from 'next/script'
+// import Script from 'next/script'
 
 const Seo = (props) => {
     return (
@@ -28,17 +28,17 @@ const Seo = (props) => {
                 <meta name="twitter:image" content="https://www.abolirlapolice.org/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fpublic%2FcouvMin.64099324a2cd6af6ed4653b63dca91f1.jpg&w=256&q=50" />
                 <meta name="twitter:image:alt" content="couverture" />
 
-                <div hidden id="snipcart" data-api-key={process.env.SNIPCART_API} ></div>
+                {/* <div hidden id="snipcart" data-api-key={process.env.SNIPCART_API} ></div>
                 <link rel="stylesheet" href="<https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css>" />
                 <link rel="preconnect" href="<https://app.snipcart.com>" />
-                <link rel="preconnect" href="<https://cdn.snipcart.com>" />
+                <link rel="preconnect" href="<https://cdn.snipcart.com>" /> */}
 
                 {/* <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
             <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" data-api-key="MDJjY2U2MmQtYjEyMS00ODM3LWI5Y2YtMjE2MTQ3NGY3ZmJhNjM3NjYzODU4NjEyMDk5Nzc2" id="snipcart"></script>
             <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" rel="stylesheet" type ="text/css" /> */}
             </Head>
 
-            <Script src="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.js"></Script>
+            {/* <Script src="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.js"></Script> */}
         </div>
     )
 }
