@@ -143,7 +143,7 @@ const allerPlusLoin = (data) => {
                 <Seo title={titre} description={description} />
                 <Intro src={occupy} title={"Aller plus loin"} texte={texte} />
 
-                <div className='hidden'>
+                <div className='hidden md:block'>
                     <div className='text-center text-xl'>
                         Trié par
                     </div>
