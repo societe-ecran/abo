@@ -67,10 +67,10 @@ const useStyles = makeStyles((theme) => ({
 
 const allerPlusLoin = (data) => {
     console.log(data)
-    const router = useRouter()
-    const {
-        query: { id },
-    } = router
+    // const router = useRouter()
+    // const {
+    //     query: { id },
+    // } = router
     const classes = useStyles();
     // const [value, setValue] = useState(JSON.parse(id));
     const [value, setValue] = useState(0);
@@ -144,7 +144,7 @@ const allerPlusLoin = (data) => {
                 <Intro src={occupy} title={"Aller plus loin"} texte={texte} />
 
                 <div className='text-center text-xl'>
-                    Tri par
+                    Trié par
                 </div>
                 <div className="flex justify-center text-xl pt-3 px-12">
 

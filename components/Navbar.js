@@ -18,7 +18,7 @@ export default function Example() {
     {
       name: "L'acheter",
       description: '',
-      href: 'https://achat-livre-abolir.vercel.app/' ,
+      href: 'https://achat-livre-abolir.vercel.app/',
     },
     {
       name: 'Sources et traductions complètes',
@@ -32,13 +32,13 @@ export default function Example() {
       name: 'Médias',
       description: 'articles, fanzines, bibliographie, filmographie, podcasts',
       href: '/AllerPlusLoin/allerPlusLoin',
-      number:1
+      number: 1
     },
     {
       name: 'Thématiques',
       description: 'histoire, réformes et luttes, justice transformatrice',
       href: '/AllerPlusLoin/allerPlusLoin',
-      number:0
+      number: 0
     }
   ]
 
@@ -124,8 +124,8 @@ export default function Example() {
                         >
                           <div className='flex flex-col '>
                             <span className="">Le livre </span>
-                            {router.pathname == '/actualites' || router.pathname == '/leLivre' || router.pathname == '/sourcesEtTraductions' || 
-                            router.pathname == '/Traductions/neverGiveUp' ||  router.pathname == "Traductions/auWendy's" || router.pathname == "/Traductions/partirDesRessourcesExistantes" || router.pathname == "/Traductions/exercerAbolition" || router.pathname == "/Traductions/sistasMakinMove" ?
+                            {router.pathname == '/actualites' || router.pathname == '/leLivre' || router.pathname == '/sourcesEtTraductions' ||
+                              router.pathname == '/Traductions/neverGiveUp' || router.pathname == "Traductions/auWendy's" || router.pathname == "/Traductions/partirDesRessourcesExistantes" || router.pathname == "/Traductions/exercerAbolition" || router.pathname == "/Traductions/sistasMakinMove" ?
                               <div className='text-center font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                                 __
                               </div>
@@ -179,7 +179,7 @@ export default function Example() {
 
 
 
-                  <Popover className="relative">
+                  {/* <Popover className="relative">
                     {({ open }) => (
                       <>
                         <Popover.Button
@@ -244,6 +244,33 @@ export default function Example() {
                         </Transition>
                       </>
                     )}
+                  </Popover> */}
+
+
+                  <Popover className="relative">
+                    {({ open }) => (
+                      <Popover.Button
+                        className={`
+                ${open ? '' : 'text-opacity-90'}
+                text-black group bg-orange-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                      >
+                        <div className='flex flex-col'>
+                          <Link href='/AllerPlusLoin/allerPlusLoin'>
+                            <a> Aller plus loin </a>
+                          </Link>
+
+
+                          {router.pathname == '/AllerPlusLoin/allerPlusLoin' ?
+                            <div className='text-center font-bold md:text-2xl text-red-700 transform -translate-y-6'>
+                              __
+                            </div>
+                            : ""}
+                        </div>
+
+                        {router.pathname == '/' ? "" : ''}
+
+                      </Popover.Button>
+                    )}
                   </Popover>
 
 
@@ -283,10 +310,10 @@ export default function Example() {
                 text-black group bg-orange-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
                         >
                           <div className='flex flex-col'>
-                          <Link href='/groupes'>
-                             <span className="">Trouver des groupes près de chez vous </span>
-                          </Link>
-                         
+                            <Link href='/groupes'>
+                              <span className="">Trouver des groupes près de chez vous </span>
+                            </Link>
+
                             {router.pathname == '/groupes' ?
                               <div className='text-center font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                                 __
