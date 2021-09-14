@@ -17,7 +17,6 @@ const Seo = (props) => {
                 <meta name="author" content="{Team17}" />
                 <meta name="twitter:title" content="collectifmatsu1" />
                 <meta name="theme-color" content="#59577c" />
-                <meta http-equiv="Content-Security-Policy" content="default-src 'self' vitals.vercel-insights.com *.vitals.vercel-insights.com"/>
 
 
                 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
