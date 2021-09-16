@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const allerPlusLoin = (data) => {
-// if(typeof data.featuredImage.node.link !== undefined){  console.log(data.featuredImage.node.link) }    
+    // if(typeof data.featuredImage.node.link !== undefined){  console.log(data.featuredImage.node.link) }    
     // const router = useRouter()
     // const {
     //     query: { id },
@@ -143,7 +143,7 @@ const allerPlusLoin = (data) => {
                 <Seo title={titre} description={description} />
                 <Intro src={occupy} title={"Aller plus loin"} texte={texte} />
 
-                <div className='hidden md:block'>
+                {/* <div className='hidden md:block'>
                     <div className='text-center text-xl'>
                         Trié par
                     </div>
@@ -195,8 +195,7 @@ const allerPlusLoin = (data) => {
                             <div className={classes.root}>
                                 <div>
                                     <Tabs
-                                        orientation="vertical"
-                                        // variant="scrollable"
+                                        orientation="vertical"                             
                                         value={value}
                                         onChange={handleChange}
                                         aria-label="Vertical tabs "
@@ -210,9 +209,9 @@ const allerPlusLoin = (data) => {
                                 </div>
 
                                 <div className='md:pl-20'>
-                                    <TabPanel value={value} index={0}>
-                                        {/* Vivre sans */}
-                                        <div className='text-sm md:text-base md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6'>
+                                    <TabPanel value={value} index={0}> */}
+                {/* Vivre sans */}
+                {/* <div className='text-sm md:text-base md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6'>
                                             {data.data.edges.map((post) => (
                                                 <>
                                                     {post.node.tags.edges.length !== 0
@@ -247,9 +246,9 @@ const allerPlusLoin = (data) => {
                                         </div>
                                     </TabPanel>
 
-                                    <TabPanel value={value} index={1}>
-                                        {/* Reforme et lutte */}
-                                        Articles à venir
+                                    <TabPanel value={value} index={1}> */}
+                {/* Reforme et lutte */}
+                {/* Articles à venir
                                     </TabPanel>
                                 </div>
 
@@ -277,9 +276,9 @@ const allerPlusLoin = (data) => {
 
                                 <div className='pl-20'>
 
-                                    <TabPanel value={value} index={0}>
-                                        {/* ARTICLES */}
-                                        <div className='text-sm md:text-base md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6'>
+                                    <TabPanel value={value} index={0}> */}
+                {/* ARTICLES */}
+                {/* <div className='text-sm md:text-base md:grid md:grid-cols-2 xl:grid-cols-3 gap-12 md:px-6 lg:px-12 xl:pl-24 xl:pr-12 pb-6'>
                                             {data.data.edges.map((post) => (
                                                 <>
                                                     {post.node.tags.edges.length !== 0
@@ -314,28 +313,68 @@ const allerPlusLoin = (data) => {
                                         </div>
                                     </TabPanel>
 
-                                    <TabPanel value={value} index={1}>
-                                        {/* PODCASTS */}
-                                        Articles à venir
+                                    <TabPanel value={value} index={1}> */}
+                {/* PODCASTS */}
+                {/* Articles à venir
                                     </TabPanel>
-                                    <TabPanel value={value} index={2}>
-                                        {/* FANZINES */}
-                                        Articles à venir
+                                    <TabPanel value={value} index={2}> */}
+                {/* FANZINES */}
+                {/* Articles à venir
                                     </TabPanel>
-                                    <TabPanel value={value} index={3}>
-                                        {/* Filmographie */}
-                                        Articles à venir
+                                    <TabPanel value={value} index={3}> */}
+                {/* Filmographie */}
+                {/* Articles à venir
                                     </TabPanel>
-                                    <TabPanel value={value} index={4}>
-                                        {/* Bibliographie */}
-                                        Articles à venir
+                                    <TabPanel value={value} index={4}> */}
+                {/* Bibliographie */}
+                {/* Articles à venir
                                     </TabPanel>
                                 </div>
                             </div>
                         </div>
                     }
 
+                </div> */}
+
+
+
+                <div className='hidden md:grid md:grid-cols-2 lg:grid-cols-3 md:pl-12 '>
+                    {data.data.edges.map((post) => (
+                        <>
+                            {post.node.tags.edges.length !== 0
+                                // && post.node.tags.edges.map(tag => {
+                                //     if (tag.node.name == 'Réformes et luttes') {
+                                //         return (true)
+                                //     }
+                                // })
+                                &&
+                                <div className='md:px-6'>
+                                    <Link href={`/Post/${post.node.slug}`}>
+                                        <a>
+                                            <div className=' pt-1 pb-6 hover:bg-gray-50 ' key={post.node.slug}
+                                            >
+                                                <div className='font-bold border-t'>
+                                                    {post.node.title}
+                                                </div>
+                                                <div className='text-gray-500 '>
+                                                    {post.node.article.auteur}
+                                                </div>
+                                                <div post='text-left font-bold md:text-2xl text-red-700 transform -translate-y-6'>
+                                                    __
+                                                </div>
+                                                <div className=' '>
+                                                    {post.node.article.resume}
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </Link>
+                                </div>
+                            }
+                        </>
+                    ))}
                 </div>
+
+
 
 
 
