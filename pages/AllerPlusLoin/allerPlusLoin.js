@@ -351,7 +351,7 @@ const allerPlusLoin = (data) => {
                                 <div className='md:px-6'>
                                     <Link href={`/Post/${post.node.slug}`}>
                                         <a>
-                                            <div className=' pt-1 pb-6 hover:bg-gray-50 ' key={post.node.slug}
+                                            <div className='pt-1 pb-6 hover:bg-gray-50 ' key={post.node.slug}
                                             >
                                                 <div className='font-bold border-t'>
                                                     {post.node.title}
