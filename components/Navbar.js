@@ -73,11 +73,11 @@ export default function Example() {
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-            <div className="relative flex justify-center h-16">
+            <div className="relative flex justify-center h-14">
               <div className=' sm:hidden  block pt-4 pl-2'>
                 <Link href="/">
                   <a className=''>
-                    <div className=' text-xl HarbourBold text-gray-700   '>
+                    <div className=' text-l md:text-xl HarbourBold text-gray-700   '>
                       <p className=''>
                         ABOLIR LA POLICE
                       </p>
@@ -90,11 +90,11 @@ export default function Example() {
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
 
                 {/* Mobile menu button */}
-                <Disclosure.Button className="flex flex-end items-center p-2 justify-right rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
+                <Disclosure.Button className="flex flex-end items-center  justify-right rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
                   {open ? (
-                    <XIcon className="block h-8 w-8" aria-hidden="true" />
+                    <XIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
-                    <MenuIcon className="block h-8 w-8" aria-hidden="true" />
+                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
 
