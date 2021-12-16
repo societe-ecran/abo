@@ -166,7 +166,7 @@ export default function actualites({ datesTournee }) {
                         </div>
 
                         <div className='text-sm md:text-base'>
-                            Régulièrement alimentée, cette section présente différents types de ressources pour mieux comprendre l’histoire de la police et du système pénal, connaître des luttes et stratégies qui s’y sont opposées, partager des façons de prendre en charge les torts, apprendre d’élans et expériences passés et actuels. En somme différents outils pour aider à défaire la police, la justice et la prison .
+                            Régulièrement alimentée, cette section présente différents types de ressources pour mieux comprendre l’histoire de la police et du système pénal, connaître des luttes et stratégies qui s’y sont opposées, partager des façons de prendre en charge les torts, apprendre d’élans et expériences passés et actuels. En somme différents outils pour aider à défaire la police, la justice et la prison.
                         </div>
                         <div className=' text-gray-500 font-bold text-xl pt-1 text-right'>
                             <Link href="/AllerPlusLoin/allerPlusLoin">
