@@ -8,11 +8,6 @@ import ArticleHeader from '../../components/ArticleHeader'
 // import { useRouter } from 'next/router'
 
 const Post = ({ postData }) => {
-    // const router = useRouter()
-
-    // if(!router.isFallback &&!postData?.slug){
-    //     return<p>hMMMMM.....</p>
-    // }
 
     return (
         <div>
