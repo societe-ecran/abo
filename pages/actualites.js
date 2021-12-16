@@ -36,7 +36,7 @@ export default function actualites({ datesTournee }) {
     //     })
     // }
 
-  
+
 
 
     return (
@@ -99,15 +99,15 @@ export default function actualites({ datesTournee }) {
                             George Floyd, un Afro-Américain de 46 ans, meurt étouffé par la police. Une vague de contestations, inédite depuis les années 1960, s’empare du pays. Manifestations, mobilisations sur les réseaux sociaux, pillages : la singularité de ce mouvement tient autant à son ampleur qu’à la radicalité de ses propositions. Il ne s’agit plus de dénoncer les dérives de l’institution policière, mais de questionner son existence même.
                         </div>
                         <div className=' text-gray-500 font-bold text-xl pt-1 text-right md:text-left'>
-                            
-                                <a href="https://achat-livre-abolir.vercel.app/">Lire</a>
 
-                         
+                            <a href="https://achat-livre-abolir.vercel.app/">Lire</a>
+
+
                         </div>
                         <div className=' border-t font-bold text-xl pt-1 mt-6 pb-2  md:pt-3'>
                             Sources et traductions complètes
                         </div>
-                        <div  className='text-sm md:text-base'>
+                        <div className='text-sm md:text-base'>
                             En traduisant plusieurs textes écrits aux États-Unis ces dix dernières années, ce recueil souhaite autant documenter que transmettre ce nouvel abolitionnisme : vivre sans police.
                             <br />
                             Nous proposons ici les traductions complètes dont les extraits composent certains chapitres du livre.
@@ -166,7 +166,7 @@ export default function actualites({ datesTournee }) {
                         </div>
 
                         <div className='text-sm md:text-base'>
-                            Régulièrement alimentée, cette section présente différents types de ressources pour mieux comprendre l’histoire de la police et du système pénal, connaître des luttes et stratégies qui s’y sont opposées, partager des façons de prendre en charge les torts, apprendre d’élans et expériences passés et actuels. En somme différents outils pour aider à défaire la police, la justice et la prison.
+                            Régulièrement alimentée, cette section présente différents types de ressources pour mieux comprendre l’histoire de la police et du système pénal, connaître des luttes et stratégies qui s’y sont opposées, partager des façons de prendre en charge les torts, apprendre d’élans et expériences passés et actuels. En somme différents outils pour aider à défaire la police, la justice et la prison .
                         </div>
                         <div className=' text-gray-500 font-bold text-xl pt-1 text-right'>
                             <Link href="/AllerPlusLoin/allerPlusLoin">
@@ -229,14 +229,14 @@ export default function actualites({ datesTournee }) {
                     </div>
                 </div>
             </div>
- <Footer/>
+            <Footer />
 
             <footer>
-               
 
-           
 
-               </footer>
+
+
+            </footer>
         </Layout>
     )
 }
