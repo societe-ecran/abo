@@ -7,7 +7,7 @@ const Sitemap = () => {
 };
 
 export const getServerSideProps = async ({ res }) => {
-    const BASE_URL = 'lhttps://abolirlapolice.org/0';
+    const BASE_URL = 'https://abolirlapolice.org/';
 
 
 
