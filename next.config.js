@@ -1,4 +1,5 @@
 module.exports = {
+  
     i18n: {
       /**
        * Provide the locales you want to support in your application
