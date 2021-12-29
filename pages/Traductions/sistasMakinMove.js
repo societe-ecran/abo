@@ -13,7 +13,6 @@ const sista = (traduction) => {
 
     return (
         <div>
-
             <Layout titles={titre} description={description}>
                 <ArticleHeader src={occupy} title={titre} author={auteur} date={date} traduction={trad} />
                 <div className="xl:px-64 lg:px-32 md:px-24 lg:bg-gray-50 ">
