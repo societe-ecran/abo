@@ -2,7 +2,6 @@ import { React, useState } from 'react'
 import Layout from '../../components/Layout'
 import Intro from '../../components/Intro'
 import occupy from '../../public/occupycityhall.jpg'
-import Seo from '../../components/seo/Seo'
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';

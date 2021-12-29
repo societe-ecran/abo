@@ -1,10 +1,9 @@
 import React from 'react'
-import Seo from '../../components/seo/Seo'
 import Layout from '../../components/Layout'
 import ArticleHeader from '../../components/ArticleHeader'
 import occupy from '../../public/occupycityhall.jpg'
 import { getPageExerxerAbolition } from '../../components/lib/api'
-import Head from 'next/head'
+
 const exercerAbolition = (traduction) => {
     const titre = traduction.traduction.page.title
     const description = 'Traduction complète'

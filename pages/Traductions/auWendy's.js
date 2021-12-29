@@ -1,5 +1,4 @@
 import React from 'react'
-import Seo from '../../components/seo/Seo'
 import Layout from '../../components/Layout'
 import ArticleHeader from '../../components/ArticleHeader'
 import occupy from '../../public/occupycityhall.jpg'

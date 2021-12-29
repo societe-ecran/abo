@@ -2,7 +2,6 @@ import { React, useEffect } from 'react'
 import { getAllPostsWithSlug } from '../../components/lib/api';
 import { getPost } from '../../components/lib/api';
 import Layout from '../../components/Layout'
-import Seo from '../../components/seo/Seo'
 import foule from '../../public/foule.jpg'
 import ArticleHeader from '../../components/ArticleHeader'
 // import { useRouter } from 'next/router'

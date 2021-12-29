@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Image from 'next/image'
 import couv from '../public/couv.jpg'
-import Seo from '../components/seo/Seo'
+
 
 const leLivre = () => {
     // const titre = 'Abolir la police - le livre'
