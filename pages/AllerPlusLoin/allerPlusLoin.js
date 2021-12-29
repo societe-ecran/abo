@@ -10,7 +10,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { useRouter } from 'next/router'
-import { getAllerPlusloin, getCollectifs } from '../../components/lib/api'
+import { getAllerPlusloin } from '../../components/lib/api'
 import Link from 'next/link'
 
 function TabPanel(props) {
@@ -138,9 +138,10 @@ const allerPlusLoin = (data) => {
 
 
     return (
-        <div >
-            <Layout>
-                <Seo title={titre} description={description} />
+
+        <div>
+
+            <Layout titles={titre} description={description}>
                 <Intro src={occupy} title={"Aller plus loin"} texte={texte} />
 
                 {/* <div className='hidden md:block'>

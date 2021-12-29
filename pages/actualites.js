@@ -5,12 +5,11 @@ import pigs from '../public/pigs.jpg'
 import tags from '../public/tags.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
-import Seo from '../components/seo/Seo'
 import { getDates } from '../components/lib/api'
 import Footer from '../components/Footer'
 
 export default function actualites({ datesTournee }) {
-    const titre = 'Actualités'
+    const titre = 'Actualités - Abolir la police'
     const description = "Vous trouverez ici les actualités du collectif : dates de tournée, dernières publications et fils twitter."
 
 
@@ -40,8 +39,8 @@ export default function actualites({ datesTournee }) {
 
 
     return (
-        <Layout>
-            <Seo title={titre} description={description} />
+        <Layout titles={titre} description={description}>
+
             <div className="">
                 <div className=''>
                     <div className=' pb-3 pt-12 '>

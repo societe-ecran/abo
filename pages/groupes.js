@@ -9,11 +9,9 @@ import Box from '@material-ui/core/Box';
 import { useRouter } from 'next/router'
 import Intro from '../components/Intro'
 import statue from '../public/statueNB.jpg'
-import Seo from '../components/seo/Seo'
 import { getCollectifs } from '../components/lib/api'
 import { Accordion, AccordionItem } from 'react-sanfona';
 import { ViewListIcon } from '@heroicons/react/solid'
-
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -91,10 +89,9 @@ const groupes = ({ collectif }) => {
     ]
 
     return (
-        <div className=''>
-            <Layout>
-                <Seo title={titre} />
-                <Intro title='Groupes et collectifs' texte={texte} src={statue} />
+        <div>
+            <Layout titles={titre} description={description}>
+                <Intro title='Groupes et collectifs - Abolir la police' texte={texte} src={statue} />
 
                 <div className='hidden md:block pt-6  md:pl-6 '>
                     <div className={classes.root}>

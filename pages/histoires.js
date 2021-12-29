@@ -2,9 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import foule from '../public/foule.jpg'
 import Intro from '../components/Intro'
-import { getAllPostsWithSlug } from '../components/lib/api';
 import Link from 'next/link'
-import Seo from '../components/seo/Seo'
 import { getHistoires } from '../components/lib/api'
 import Image from 'next/image'
 import couvMin from '../public/couvMin.jpg'
@@ -14,13 +12,12 @@ const histoires = ({
 }) => {
     const texte = "Voici des  témoignages, récits ou histoires collectées sur internet ou lors d’ateliers. Toutes les manières d’affronter au quotidien les situations de violences et de torts en dehors du système pénal sont trop invisibilisées. Les institutions pénales nous affaiblissent en s’accaparant nos conflits et les façons de les régler. Alors nous savons trop peu comment résoudre collectivement des problèmes qui font pleinement partie de nos vies. Partager des histoires alternatives permet donc d’avoir de nouvelles idées, de se défaire de certains réflexes et d’apprendre des erreurs ou méthodes des autres. Nous serions très heureux de partager les vôtres aussi. Vous pouvez nous envoyer un mail à : collectif_matsuda (at) riseup.net"
     // const textComplet= {`${}`} <span className =" font-bold"> collectif_matsuda (at) riseup.net </span>
-    const titre = 'Partager des histoires'
+    const titre = 'Partager des histoires - Abolir la police'
     const histoires = histoiresPartagees.posts.edges
 
     return (
         <div>
-            <Layout>
-                <Seo title={titre} />
+            <Layout titles={titre} description={description}>
                 <Intro src={foule} texte={texte} title={titre} />
                 <div className='hidden'>
                     <Image
@@ -63,9 +60,7 @@ const histoires = ({
                             </Link>
                         </div>
                     ))}
-
                 </div>
-
             </Layout>
         </div>
     )

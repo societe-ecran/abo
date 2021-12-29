@@ -2,10 +2,9 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Link from 'next/link'
 import { Accordion, AccordionItem } from 'react-sanfona';
-import Seo from '../components/seo/Seo'
 
 const sourcesEtTraductions = () => {
-    const titre = 'Sources et traductions'
+    const titre = 'Sources et traductions - Abolir la police'
     const description = " Nous proposons ici les traductions complètes dont les extraits composent certains chapitres du livre."
 
     const data = [
@@ -43,10 +42,7 @@ const sourcesEtTraductions = () => {
     return (
 
         <div>
-
-            <Layout className=''>
-
-                <Seo title={titre} description={description} />
+            <Layout titles={titre} description={description}>
                 <div className=' grid grid-cols-3 px-3 md:pl-6 pb-3 pt-12 titreNav '>
                     <div>
                         SOMMAIRE
@@ -71,7 +67,7 @@ const sourcesEtTraductions = () => {
                 <div className='text-xs md:text-base z-50 pb-36'>
                     <Accordion>
                         {data.map(item => {
-                         
+
                             return (
                                 <AccordionItem title={
                                     <div>
@@ -144,12 +140,12 @@ const sourcesEtTraductions = () => {
                                                 <a className='pl-4 flex flex-col' >
                                                     <div className='text-right mr-6 pt-6 '>
 
-                                                        { item.link !== "" &&
-                                                        <button className='border rounded-full px-3 py-1 hover:bg-gray-50 text-black' >
-                                                            Lire la traduction complète
-                                                        </button>
+                                                        {item.link !== "" &&
+                                                            <button className='border rounded-full px-3 py-1 hover:bg-gray-50 text-black' >
+                                                                Lire la traduction complète
+                                                            </button>
                                                         }
-                                                        
+
 
                                                     </div>
 
