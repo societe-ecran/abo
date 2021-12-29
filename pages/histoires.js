@@ -14,6 +14,7 @@ const histoires = ({
     // const textComplet= {`${}`} <span className =" font-bold"> collectif_matsuda (at) riseup.net </span>
     const titre = 'Partager des histoires - Abolir la police'
     const histoires = histoiresPartagees.posts.edges
+    const description = "Voici des  témoignages, récits ou histoires collectées sur internet ou lors d’ateliers." 
 
     return (
         <div>
