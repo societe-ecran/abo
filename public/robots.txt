@@ -1,3 +1,5 @@
 # Allow all user agents.
 User-agent: *
 Allow: /
+
+Sitemap: https://abolirlapolice.org/sitemap.xml
