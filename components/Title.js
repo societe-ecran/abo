@@ -9,10 +9,9 @@ const Title = () => {
             <Link href="/actualites">
                 <a className='border'>
                     <div className=' text-4xl HarbourBold text-gray-700   '>
-                    <p className=''>   
+                    <h1>   
                        ABOLIR LA POLICE
-                    </p>
-                 
+                    </h1>
                     </div>
                 </a>
             </Link>

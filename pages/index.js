@@ -35,10 +35,11 @@ export default function Home() {
             <div className='  flex  items-center  xl:pr-24 pl-6 violetBack h-screen'>
               <Link
                 href='/actualites'>
-                <a> <div className='text-5xl menthe pb-12 HarbourBold '>
-                  ABOLIR <br />
-                  LA POLICE
-                </div>
+                <a>
+                  <h1 className='text-5xl menthe pb-12 HarbourBold '>
+                    ABOLIR <br />
+                    LA POLICE
+                  </h1>
                   <div className='sabonRoman text-l text-white font-bold'>
                     Bienvenue sur ce site qui vise à diffuser les idées, pratiques et luttes pour l’abolition du système pénal (police, justice, prison)
                     auprès des francophones. C’est une façon de prolonger le travail autour du livre <span className='italic underlineWhite '>Abolir la police. Échos des États-Unis</span> (paru en septembre 2021).

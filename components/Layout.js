@@ -35,8 +35,6 @@ const Layout = ({ children, ...pageProps }) => {
             {router.pathname == '/' ? "" :
                 <div className=' shadow-md bg-white '>
                     <Title />
-
-
                     <Navbar />
                 </div>
             }
