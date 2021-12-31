@@ -25,9 +25,9 @@ const intro = (props) => {
 
         </div>
         <div className='md:pl-6'>
-        <p className='titreNav text-xl pt-6 md:pt-0 text-center md:text-left '>
+        <h1 className='titreNav text-xl pt-6 md:pt-0 text-center md:text-left '>
              {props.title}
-            </p>
+            </h1>
             <p className='pt-6 md:px-6 text-sm md:text-base px-3 md-px-0'>
               {props.texte}
               </p>

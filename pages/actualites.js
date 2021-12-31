@@ -219,7 +219,7 @@ export default function actualites({ datesTournee }) {
                                         }}
                                         options={{
                                             chrome: "noheader, nofooter",
-                                            width: "500", height: "800"
+                                            // width: "500", height: "800"
                                         }}
                                     />
                                 </div>
