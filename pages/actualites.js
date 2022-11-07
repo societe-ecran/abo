@@ -79,9 +79,9 @@ export default function actualites({ datesTournee }) {
                 </div>
 
                 <div className=' pt-12 '>
-                    <div className="text-2xl md:text-3xl font-Bold px-12 titreNav transforme  text-center pb-5">
+                    <h2 className="text-2xl md:text-3xl font-Bold px-12 titreNav transforme  text-center pb-5">
                         Documenter l'abolitionnisme
-                    </div>
+                    </h2>
                     <div className="text-2xl md:text-3xl font-Bold px-12 titreNav transforme  text-center text-gray-500">
                         Le livre
                     </div>
@@ -89,9 +89,9 @@ export default function actualites({ datesTournee }) {
 
                 <div className='md:grid md:grid-cols-2 md:px-24'>
                     <div className='pt-6 px-12 md:text-base  md:px-3'>
-                        <div className=' border-t font-bold text-xl pt-1 pb-2  md:pt-3'>
+                        <h2 className=' border-t font-bold text-xl pt-1 pb-2  md:pt-3'>
                             Présentation et sommaire du livre
-                        </div>
+                        </h2>
 
                         <div className='text-sm md:text-base'>
                             Minneapolis, mai 2020.
@@ -154,7 +154,7 @@ export default function actualites({ datesTournee }) {
                             className=''
                         // blurDataURL="data:..." automatically provided
                         // Optionally allows to add a blurred version of the image while loading
-                        // placeholder="blur"
+            
                         />
                     </div>
 
