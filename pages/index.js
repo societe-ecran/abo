@@ -38,20 +38,20 @@ export default function Home({
 
     return (
         <Layout titles={titre} description={description}>
-            <div className="bg-bandeau py-3">
-                <div className='grid grid-cols-3'>
-                    <div className='text-white GillSansUltraBold text-xl md:text-3xl flex items-center justify-items-center justify-center py-6 '>
+            <div className="bg-bandeau  py-3 md:py-3">
+                <div className='md:grid grid-cols-3'>
+                    <div className='text-white text-center  GillSansUltraBold text-xl md:text-3xl flex items-center justify-items-center justify-center  '>
                         LA TOURNEE
                     </div>
-                    <div className='text-white text-xl md:text-3xl GillSansUltraBold flex items-center justify-items-center justify-center py-6'>
+                    <div className='hidden md:flex text-white text-xl md:text-3xl GillSansUltraBold items-center justify-items-center justify-center '>
                         LE LIVRE</div>
-                    <div className='text-white text-xl md:text-3xl GillSansUltraBold flex items-center justify-items-center justify-center py-6'>
+                    <div className='hidden md:flex text-white text-xl md:text-3xl GillSansUltraBold items-center justify-items-center justify-center '>
                         LE SITE
                     </div>
                 </div>
             </div>
 
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 pt-6 px-3 '>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 pt-6 px-0 md:px-3 '>
 
                 <div className='flex flex-col justify-between items-center '>
 
@@ -60,26 +60,33 @@ export default function Home({
                         var corectMonth = (month += 1)
 
                         return (
-                            <div className='text-center  w-2/4 pt-3'>
-                                <div className='font-extrabold text-xl'>
+                            <div className='text-center w-3/4 md:w-2/4 pt-3'>
+                                <div className='font-extrabold text-base md:text-xl'>
                                     {item.node.datestournee.ville}
                                 </div>
 
-                                <div className=' '>
+                                <div className=' text-sm  '>
                                     {new Date(item.node.datestournee.dateDeLaPresentation).getDate()}/{corectMonth}/{new Date(item.node.datestournee.dateDeLaPresentation).getFullYear()}
-                                <div className='' dangerouslySetInnerHTML={{ __html: item.node.content }} /> 
+                                    <div className='' dangerouslySetInnerHTML={{ __html: item.node.content }} />
                                 </div>
                             </div>
                         )
                     })}
 
-                    <div className='underline decoration-indigo-900 decoration-4 underline-offset-8 italic'>
-                    <a href="mailto:collectif_matsuda@riseup.net">Contactez-nous ! </a> 
+                    <div className='underline decoration-indigo-900 decoration-4 underline-offset-8 italic pt-3 md:pt-0'>
+                        <a href="mailto:collectif_matsuda@riseup.net">Contactez-nous ! </a>
                     </div>
                 </div>
 
-                <div className='flex flex-col justify-start items-center pt-12 md:pt-0 '>
-                    <div className=' px-12 items-center'>
+
+                <div className="bg-bandeau  py-3 md:py-3 mt-6">
+                    <div className='md:grid grid-cols-3'>
+                        <div className='md:hidden text-center text-white text-xl md:text-3xl GillSansUltraBold items-center justify-items-center justify-center '>
+                            LE LIVRE</div>
+                    </div>
+                </div>
+                <div className='flex flex-col justify-start items-center md:pt-12 pt-3 '>
+                    <div className='  px-3 md:px-12 items-center'>
                         <Image
                             src={couv}
                             alt="Couverture Abolir la police"
@@ -101,13 +108,22 @@ export default function Home({
 
                 </div>
 
-                <div className=' flex flex-col space-y-6 pt-12 md:pt-0'>
+
+
+                <div className="md:hidden bg-bandeau  py-3 md:py-3 mt-6">
+                    <div className='text-center  md:hidden text-white text-xl md:text-3xl GillSansUltraBold items-center justify-items-center justify-center '>
+                        LE SITE
+                    </div>
+                </div>
+
+                <div className=' flex flex-col space-y-6 md:pt-12 pt-3 px-3'>
 
                     <div  >
                         <div className='underline italic text-xl decoration-indigo-900 decoration-4 underline-offset-8 pb-2 '>
-                            Aller plus loin
+                            <Link href="/AllerPlusLoin/allerPlusLoin" >Aller plus loin
+                            </Link>
                         </div>
-                        <div className='pt-1'>
+                        <div className='pt-1 text-sm md:text-base'>
                             Série de textes et de traductions qui ne figurent pas dans le livre mais qui
                             ont trait à l’abolitionnisme pénal : pistes de réflexion, prises de position et
                             petits bouts d’histoire.
@@ -116,9 +132,12 @@ export default function Home({
 
                     <div className='' >
                         <div className='underline italic text-xl decoration-indigo-900 decoration-4 underline-offset-8 pb-2'>
-                            Partager des histoires
+
+                            <Link href='/histoires'>
+                                Partager des histoires
+                            </Link>
                         </div>
-                        <div className='pt-1'>
+                        <div className='pt-1 text-sm md:text-base'>
                             Ici, des témoignages de réactions face à des situations de violences. Alors
                             que nous savons trop peu comment résoudre collectivement des problèmes
                             qui font pleinement partie de nos vies, partager des récits permet de se
@@ -130,9 +149,11 @@ export default function Home({
 
                     <div className='' >
                         <div className='underline italic text-xl decoration-indigo-900 decoration-4 underline-offset-8 pb-2'>
-                            Groupes et collectifs
+                            <Link href="/groupes">
+                                Groupes et collectifs
+                            </Link>
                         </div>
-                        <div className='pt-1'>
+                        <div className='pt-1 text-sm md:text-base'>
                             Il y a beaucoup de façons de se défendre de la police et de la justice,
                             ici et maintenant. Cette section se propose de relayer les organisations
                             locales contre les violences d’Etat qui luttent au quotidien et font vivre la
@@ -144,7 +165,7 @@ export default function Home({
                         <div className='underline italic text-xl decoration-indigo-900 decoration-4 underline-offset-8 pb-2'>
                             Médias
                         </div>
-                        <div className='pt-1'>
+                        <div className='pt-1 text-sm md:text-base'>
                             <div className='flex flex-row'>
                                 - <span className='text-white '>-</span>
                                 <a href='' className='underline text-violetLivre'>

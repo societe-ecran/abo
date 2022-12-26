@@ -17,12 +17,12 @@ const lesChapitres = () => {
     return (
         <div>
             <Layout titles={titre} description={description}>
-                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center mx-6 mt-12 space-x-3 space-y-12'>
-                    <div>
+                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center mx-0 md:mx-6 mt-6 md:mt-12 md:space-x-3 space-y-12'>
+                    <div className='px-3 md:px-0'>
                         <div className='GillSansUltraBold text-xl pb-3'>
                             Le livre
                         </div>
-                        <div>
+                        <div className='text-sm md:text-base'>
                             En traduisant plusieurs textes écrits aux États-Unis ces dix dernières
                             années, ce recueil souhaite autant documenter que transmettre ce nouvel
                             abolitionnisme : vivre sans police. Nous proposons ici les traductions

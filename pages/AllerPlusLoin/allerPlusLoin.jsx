@@ -112,7 +112,7 @@ const allerPlusLoin = (data) => {
                 <div className=''>
 
                 <Intro src={occupy} title={"Aller plus loin"} texte={texte} />
-                <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-6 px-12'>
+                <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-6 px-3 md:px-12'>
                     {data.data.edges.map((post) => {
 
                         return (
@@ -124,10 +124,10 @@ const allerPlusLoin = (data) => {
                                         <a>
                                             <div className='pt-1 pb-6' key={post.node.slug}
                                             >
-                                                <div className='font-bold text-base GillSansUltraBold '>
+                                                <div className='text-sm md:text-base GillSansUltraBold '>
                                                     {post.node.title}
                                                 </div>
-                                                <div className='text-gray-600 py-2 underline italic decoration-indigo-900 decoration-2 underline-offset-8 pb-3'>
+                                                <div className='text-sm text-gray-600 py-2 underline italic decoration-indigo-900 decoration-2 underline-offset-8 pb-3'>
                                                     {post.node.article.auteur}
                                                 </div>
                                                 <div className='text-sm '>
