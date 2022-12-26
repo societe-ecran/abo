@@ -1,5 +1,13 @@
 module.exports = {
-  
+  webpack: (config, options) =>
+  {
+      config.module.rules.push({
+          test: /\.pdf$/i,
+          type: 'asset/source'
+      })
+
+      return config
+  },
     i18n: {
       /**
        * Provide the locales you want to support in your application

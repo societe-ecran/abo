@@ -11,15 +11,21 @@ export default function Example() {
   const router = useRouter()
   const LeLivre = [
     {
-      name: "L'acheter",
+      name: "l'acheter",
       description: '',
       href: 'https://achat-livre-abolir.vercel.app/',
     },
     {
-      name: 'Sources et traductions complètes',
+      name: 'chapitres',
       description: '',
-      href: '/sourcesEtTraductions',
+      href: '/lesChapitres',
     },
+    
+    // {
+    //   name: 'sources et traductions complètes',
+    //   description: '',
+    //   href: '/sourcesEtTraductions',
+    // },
   ]
 
   const AllerPlusLoin = [
@@ -68,7 +74,7 @@ export default function Example() {
 
 
   return (
-    <Disclosure as="nav" className="bg-white shadow ">
+    <Disclosure as="nav" className="bg-white ">
 
       {({ open }) => (
         <>
@@ -104,21 +110,17 @@ export default function Example() {
               <div className="flex-1 flex items-center justify-center pt-5">
 
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                  {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
-
-
-
                   <Popover className="relative">
                     {({ open }) => (
                       <>
                         <Popover.Button
                           className={` 
                 ${open ? '' : 'text-opacity-90'}
-                text-black group bg-orange-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                text-black group  px-3 py-2 rounded-md inline-flex items-center text-base font-bold hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
                         >
                           <div className='flex flex-col '>
-                            <span className="">Le livre </span>
-                            {router.pathname == '/actualites' || router.pathname == '/leLivre' || router.pathname == '/sourcesEtTraductions' ||
+                            <span className="GillSansUltraBold text-base">LE LIVRE </span>
+                            {router.pathname == '/' || router.pathname == '/leLivre' || router.pathname == '/sourcesEtTraductions' ||
                               router.pathname == '/Traductions/neverGiveUp' || router.pathname == "Traductions/auWendy's" || router.pathname == "/Traductions/partirDesRessourcesExistantes" || router.pathname == "/Traductions/exercerAbolition" || router.pathname == "/Traductions/sistasMakinMove" ?
                               <div className='text-center font-bold md:text-2xl text-red-700 transform -translate-y-6'>
                                 __
@@ -138,21 +140,16 @@ export default function Example() {
                           leaveTo="opacity-0 translate-y-1"
                         >
                           <Popover.Panel className="absolute z-10  max-w-sm px-4 mt-1 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl">
-                            <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                              <div className="relative  bg-white p-7 ">
+                            <div className="overflow-hidden  ring-1 ring-black shadow-lg">
+                              <div className="relative  bg-white pt-3 pb-6 pr-12 italic ">
                                 {LeLivre.map((item) => (
                                   <Link href={item.href}>
                                     <a
-
                                       key={item.name}
-                                      className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                                      className="flex text-lg items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                                     >
-
-                                      {/* <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-white sm:h-12 sm:w-12">
-                          <item.icon aria-hidden="true" />
-                        </div> */}
-                                      <div className="ml-4 pt-3">
-                                        <p className="text-sm font-medium text-gray-900 ">
+                                      <div className="ml-4 pt-3 ">
+                                        <p className=" font-base underline text-gray-900 ">
                                           {item.name}
                                         </p>
                                         <p className="text-sm text-gray-500">
@@ -173,84 +170,16 @@ export default function Example() {
 
 
 
-                  {/* <Popover className="relative">
-                    {({ open }) => (
-                      <>
-                        <Popover.Button
-                          className={`
-                ${open ? '' : 'text-opacity-90'}
-                text-black group bg-orange-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
-                        >
-                          <div className='flex flex-col'>
-                          <Link href="/AllerPlusLoin/allerPlusLoin">
-                            <a> Aller plus loin  </a>
-                          </Link>
-                          
-                            {router.pathname == '/allerPlusLoin' ?
-                              <div className='text-center font-bold md:text-2xl text-red-700 transform -translate-y-6'>
-                                __
-                              </div>
-                              :
-                               <div className='text-center font-bold md:text-2xl text-white transform -translate-y-6'>
-                                __
-                              </div>}
-                          </div>
-                        </Popover.Button>
-                        <Transition
-                          as={Fragment}
-                          enter="transition ease-out duration-200"
-                          enterFrom="opacity-0 translate-y-1"
-                          enterTo="opacity-100 translate-y-0"
-                          leave="transition ease-in duration-150"
-                          leaveFrom="opacity-100 translate-y-0"
-                          leaveTo="opacity-0 translate-y-1"
-                        >                           
-                        <Popover.Panel className="absolute z-10  max-w-sm px-4 mt-1 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl">
-                            <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                              <div className="relative  bg-white p-7 ">
-                                {AllerPlusLoin.map((item) => (
-                                  <Link
-                                    href={{
-                                      pathname: "/AllerPlusLoin/allerPlusLoin",
-                                      query: { id:item.number },
-                                    }}
-
-                                  >
-                                    <a
-                                      key={item.name}
-                                      className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
-                                    >
-
-                                      <div className="ml-4 pt-3">
-                                        <p className="text-sm font-medium text-gray-900">
-                                          {item.name}
-                                        </p>
-                                        <p className="text-sm text-gray-500">
-                                          {item.description}
-                                        </p>
-                                      </div>
-                                    </a>
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-                          </Popover.Panel>
-                        </Transition>
-                      </>
-                    )}
-                  </Popover> */}
-
-
                   <Popover className="relative">
                     {({ open }) => (
                       <Popover.Button
                         className={`
                 ${open ? '' : 'text-opacity-90'}
-                text-black group bg-orange-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                text-black group  px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
                       >
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col GillSansUltraBold'>
                           <Link href='/AllerPlusLoin/allerPlusLoin'>
-                            <a> Aller plus loin </a>
+                            <a> ALLER PLUS LOIN </a>
                           </Link>
 
 
@@ -273,11 +202,11 @@ export default function Example() {
                       <Popover.Button
                         className={`
                 ${open ? '' : 'text-opacity-90'}
-                text-black group bg-orange-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                text-black group  px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
                       >
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col GillSansUltraBold'>
                           <Link href='/histoires'>
-                            <a> Partager des histoires </a>
+                            <a> PARTAGER DES HISTOIRES </a>
                           </Link>
 
 
@@ -301,11 +230,11 @@ export default function Example() {
                         <Popover.Button
                           className={`
                 ${open ? '' : 'text-opacity-90'}
-                text-black group bg-orange-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                text-black group  px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
                         >
-                          <div className='flex flex-col'>
+                          <div className='flex flex-col GillSansUltraBold'>
                             <Link href='/groupes'>
-                              <span className="">Trouver des groupes près de chez vous </span>
+                              <span className="">TROUVER DES GROUPES PRES DE CHEZ VOUS </span>
                             </Link>
 
                             {router.pathname == '/groupes' ?
@@ -365,9 +294,6 @@ export default function Example() {
 
           <Disclosure.Panel className="sm:hidden mb-3 pl-3 ">
             <div className="pt-2 pb-4 flex flex-col">
-              {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
-
-
               <div className=''>
                 Le livre
 
@@ -376,14 +302,9 @@ export default function Example() {
                   {LeLivre.map((item) => (
                     <Link href={item.href}>
                       <a
-
                         key={item.name}
                         className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                       >
-
-                        {/* <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-white sm:h-12 sm:w-12">
-                          <item.icon aria-hidden="true" />
-                        </div> */}
                         <div className="ml-4 pt-3">
                           <p className="text-sm font-medium text-gray-900 ">
                             {item.name}

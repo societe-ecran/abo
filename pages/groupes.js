@@ -76,8 +76,8 @@ const groupes = ({ collectif }) => {
         setValue(newValue);
     };
 
-    const texte = ' Les groupes ou collectifs rassemblés ici ne se disent pas nécessairement abolitionnistes. Mais ils mènent des luttes pour se défendre de la police, de la justice ou de la prison, ici et maintenant. Nous ne faisons que relayer ces organisations contre les violences d’État pour qu’il soit plus facile de les contacter et de connaître les forces en présence. Si vous participez à un collectif qui n’est pas répertorié ici et que vous aimeriez qu’il y soit, n’hésitez pas à nous envoyer un mail !'
-    const titre = 'Groupes et collectifs'
+    const texte = "Il y a beaucoup de façons de se défendre de la police et de la justice, ici et maintenant. Cette section se propose de relayer les organisations locales contre les violences d’Etat qui luttent au quotidien et font vivre la solidarité."
+     const titre = 'Groupes et collectifs'
     const description = "Les groupes ou collectifs rassemblés ici ne se disent pas nécessairement abolitionnistes. Mais ils mènent des luttes pour se défendre de la police, de la justice ou de la prison, ici et maintenant. "
 
     const groupsTypes = [
@@ -91,7 +91,10 @@ const groupes = ({ collectif }) => {
     return (
         <div>
             <Layout titles={titre} description={description}>
-                <Intro title='Groupes et collectifs - Abolir la police' texte={texte} src={statue} />
+                <div className='bg-fond'>
+                    <Intro title='Groupes et collectifs' texte={texte} src={statue} />
+                </div>
+
 
                 <div className='hidden md:block pt-6  md:pl-6 '>
                     <div className={classes.root}>

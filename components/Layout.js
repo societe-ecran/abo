@@ -32,12 +32,12 @@ const Layout = ({ children, ...pageProps }) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            {router.pathname == '/' ? "" :
-                <div className=' shadow-md bg-white '>
+
+                <div className=' bg-white border border-b border-black pb-2'>
                     <Title />
                     <Navbar />
                 </div>
-            }
+            
 
             <main>
                 {children}

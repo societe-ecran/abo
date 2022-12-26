@@ -8,6 +8,10 @@
   src: local("HarbourBold"), url("./fonts/HarbourBold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "GillSansUltraBold";
+  src: local("GillSansUltraBold"), url("./fonts/GillSansUltraBold.ttf") format("truetype");
+}
 
 
 @font-face {
@@ -30,6 +34,12 @@
   font-family: "Combat";
   src: local("Combat"), url("./fonts/Combat.otf") format("truetype");
 } */
+
+
+.elipsis{
+  overflow:hidden;
+  text-overflow: ellipsis;
+}
 
 .menthe {
     color:#E1ECD5
@@ -61,6 +71,9 @@
 .HarbourBold{
 font-family: "HarbourBold";
 }
+.GillSansUltraBold{
+  font-family: "GillSansUltraBold";
+  }
 .titreNav {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }

@@ -32,7 +32,7 @@ const Footer = () => {
 
       <div className="max-w-7xl mx-auto  overflow-hidden  ">
         <div className='text-center text-gray-400 '>
-          collectif_matsuda@riseup.net
+          collectif_matsuda(at)riseup.net
         </div>
         <div className="mt-2 flex justify-center space-x-6">
           {navigation.social.map((item) => (

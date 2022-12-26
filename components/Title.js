@@ -5,10 +5,10 @@ import Link from 'next/link'
 const Title = () => {
     return (
 
-        <div className=" hidden sm:block  text-center">
-            <Link href="/actualites">
-                <a className='border'>
-                    <div className=' text-4xl HarbourBold text-gray-700   '>
+        <div className="my-6 hidden sm:block  text-center pb-3">
+            <Link href="/">
+                <a className=''>
+                    <div className=' text-4xl HarbourBold text-violetLivre  '>
                     <h1>   
                        ABOLIR LA POLICE
                     </h1>
